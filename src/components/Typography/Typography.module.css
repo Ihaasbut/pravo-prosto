@@ -1,0 +1,117 @@
+.typography {
+    color: var(--color-text-primary);
+}
+
+.h1 {
+    font-size: 86px;
+    line-height: 90px;
+    font-weight: 900;
+}
+
+.h2 {
+    font-size: 80px;
+    line-height: 84px;
+    font-weight: 900;
+    white-space: pre-line;
+}
+
+.h3 {
+    font-size: 65px;
+    line-height: 69px;
+}
+
+.text-24 {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.text-20 {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.text-16 {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.button-close-menu {
+    font-weight: 900;
+    color: var(--no-change-fff);
+    font-size: 30px;
+}
+
+@media (min-width: 2200px) {
+    .h1 {
+        font-size: 96px;
+        line-height: 100px;
+    }
+
+    .text-24 {
+        font-size: 34px;
+    }
+    .text-16 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 1510px) {
+    .h1 {
+        font-size: 80px;
+        line-height: 84px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .h1 {
+        font-size: 62px;
+        line-height: 66px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .h1 {
+        font-size: 44px;
+        line-height: 48px;
+    }
+    .text-24 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .h1 {
+        font-size: 48px;
+        line-height: 52px;
+    }
+}
+
+@media (max-width: 767px) {
+    .h1 {
+        font-size: 38px;
+        line-height: 42px;
+    }
+    .text-24 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 424px) {
+    .h1 {
+        font-size: 37px;
+        line-height: 41px;
+    }
+    .text-24 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 374px) {
+    .h1 {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .text-24 {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,33 @@
+.embla__viewport {
+    overflow: hidden;
+}
+
+.embla__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+    margin-right: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-transform: uppercase;
+}
+
+.embla__slide p {
+  width: max-content;
+}
+
+.embla__slide span {
+  color: var(--blue-1);
+  font-weight: 900;
+  width: 20px;
+}
+
+@media (min-width: 2200px) {
+  .embla__slide {
+    width: 700px;
+  }
+}

@@ -1,0 +1,17 @@
+.title-block-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* padding-left: 30px; */
+}
+
+.title-block-text {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+}
+
+.title-block {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

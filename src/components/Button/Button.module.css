@@ -1,0 +1,47 @@
+.button {
+    background-color: var(--blue-1);
+    color: var(--no-change-fff);
+    font-size: 18px;
+    padding: 30px 80px;
+    border: 2px solid var(--blue-1);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.4s ease-out;
+    font-weight: 600;
+}
+
+.button:hover {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+}
+
+@media (min-width: 2200px) {
+    .button {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .button {
+        padding: 20px 50px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .button {
+        padding: 15px 40px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .button {
+        width: 100%;
+    }
+}
+
+/* @media (max-width: 424px) {
+    .button {
+        font-size: 14px;
+    }
+} */
