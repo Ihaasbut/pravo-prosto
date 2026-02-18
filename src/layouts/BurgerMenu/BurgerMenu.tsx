@@ -3,14 +3,14 @@ import Logo from "../../components/icons/Logo/Logo";
 import Typography from "../../components/Typography/Typography";
 import styles from "./BurgerMenu.module.css";
 import cn from "classnames";
-import type { BurgerMenuPropsI, NavLinkI } from "./BurgerMenu.types.";
+import type { BurgerMenuPropsI, NavLinkI } from "./burgerMenu.types";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../hooks/use-language";
 import Overlay from "../../components/Overlay/Overlay";
 import ButtonClose from "../../components/ButtonClose/ButtonClose";
 
 function BurgerMenu(props: BurgerMenuPropsI) {
-    const { onToggleMenu, isMenuOpen} = props;
+    const { onToggleMenu, isMenuOpen } = props;
     const { language } = useLanguage();
     const [navLinks, setNavLinks] = useState<NavLinkI[] | null>(null);
 

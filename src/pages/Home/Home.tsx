@@ -1,26 +1,28 @@
 import { useLanguage } from "../../hooks/use-language";
 import Hero from "./components/Hero/Hero";
 import { useEffect, useState } from "react";
-import type { HomeDataI } from "./types/Mocdata";
+import type { PageHomeFullDataI } from "./types/home-page.types";
 
 function Home() {
-    const [data, setData] = useState<HomeDataI | null>(null);
+    const [pageData, setPageData] = useState<PageHomeFullDataI | null>(null);
     const { language } = useLanguage();
 
     useEffect(() => {
         (async () => {
-            const module = await import(`./mocData/mockData.${language}.ts`);
-            setData(module);
+            const pageModule = await import(
+                `./mockData/Home.mockData.${language}.ts`
+            );
+            setPageData(pageModule);
         })();
     }, [language]);
 
-    if (!data) {
+    if (!pageData) {
         return null;
     }
 
     return (
         <>
-            <Hero heroData={data.heroData} />
+            <Hero hero={pageData.hero} />
         </>
     );
 }

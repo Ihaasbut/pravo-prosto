@@ -1,80 +1,53 @@
-import type { HeroDataI } from "../types/Mocdata";
+import type { HeroI } from "../components/Hero/types/hero.types";
 
-export const heroData: HeroDataI = {
+
+export const hero: HeroI = {
     title: "Математически точные\nюридические решения",
     description:
         "ПРАВО ПРОСТО — российская юридическая фирма с глубокой экспертизой в IT, инвестиционных сделках и юридических исследованиях. Мы решаем многоуровневые правовые задачи и управляем комплексными юридическими проектами для бизнеса и частных клиентов. Головной офис компании расположен в ИТ-Парке им. Б. Рамеева в Казани.",
     button: "Консультация",
-    services: [
+    serviceKeywords: [
         {
-            id: 1,
             name: "Договоры",
-            href: "/",
         },
         {
-            id: 2,
             name: "Сделки",
-            href: "/",
         },
         {
-            id: 3,
             name: "Претензии",
-            href: "/",
         },
         {
-            id: 4,
             name: "Инвестиции",
-            href: "/",
         },
         {
-            id: 5,
             name: "Авторское право",
-            href: "/",
         },
         {
-            id: 6,
             name: "Аудит",
-            href: "/",
         },
         {
-            id: 7,
             name: "Реорганизация",
-            href: "/",
         },
         {
-            id: 8,
             name: "Защита кода",
-            href: "/",
         },
         {
-            id: 9,
             name: "Аккредитация",
-            href: "/",
         },
         {
-            id: 10,
             name: "Правовой R&D",
-            href: "/",
         },
         {
-            id: 11,
             name: "ИТ-льготы",
-            href: "/",
         },
         {
-            id: 12,
             name: "Биометрия",
-            href: "/",
         },
         {
-            id: 13,
             name: "Due diligence",
-            href: "/",
         },
         {
-            id: 14,
             name: "Лицензия",
-            href: "/",
         },
     ],
 };

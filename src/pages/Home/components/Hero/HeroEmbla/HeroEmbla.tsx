@@ -2,10 +2,11 @@ import "./HeroEmbla.css";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import Typography from "../../../../../components/Typography/Typography";
+import type { HeroEmblaPropsI } from "../types/hero.types";
 
-import type { HeroEmblaPropsI } from "../../../types/Mocdata";
 
-function HeroEmbla({ services }: HeroEmblaPropsI) {
+
+function HeroEmbla({ serviceKeywords }: HeroEmblaPropsI) {
     const [emblaRef] = useEmblaCarousel({ loop: true }, [
         AutoScroll({
             speed: 2,
@@ -18,11 +19,11 @@ function HeroEmbla({ services }: HeroEmblaPropsI) {
         <div className="embla">
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
-                    {services.map((el) => (
-                        <div className="embla__slide" key={el.id}>
-                            <span> [ ] </span>{" "}
-                            <Typography variant="text-24" as={"p"}>
-                                {el.name}
+                    {serviceKeywords.map((serviceKeyword, index) => (
+                        <div className="embla__slide" key={index}>
+                            <span> [ ] </span>
+                            <Typography variant="body-l" as={"p"}>
+                                {serviceKeyword.name}
                             </Typography>
                         </div>
                     ))}

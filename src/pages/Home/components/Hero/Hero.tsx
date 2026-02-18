@@ -4,26 +4,27 @@ import "swiper/swiper.css";
 
 import Button from "../../../../components/Button/Button";
 import HeroEmbla from "./HeroEmbla/HeroEmbla";
-import type { HeroPropsI } from "../../types/Mocdata";
+import type { HeroPropsI } from "./types/hero.types";
 
-function Hero({ heroData }: HeroPropsI) {
+
+function Hero({ hero }: HeroPropsI) {
     return (
         <div className="container">
             <div className={styles["hero"]}>
                 <div className="content">
-                    <div className={styles["hero-info"]}>
+                    <div className={styles["inner"]}>
                         <Typography variant="h1" as="h1">
-                            [{heroData.title}]
+                            [{hero.title}]
                         </Typography>
                         <Typography variant="body-l" as="p">
-                            {heroData.description}
+                            {hero.description}
                         </Typography>
 
-                        <Button variant="fill"> {heroData.button} </Button>
+                        <Button variant="fill"> {hero.button} </Button>
                     </div>
                 </div>
 
-                <HeroEmbla services={heroData.services} />
+                <HeroEmbla serviceKeywords={hero.serviceKeywords} />
             </div>
         </div>
     );

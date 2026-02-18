@@ -1,5 +1,4 @@
-import type { TitleBlockPropsI } from "../../../types/TitleBlock.types";
-
+import type { TitleBlockPropsI } from "../../../types/titleBlock.types";
 
 export const headerPage: TitleBlockPropsI = {
     title: "Legal and accounting services for IT",

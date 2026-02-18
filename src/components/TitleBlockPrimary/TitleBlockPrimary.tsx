@@ -1,6 +1,6 @@
 import styles from "./TitleBlockPrimary.module.css";
 import TitleBlock from "../TitleBlockHome/TitleBlockHome";
-import type { TitleBlockPropsI } from "../../types/TitleBlock.types";
+import type { TitleBlockPropsI } from "../../types/titleBlock.types";
 
 function TitleBlockGrey({
     title,

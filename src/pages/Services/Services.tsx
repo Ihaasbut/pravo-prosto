@@ -4,10 +4,12 @@ import TitleBlockGrey from "../../components/TitleBlockPrimary/TitleBlockPrimary
 import styles from "./Services.module.css";
 import { useLanguage } from "../../hooks/use-language";
 import ServiceCategory from "./ServiceCategory/ServiceCategory";
-import type { PageServicesFullDataI } from "./types/types";
+import type { PageServicesFullDataI } from "./types/services-page.types";
 
 function Services() {
-    const [data, setData] = useState<PageServicesFullDataI | null>(null);
+    const [pageData, setPageData] = useState<PageServicesFullDataI | null>(
+        null,
+    );
     const { language } = useLanguage();
 
     useEffect(() => {
@@ -17,33 +19,33 @@ function Services() {
             );
 
             const pageModule = await import(
-                `./mockData/mockData.${language}.ts`
+                `./mockData/services.mockData.${language}.ts`
             );
-
-            const servicesPageData: PageServicesFullDataI = {
-                servicesData: servicesModule.serviceCategories,
-                pageServicesData: pageModule,
+          
+            const pageServicesFullData: PageServicesFullDataI = {
+                serviceCategories: servicesModule.serviceCategories,
+                page: pageModule,
             };
-
-            setData(servicesPageData);
-            console.log(servicesPageData)
+            console.log(pageServicesFullData.page)
+           
+            setPageData(pageServicesFullData);
         })();
     }, [language]);
 
-    if (!data) {
+    if (!pageData) {
         return null;
     }
-
+ 
     return (
         <div className={styles["services"]}>
             <TitleBlockGrey
-                title={data.pageServicesData.headerPage.title}
-                description={data.pageServicesData.headerPage.description}
-                buttonText={data.pageServicesData.headerPage.buttonText}
+                title={pageData.page.headerPage.title}
+                description={pageData.page.headerPage.description}
+                buttonText={pageData.page.headerPage.buttonText}
             />
             <div className="container">
                 <div className="content">
-                    {data.servicesData.map((category) => (
+                    {pageData.serviceCategories.map((category) => (
                         <ServiceCategory
                             area={category.area}
                             services={category.services}

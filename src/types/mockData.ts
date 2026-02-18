@@ -1,4 +1,4 @@
-export type ServiceCategoryI = {
+export type ServicesCategoryI = {
     area: string;
     services: ServiceI[];
 };

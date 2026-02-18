@@ -1,6 +1,6 @@
-import type { ServiceCategoryI } from "../types/mockData";
+import type { ServicesCategoryI } from "../types/mockData";
 
-export const serviceCategories: ServiceCategoryI[] = [
+export const serviceCategories: ServicesCategoryI[] = [
     {
         area: "Core Legal Services",
         services: [

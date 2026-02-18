@@ -1,7 +1,7 @@
 import Button from "../Button/Button";
 import Typography from "../Typography/Typography";
 import styles from "./TitleBlockHome.module.css";
-import type { TitleBlockPropsI } from "../../types/TitleBlock.types";
+import type { TitleBlockPropsI } from "../../types/titleBlock.types";
 
 function TitleBlockHome({
     title,

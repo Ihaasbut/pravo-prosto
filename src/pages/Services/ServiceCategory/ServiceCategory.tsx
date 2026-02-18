@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Typography from "../../../components/Typography/Typography";
-import type { ServiceCategoryI } from "../../../types/mockData";
+import type { ServicesCategoryI } from "../../../types/mockData";
 import styles from "./ServiceCategory.module.css";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,48 +10,41 @@ import { useSlideUp } from "../../../hooks/animation/useSlideUp";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function ServiceCategory({ services, area }: ServiceCategoryI) {
+function ServiceCategory({ services, area }: ServicesCategoryI) {
     const containerRef = useRef<HTMLDivElement>(null);
     useSlideUp(containerRef);
-    // console.log(area)
+
     return (
-        <div className={styles["services-area"]} ref={containerRef}>
+        <div className={styles["services-category"]} ref={containerRef}>
             <Typography
                 variant="h3"
                 as={"h3"}
-                className={styles["service-title"]}
+                className="title"
             >
                 {area}
             </Typography>
-            <div className={styles["services-theme-list"]}>
+            <div className={styles["services"]}>
                 {services.map((service) => (
                     <Link
                         to={service.slug}
-                        className={cn(styles["services-theme-list-wrapper"])}
+                        className={cn(styles["service-wrapper"])}
                     >
                         <div
                             className={cn(
-                                styles["services-theme-list-item"],
+                                styles["service"],
                                 "animate-from-top",
                             )}
                         >
                             <Typography
                                 variant="body-l"
                                 as={"p"}
-                                className={
-                                    styles["services-theme-list-item-title"]
-                                }
+                                className={styles["service-title"]}
                             >
                                 {service.title}
                             </Typography>
+                            
                             {service.highlights.map((highlight) => (
-                                <Typography
-                                    variant="body-s"
-                                    as={"p"}
-                                    className={
-                                        styles["services-theme-list-item-about"]
-                                    }
-                                >
+                                <Typography variant="body-s" as={"p"}>
                                     - {highlight}
                                 </Typography>
                             ))}
