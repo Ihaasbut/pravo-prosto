@@ -5,20 +5,18 @@ import Sidebar from "../Sidebar/Sidebar";
 import { useState } from "react";
 import Header from "../Header/Header";
 
-
 function RootLayout() {
-    const [openedMenu, setOpenedMenu] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setOpenedMenu(!openedMenu);
+    const onToggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
     };
-
 
     return (
         <>
-            <Header toggleMenu={toggleMenu} openedMenu={openedMenu} />
+            <Header onToggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} />
             <div className={styles["menu-and-page"]}>
-                <Sidebar toggleMenu={toggleMenu} openedMenu={openedMenu} />
+                <Sidebar onToggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} />
                 <div className={styles["page"]}>
                     <span className={styles["background-line"]}></span>
                     <span className={styles["background-line"]}></span>

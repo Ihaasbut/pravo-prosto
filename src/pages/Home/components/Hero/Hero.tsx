@@ -15,11 +15,11 @@ function Hero({ heroData }: HeroPropsI) {
                         <Typography variant="h1" as="h1">
                             [{heroData.title}]
                         </Typography>
-                        <Typography variant="text-24" as="p">
+                        <Typography variant="body-l" as="p">
                             {heroData.description}
                         </Typography>
 
-                        <Button> {heroData.button} </Button>
+                        <Button variant="fill"> {heroData.button} </Button>
                     </div>
                 </div>
 

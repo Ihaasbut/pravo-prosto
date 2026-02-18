@@ -6,9 +6,9 @@ import {
 } from "./language-context";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
-interface LanguageProviderI {
+type LanguageProviderI = {
     children: ReactNode;
-}
+};
 
 export const LanguageProvider = ({ children }: LanguageProviderI) => {
     const params = useParams<{ lang: Language }>();
@@ -19,10 +19,10 @@ export const LanguageProvider = ({ children }: LanguageProviderI) => {
     useEffect(() => {
         if (params.lang !== language) {
             const pathname = location.pathname;
-            const segments = pathname.split("/").filter(Boolean);
+            const pathParts = pathname.split("/").filter(Boolean);
             const newPath =
-                segments.length > 0
-                    ? `/${language}/${segments.slice(1).join("/")}`
+                pathParts.length > 0
+                    ? `/${language}/${pathParts.slice(1).join("/")}`
                     : `/${language}`;
             navigate(newPath, { replace: true });
         }
@@ -32,13 +32,13 @@ export const LanguageProvider = ({ children }: LanguageProviderI) => {
         window.localStorage.setItem("language", language);
     }, [language, params.lang]);
 
-    const changeLanguage = (lang: Language) => {
-        setLanguage(lang);
+    const handleChangeLanguage = (language: Language) => {
+        setLanguage(language);
     };
 
     const value: LanguageContextValue = {
         language,
-        changeLanguage,
+        handleChangeLanguage,
     };
 
     return (

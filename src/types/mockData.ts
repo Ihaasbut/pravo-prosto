@@ -1,27 +1,21 @@
-export interface ServiceCardI {
-    link?: string;
+export type ServiceCategoryI = {
+    area: string;
+    services: ServiceI[];
+};
+export type ServiceI = {
     title: string;
-    aboutList: string[];
+    highlights: string[];
     slug: string;
     detailPage?: ServiceDetailI;
-}
-export interface ServicesI {
-    area: string;
-    serviceCards: ServiceCardI[];
-}
+};
 
-export interface ServicesDataI {
-    servicesBlocks: ServicesI[];
-}
+export type ServiceDetailI = {
+    title: string;
+    description: string;
+    features: FeaturesI[];
+};
 
-export interface ServiceDetailI {
-          title: string;
-          description: string;
-          whatsIncluded: WhatsIncludedI[]
-}
-
- 
-export interface WhatsIncludedI {
-          title: string;
-          description: string;
-}
+export type FeaturesI = {
+    title: string;
+    description: string;
+};

@@ -5,7 +5,6 @@
 
 .page {
     position: relative;
-    /* width: 93vw; */
     width: calc(100% - 130px);
 }
 
@@ -21,6 +20,7 @@
 .background-line:first-child {
     right: 130px;
 }
+
 .background-line:nth-child(2) {
     right: 28.5vw;
 }
@@ -37,6 +37,7 @@
     .page {
         width: calc(100% - 150px);
     }
+
     .background-line:first-child {
         right: 150px;
     }
@@ -46,6 +47,7 @@
     .page {
         width: calc(100% - 100px);
     }
+
     .background-line:first-child {
         right: 100px;
     }
@@ -55,18 +57,23 @@
     .menu-and-page {
         display: block;
     }
+
     .page {
         width: 100%;
     }
+
     .background-line:first-child {
         right: 15px;
     }
+
     .background-line:nth-child(4) {
         left: 15px;
     }
+
     .background-line:nth-child(2) {
         right: 66.6vw;
     }
+    
     .background-line:nth-child(3) {
         right: 33.3vw;
     }
@@ -76,6 +83,7 @@
     .background-line:first-child {
         right: 5px;
     }
+    
     .background-line:nth-child(4) {
         left: 5px;
     }

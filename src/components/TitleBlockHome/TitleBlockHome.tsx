@@ -1,26 +1,29 @@
 import Button from "../Button/Button";
 import Typography from "../Typography/Typography";
-import styles from "./TitleBlock.module.css";
+import styles from "./TitleBlockHome.module.css";
+import type { TitleBlockPropsI } from "../../types/TitleBlock.types";
 
-export interface TitleBlockPropsI {
-    title: string;
-    description?: string;
-    buttonText?: string;
-    classname?: string;
-}
-
-function TitleBlock({ title, description, buttonText, classname }: TitleBlockPropsI) {
+function TitleBlockHome({
+    title,
+    description,
+    buttonText,
+    descriptionStyle,
+}: TitleBlockPropsI) {
     return (
         <div className={styles["title-block"]}>
             <div className="container">
                 <div className="content">
-                    <div className={styles["title-block-info"]}>
-                        <div className={styles["title-block-text"]}>
+                    <div className={styles["inner"]}>
+                        <div className={styles["text-group"]}>
                             <Typography variant="h2" as={"h2"}>
                                 {title}
                             </Typography>
                             {description && (
-                                <Typography variant="text-20" as={"p"} className={classname}>
+                                <Typography
+                                    variant="body-m"
+                                    as={"p"}
+                                    className={descriptionStyle}
+                                >
                                     {description}
                                 </Typography>
                             )}
@@ -35,4 +38,4 @@ function TitleBlock({ title, description, buttonText, classname }: TitleBlockPro
     );
 }
 
-export default TitleBlock;
+export default TitleBlockHome;

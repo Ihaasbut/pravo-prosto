@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import type { ThemeContextValue } from "../context/theme-context";
 import { ThemeContext } from "../context/theme-context";
-//создали свой хук епта
+
 export const useTheme = (): ThemeContextValue => {
     const ctx = useContext(ThemeContext);
 

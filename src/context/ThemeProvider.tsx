@@ -5,9 +5,9 @@ import {
     type ThemeContextValue,
 } from "./theme-context";
 
-interface ThemeProviderI {
+type ThemeProviderI = {
     children: ReactNode;
-}
+};
 
 export const ThemeProvider = ({ children }: ThemeProviderI) => {
     const [theme, setTheme] = useState<Theme>("light");
@@ -17,22 +17,11 @@ export const ThemeProvider = ({ children }: ThemeProviderI) => {
         localStorage.setItem("theme", theme);
     }, [theme]);
 
-    // const setDarkTheme: () => void = () => {
-    //     if (theme === "light") {
-    //         setTheme("dark");
-    //     }
-    // };
-    // const setLightTheme: () => void = () => {
-    //     if (theme === "dark") {
-    //         setTheme("light");
-    //     }
-    // };
-
-    const changeTheme = (theme: Theme) => {
+    const handleChangeTheme = (theme: Theme) => {
         setTheme(theme);
     };
 
-    const value: ThemeContextValue = { theme, changeTheme };
+    const value: ThemeContextValue = { theme, handleChangeTheme };
 
     return (
         <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

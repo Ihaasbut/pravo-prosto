@@ -1,16 +1,14 @@
-import type { ReactNode } from "react";
 import styles from "./Button.module.css";
 import cn from "classnames";
-
-interface ButtonPropsI {
-    children: ReactNode;
-    variant: "fill" | "outline";
-}
+import type { ButtonPropsI } from "./Button.types";
+import Typography from "../Typography/Typography";
 
 function Button({ children, variant }: ButtonPropsI) {
     return (
         <button className={cn(styles["button"], styles[`button-${variant}`])}>
-            {children}
+            <Typography variant="button" as={"span"}>
+                {children}
+            </Typography>
         </button>
     );
 }

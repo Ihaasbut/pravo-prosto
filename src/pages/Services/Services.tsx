@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import TitleBlockGrey from "../../components/TitleBlockGrey/TitleBlockGrey";
+import TitleBlockGrey from "../../components/TitleBlockPrimary/TitleBlockPrimary";
 
 import styles from "./Services.module.css";
 import { useLanguage } from "../../hooks/use-language";
-import ServicesBlock from "./ServicesBlock/ServicesBlock";
+import ServiceCategory from "./ServiceCategory/ServiceCategory";
 import type { PageServicesFullDataI } from "./types/types";
 
 function Services() {
@@ -12,44 +12,41 @@ function Services() {
 
     useEffect(() => {
         (async () => {
-            const commonServicesModule = await import(
+            const servicesModule = await import(
                 `../../mockData/mockData.${language}.ts`
             );
 
-            const pageServicesModule = await import(
-              `./mockData/mockData.${language}.ts`
-          );
-         
+            const pageModule = await import(
+                `./mockData/mockData.${language}.ts`
+            );
 
-            const data: PageServicesFullDataI = {
-              commonServicesData: commonServicesModule,
-              pageServicesData: pageServicesModule,
-            }    
+            const servicesPageData: PageServicesFullDataI = {
+                servicesData: servicesModule.serviceCategories,
+                pageServicesData: pageModule,
+            };
 
-            setData(data);
+            setData(servicesPageData);
+            console.log(servicesPageData)
         })();
     }, [language]);
-
 
     if (!data) {
         return null;
     }
 
-
-
     return (
         <div className={styles["services"]}>
             <TitleBlockGrey
-                title={data.pageServicesData.pageTitleData.title}
-                description={data.pageServicesData.pageTitleData.description}
-                buttonText={data.pageServicesData.pageTitleData.buttonText}
+                title={data.pageServicesData.headerPage.title}
+                description={data.pageServicesData.headerPage.description}
+                buttonText={data.pageServicesData.headerPage.buttonText}
             />
             <div className="container">
                 <div className="content">
-                    {data.commonServicesData.servicesBlocks.map((el) => (
-                        <ServicesBlock
-                            area={el.area}
-                            serviceCards={el.serviceCards}
+                    {data.servicesData.map((category) => (
+                        <ServiceCategory
+                            area={category.area}
+                            services={category.services}
                         />
                     ))}
                 </div>

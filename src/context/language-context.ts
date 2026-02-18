@@ -2,11 +2,11 @@ import { createContext } from "react";
 
 export type Language = "ru" | "en";
 
-export interface LanguageContextValue {
+export type LanguageContextValue = {
     language: Language;
-    changeLanguage: (lang:Language) => void;
-}
+    handleChangeLanguage: (language: Language) => void;
+};
 
 export const LanguageContext = createContext<LanguageContextValue | undefined>(
-    undefined
+    undefined,
 );

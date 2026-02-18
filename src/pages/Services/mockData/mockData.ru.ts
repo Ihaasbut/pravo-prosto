@@ -1,8 +1,7 @@
-import type { TitleBlockPropsI } from "../../../components/TitleBlock/TitleBlock";
+import type { TitleBlockPropsI } from "../../../types/TitleBlock.types";
 
-
-export const pageTitleData: TitleBlockPropsI = {
-          title: "Юридические и бухгалтерские услуги\nдля ИТ",
-          description: "Мы не просто юристы. Мы часть вашей ИТ-команды.",
-          buttonText: "Консультация"
-}
+export const headerPage: TitleBlockPropsI = {
+    title: "Юридические и бухгалтерские услуги для ИТ",
+    description: "Мы не просто юристы. Мы часть вашей ИТ-команды.",
+    buttonText: "Консультация",
+};

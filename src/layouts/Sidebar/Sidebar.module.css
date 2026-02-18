@@ -30,14 +30,15 @@
 }
 
 .sidebar-wrapper path {
-    transition: background 0.4s ease-out;
+    transition: fill 0.2s ease-out;
     fill: var(--color-bg-element-secondary);
 }
 .sidebar-wrapper:hover path {
     fill: var(--no-change-fff);
 }
-.sidebar-wrapper:hover span {
-    background: var(--no-change-fff);
+
+.sidebar-wrapper:hover path.logo_detail {
+    fill: red;
 }
 
 .sidebar-wrapper span:first-child {
@@ -51,6 +52,7 @@
     transform: translateX(-20px);
     width: 15px;
     border-radius: 10px;
+    background: var(--no-change-fff);
 }
 
 .sidebar-wrapper span:nth-child(2) {
@@ -62,8 +64,9 @@
 
 .sidebar-wrapper:hover span:nth-child(2) {
     transform: translateX(-12px);
-    width: 30px; border-radius: 10px;
-
+    width: 30px;
+    background: var(--no-change-fff);
+    border-radius: 10px;
 }
 
 .sidebar-wrapper span:last-child {
@@ -75,8 +78,9 @@
 
 .sidebar-wrapper:hover span:last-child {
     transform: translateX(-5px);
-    width: 45px; border-radius: 10px;
-
+    width: 45px;
+    background: var(--no-change-fff);
+    border-radius: 10px;
 }
 
 /* .sidebar-wrapper span:nth-child(2) {

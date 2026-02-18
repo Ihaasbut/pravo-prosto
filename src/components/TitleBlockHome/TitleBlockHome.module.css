@@ -1,0 +1,18 @@
+.title-block {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 80px;
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+

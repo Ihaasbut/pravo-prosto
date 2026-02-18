@@ -1,33 +1,40 @@
-.sidebar-logo {
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 130px;
+    background: none;
+    border: none;
+    position: fixed;
+    top: 50%;
 }
-.open-menu .sidebar-logo {
+
+.burger-menu span {
+    width: 55px;
+    height: 5px;
+    background: var(--color-bg-element-secondary);
+    transition:
+        background 0.4s ease-out,
+        transform 0.3s ease;
+}
+
+.burger-menu:hover span {
+    background: var(--no-change-fff);
+}
+
+.logo {
+    position: absolute;
     left: 30px;
     transform: none;
     top: 5%;
 }
 
-.open-menu path {
+.menu-wrapper path {
     fill: var(--no-change-fff);
 }
 
-.open-menu-overlay {
-    background: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 60;
-    opacity: 0;
-    transition: opacity 0.3s ease-out;
-    pointer-events: none;
-}
-.open-menu-info {
+.inner {
     background: var(--blue-1);
     position: fixed;
     width: 30%;
@@ -38,20 +45,19 @@
     align-items: center;
     padding: 0 30px;
     transform: translateX(-105%);
-    transition: transform 0.2s ease-out;
+    transition:
+        transform 0.2s ease-out,
+        visibility 0.2s ease-out;
     z-index: 70;
     text-transform: uppercase;
     visibility: hidden;
 }
-.open-menu.active .open-menu-info {
+.menu-wrapper.menu-active .inner {
     transform: translateX(0);
     visibility: visible;
 }
-.open-menu-info div {
-    color: var(--no-change-fff);
-}
 
-.open-menu-list {
+.nav-links {
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -60,109 +66,71 @@
     width: 100%;
 }
 
-.open-menu-close {
-    position: absolute;
-    left: 30px;
-    bottom: 5%;
-    z-index: 10;
-    user-select: none;
-    border: none;
-    font-weight: 700;
+.nav-link {
     color: var(--no-change-fff);
-    background: none;
-    cursor: pointer;
-    height: max-content;
+    transition: color 0.3s ease-out;
 }
-.open-menu.active .open-menu-overlay {
-    opacity: 1;
-    pointer-events: visible;
+.nav-link:hover {
+    color: var(--no-change-grey);
 }
 
-.sidebar-menu-burger span {
-    width: 55px;
-    height: 5px;
-    background: var(--color-bg-element-secondary);
-    display: block;
-    transition: background 0.4s ease-out;
-    border: none;
-    user-select: none;
-    transition: transform 0.3s ease;
-}
-.sidebar-menu-burger:hover span {
-    background: var(--no-change-fff);
-}
-.sidebar-menu-burger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 130px;
-    background: none;
-    border: none;
-    position: fixed;
-    top: 50%;
+.nav-link-active {
+    color: var(--no-change-grey);
 }
 
 @media (min-width: 2200px) {
-    .sidebar-menu-burger span {
+    .burger-menu span {
         width: 85px;
         height: 8px;
     }
-    .sidebar-menu-burger {
+
+    .burger-menu {
         gap: 10px;
         width: 150px;
     }
 }
 
 @media (max-width: 1200px) {
-    .sidebar-menu-burger span {
+    .burger-menu span {
         width: 50px;
         height: 5px;
     }
-    .sidebar-menu-burger {
+
+    .burger-menu {
         width: 100px;
     }
 }
 
 @media (max-width: 1023px) {
-    .sidebar-menu-burger {
+    .burger-menu {
         position: relative;
     }
-    .open-menu-info {
+
+    .inner {
         width: 100%;
         text-align: center;
         transform: translateY(-100%);
     }
-    .open-menu.active .open-menu-info {
+
+    .menu-wrapper.active .inner {
         transform: translateY(0);
     }
-    .open-menu-list {
+
+    .nav-links {
         text-align: center;
     }
 
-    .sidebar-logo {
-        top: 0;
-    }
-    .open-menu .sidebar-logo {
+    .logo {
         left: 50%;
         transform: translate(-50%, -50%);
         bottom: 0;
         top: 93%;
         bottom: 0;
-    }
-    .open-menu-close {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        top: 5%;
-    }
-    .menu-dekstop {
-        display: none;
-    }
+    } 
 }
+
 @media (max-width: 424px) {
-    .sidebar-menu-burger span {
+    .burger-menu span {
         width: 46px;
         height: 5px;
     }

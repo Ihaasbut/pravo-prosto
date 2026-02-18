@@ -1,12 +1,12 @@
-import type { ServicesI } from "../types/mockData";
+import type { ServiceCategoryI } from "../types/mockData";
 
-export const servicesBlocks: ServicesI[] = [
+export const serviceCategories: ServiceCategoryI[] = [
     {
         area: "Основные юридические услуги",
-        serviceCards: [
+        services: [
             {
                 title: "Договоры и правовая документация",
-                aboutList: [
+                highlights: [
                     "Разработка с нуля, анализ, кастомизация",
                     "Объясняем, что подписываете",
                     "Настраиваем под ИТ-реалии: SaaS, API, арендные модели",
@@ -16,14 +16,14 @@ export const servicesBlocks: ServicesI[] = [
                     title: "Договоры и правовая документация",
                     description:
                         "Безопасные и понятные договоры — это фундамент любого бизнеса. Мы адаптируем юридический язык под реальные задачи разработчиков, стартапов, студий и продуктовых команд. Учитываем специфику ИТ: Agile, лицензии, IP, SaaS, open source, метрики. Договариваемся за вас — на бумаге и по смыслу.",
-                    whatsIncluded: [
+                        features: [
                         { title: "venvre", description: "wfrfwgr" },
                     ],
                 },
             },
             {
                 title: "Сделки, инвестиции, корпоративное сопровождение",
-                aboutList: [
+                highlights: [
                     "Подготовка к инвестициям, M&A",
                     "Правовой аудит и очистка рисков",
                     "Реорганизация, опционы, cap table",
@@ -32,7 +32,7 @@ export const servicesBlocks: ServicesI[] = [
             },
             {
                 title: "Судебные споры и претензии",
-                aboutList: [
+                highlights: [
                     "Представительство в арбитраже",
                     "Досудебное урегулирование",
                     "Защита интересов по договорам и IP",
@@ -41,7 +41,7 @@ export const servicesBlocks: ServicesI[] = [
             },
             {
                 title: "Интеллектуальная собственность и авторское право",
-                aboutList: [
+                highlights: [
                     "Защита кода, визуала, музыки, бренда",
                     "Регистрация объектов",
                     "Лицензирование и отчуждение прав",
@@ -50,7 +50,7 @@ export const servicesBlocks: ServicesI[] = [
             },
             {
                 title: "ИТ-льготы и аккредитация",
-                aboutList: [
+                highlights: [
                     "Помогаем получить и сохранить аккредитацию Минцифры",
                     "Документы и сопровождение для налоговых льгот",
                     "Обоснование цифрового статуса",
@@ -61,10 +61,10 @@ export const servicesBlocks: ServicesI[] = [
     },
     {
         area: "Экспертные зоны",
-        serviceCards: [
+        services: [
             {
                 title: "Правовой R&D и аудит",
-                aboutList: [
+                highlights: [
                     "Анализ нетипичных ситуаций",
                     "Подготовка правовых гипотез",
                     "Проверка сложных решений на риск",
@@ -73,7 +73,7 @@ export const servicesBlocks: ServicesI[] = [
             },
             {
                 title: "Юридический консалтинг по AI / ML",
-                aboutList: [
+                highlights: [
                     "Проверка ИИ-сервисов на соответствие праву",
                     "Риски генерации контента, персональных данных",
                     "Поддержка при внедрении AI в продукт",
@@ -82,7 +82,7 @@ export const servicesBlocks: ServicesI[] = [
             },
             {
                 title: "Биометрия и системы цифровой идентификации",
-                aboutList: [
+                highlights: [
                     "Консультируем по работе с биометрией: хранение, передача, согласия",
                     "Помогаем соблюдать требования 152-ФЗ.",
                     "Сопровождаем проекты в ЕСИА, СБП, цифровых паспортах и FinTech",
@@ -92,7 +92,7 @@ export const servicesBlocks: ServicesI[] = [
             },
             {
                 title: "Due diligence и проверка контрагентов",
-                aboutList: [
+                highlights: [
                     "Всесторонний правовой анализ ИТ-продуктов перед оформлением инвестиций",
                 ],
                 slug: "/",
@@ -101,10 +101,10 @@ export const servicesBlocks: ServicesI[] = [
     },
     {
         area: "Бухгалтерия для ИТ",
-        serviceCards: [
+        services: [
             {
                 title: "Учёт IP и нематериальных активов",
-                aboutList: [
+                highlights: [
                     "Помощь в постановке на баланс кода, бренда, игр",
                     "Подготовка к проверкам и инвестициям",
                 ],
@@ -112,7 +112,7 @@ export const servicesBlocks: ServicesI[] = [
             },
             {
                 title: "Контроль ИТ-льгот и налоговой базы",
-                aboutList: [
+                highlights: [
                     "Помогаем не потерять статус аккредитованной компании",
                     "Проверяем условия, документы и отчётность",
                 ],
@@ -120,7 +120,7 @@ export const servicesBlocks: ServicesI[] = [
             },
             {
                 title: "Управленческий учёт (ДДС, P&L)",
-                aboutList: [
+                highlights: [
                     "Настройка финансовой модели под бизнес",
                     "Контроль прозрачности и эффективности",
                 ],

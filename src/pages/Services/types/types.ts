@@ -1,16 +1,10 @@
-import type { TitleBlockPropsI } from "../../../components/TitleBlock/TitleBlock";
-import type { ServicesDataI } from "../../../types/mockData";
+import type { ServiceCategoryI } from "../../../types/mockData";
+import type { TitleBlockPropsI } from "../../../types/TitleBlock.types";
 
-export interface Test {
-    pageTitleData: TitleBlockPropsI;
-}
-
-export interface PageServicesFullDataI {
-    commonServicesData: ServicesDataI;
-    pageServicesData: Test;
-}
-
-// const data: PageServicesDataI = {
-//           commonServicesData: module,
-//           // commonServicesData: module,
-//         }
+export type PageServicesFullDataI = {
+    servicesData: ServiceCategoryI[];
+    pageServicesData: PageServices;
+};
+export type PageServices = {
+    headerPage: TitleBlockPropsI;
+};

@@ -1,5 +1,4 @@
-
-function WorkTimeIcon( ) {
+function WorkTimeIcon() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +8,6 @@ function WorkTimeIcon( ) {
             fill="none"
             className="icon-18"
         >
-
             <path
                 d="M8 5.75C7.59 5.75 7.25 5.41 7.25 5V2C7.25 1.59 7.59 1.25 8 1.25C8.41 1.25 8.75 1.59 8.75 2V5C8.75 5.41 8.41 5.75 8 5.75Z"
                 fill="#292D32"

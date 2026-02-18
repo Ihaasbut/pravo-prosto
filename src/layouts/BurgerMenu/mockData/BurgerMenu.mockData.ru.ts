@@ -1,30 +1,29 @@
-import type { SidebarItemsI } from "../BurgerMenu.types.";
-export const sidebarItems: SidebarItemsI = {
-    items: [
-        {
-            id: "1",
-            link: "",
-            title: "Главная",
-        },
-        {
-            id: "2",
-            link: "services",
-            title: "Услуги",
-        },
-        {
-            id: "3",
-            link: "team",
-            title: "Команда",
-        },
-        {
-            id: "4",
-            link: "news",
-            title: "Новости",
-        },
-        {
-            id: "5",
-            link: "contacts",
-            title: "Контакты",
-        },
-    ],
-};
+import type { NavLinkI } from "../BurgerMenu.types.";
+
+export const navLinks: NavLinkI[] = [
+    {
+        id: "1",
+        path: "",
+        title: "Главная",
+    },
+    {
+        id: "2",
+        path: "services",
+        title: "Услуги",
+    },
+    {
+        id: "3",
+        path: "team",
+        title: "Команда",
+    },
+    {
+        id: "4",
+        path: "news",
+        title: "Новости",
+    },
+    {
+        id: "5",
+        path: "contacts",
+        title: "Контакты",
+    },
+];

@@ -1,25 +1,21 @@
-import { useEffect, useState } from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import styles from "./Header.module.css";
 import { useTheme } from "../../hooks/use-theme";
 import { useLanguage } from "../../hooks/use-language";
 import { useLocation, useNavigate } from "react-router-dom";
-import type { SidebarItemsI } from "../BurgerMenu/BurgerMenu.types.";
 import cn from "classnames";
-import Logo from "../../components/icons/Logo";
+import Logo from "../../components/icons/Logo/Logo";
 
 interface HeaderPropsI {
-    openedMenu: boolean;
-    toggleMenu: () => void;
+    isMenuOpen: boolean;
+    onToggleMenu: () => void;
 }
 
-function Header({ openedMenu, toggleMenu }: HeaderPropsI) {
-    const { theme, changeTheme } = useTheme();
-    const { language, changeLanguage } = useLanguage();
+function Header({ isMenuOpen, onToggleMenu }: HeaderPropsI) {
+    const { theme, handleChangeTheme } = useTheme();
+    const { language, handleChangeLanguage } = useLanguage();
     const navigate = useNavigate();
     const location = useLocation();
-
-    const [data, setData] = useState<SidebarItemsI | null>(null);
 
     const changeUrl = (newlang: string) => {
         const pathname = location.pathname;
@@ -31,32 +27,14 @@ function Header({ openedMenu, toggleMenu }: HeaderPropsI) {
         navigate(newPath, { replace: true });
     };
 
-    useEffect(() => {
-        (async () => {
-            const module = await import(
-                `./../BurgerMenu/mockData/BurgerMenu.mockData.${language}.ts`
-            );
-            const sidebarItems: SidebarItemsI = module.sidebarItems;
-            setData(sidebarItems);
-        })();
-    }, [language]);
-
-    if (!data) {
-        return null;
-    }
-
     return (
         <div className={styles["header"]}>
-            <a href="/" className={styles["header-logo"]}>
-                <Logo />
-            </a>
+            <Logo className={styles["header-logo"]} />
             <div className={styles["burger-mobile-wrapper"]}>
-                <div onClick={toggleMenu} className={styles["burger-mobile"]}>
+                <div onClick={onToggleMenu} className={styles["burger-mobile"]}>
                     <BurgerMenu
-                        classname="menu-mobile"
-                        toggleMenu={toggleMenu}
-                        openedMenu={openedMenu}
-                        items={data.items}
+                        onToggleMenu={onToggleMenu}
+                        isMenuOpen={isMenuOpen}
                     />
                 </div>
             </div>
@@ -69,7 +47,7 @@ function Header({ openedMenu, toggleMenu }: HeaderPropsI) {
                 >
                     <button
                         onClick={() => {
-                            changeTheme("dark");
+                            handleChangeTheme("dark");
                         }}
                         className={cn(styles["color-theme-1"], {
                             [styles["is-mobile"]]: theme === "dark",
@@ -79,7 +57,7 @@ function Header({ openedMenu, toggleMenu }: HeaderPropsI) {
                     </button>
                     <button
                         onClick={() => {
-                            changeTheme("light");
+                            handleChangeTheme("light");
                         }}
                         className={cn(styles["color-theme-2"], {
                             [styles["is-mobile"]]: theme === "light",
@@ -96,7 +74,7 @@ function Header({ openedMenu, toggleMenu }: HeaderPropsI) {
                 >
                     <button
                         onClick={() => {
-                            changeLanguage("en");
+                            handleChangeLanguage("en");
                             changeUrl("en");
                         }}
                         className={cn(styles["color-language-1"], {
@@ -109,7 +87,7 @@ function Header({ openedMenu, toggleMenu }: HeaderPropsI) {
                     </button>
                     <button
                         onClick={() => {
-                            changeLanguage("ru");
+                            handleChangeLanguage("ru");
                             changeUrl("ru");
                         }}
                         className={cn(styles["color-language-2"], {

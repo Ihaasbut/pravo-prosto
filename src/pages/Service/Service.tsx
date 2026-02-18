@@ -1,15 +1,13 @@
 import { useParams } from "react-router-dom";
 import styles from "./Service.module.css";
 import type {
-    ServiceCardI,
+    ServiceI,
+    ServiceCategoryI,
     ServiceDetailI,
-    ServicesI,
 } from "../../types/mockData";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../hooks/use-language";
-import TitleBlockGrey from "../../components/TitleBlockGrey/TitleBlockGrey";
-// import { useEffect } from "react";
-// import { useLanguage } from "../../hooks/use-language";
+import TitleBlockGrey from "../../components/TitleBlockPrimary/TitleBlockPrimary";
 
 function Service() {
     const params = useParams();
@@ -21,20 +19,22 @@ function Service() {
             const servicesModule = await import(
                 `../../mockData/mockData.${language}.ts`
             );
-            const servicesBlock = servicesModule.servicesBlocks.find(
-                (el: ServicesI) => {
-                    return el.serviceCards.some(
-                        (card) => card.slug === params.slug,
+
+            const serviceCategory = servicesModule.serviceCategories.find(
+                (category: ServiceCategoryI) => {
+                    return category.services.some(
+                        (service) => service.slug === params.slug,
                     );
                 },
             );
 
-            const serviceAreaCard = servicesBlock.serviceCards.find(
-                (serviceDetail: ServiceCardI) =>
+
+            const service = serviceCategory.services.find(
+                (serviceDetail: ServiceI) =>
                     serviceDetail.slug === params.slug,
             );
 
-            setData(serviceAreaCard.detailPage);
+            setData(service.detailPage);
         })();
     }, [language, params.slug]);
 
@@ -44,7 +44,11 @@ function Service() {
 
     return (
         <div className={styles["service"]}>
-            <TitleBlockGrey title={data.title} description={data.description} classname={"justify"}/>
+            <TitleBlockGrey
+                title={data.title}
+                description={data.description}
+                descriptionStyle={"justify"}
+            />
         </div>
     );
 }

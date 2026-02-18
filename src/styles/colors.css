@@ -13,6 +13,7 @@
           --grey-line-2: #292727;
           --no-change-fff: #ffffff;
           --no-change-black: #181818;
+          --no-change-grey:#b4bac1;
 }
 
 :root[data-theme="dark"] {
@@ -30,6 +31,7 @@
           --grey-line-2: #f2f2f2;
           --no-change-fff: #ffffff;
           --no-change-black: #181818;
+          --no-change-grey:#b4bac1;
 }
 
 
