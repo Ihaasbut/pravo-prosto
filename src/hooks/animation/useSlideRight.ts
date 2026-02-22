@@ -11,7 +11,6 @@ export const useSlideRight = (
     deps: ServiceDetailI | null,
 ) => {
     useGSAP(
-        
         () => {
             gsap.from(".animate-from-top", {
                 x: `-100%`,
@@ -21,7 +20,7 @@ export const useSlideRight = (
                 stagger: 0.495,
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top 70%",
+                    start: "top 50%",
                     toggleActions: "play none none none",
                 },
             });

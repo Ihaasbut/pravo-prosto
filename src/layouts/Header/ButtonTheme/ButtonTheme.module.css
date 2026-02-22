@@ -92,8 +92,12 @@
     .header-toggle .left:hover {
         color: var(--blue-1);
     }
-    
+
     .header-toggle.active .right:hover {
         color: var(--blue-1);
+    }
+    
+    .header-toggle.active .left:hover {
+        color: var(--no-change-fff);
     }
 }

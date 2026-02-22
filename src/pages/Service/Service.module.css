@@ -32,11 +32,29 @@
     font-weight: 700;
 }
 
+@media (max-width: 1535px) {
+    .what-we-do-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+    .what-we-do-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1023px) {
+    .what-we-do-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 767px) {
     .what-we-do-wrapper {
         display: block;
     }
-    
+
     .slide-wrapper {
         height: auto;
     }

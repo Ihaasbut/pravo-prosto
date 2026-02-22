@@ -9,9 +9,11 @@ import Footer from "../Footer/Footer";
 function RootLayout() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+
     const onToggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
 
     return (
         <>

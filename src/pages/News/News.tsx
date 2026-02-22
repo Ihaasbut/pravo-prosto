@@ -1,10 +1,69 @@
+import { useEffect, useState } from "react";
 import TitleBlockGrey from "../../components/TitleBlockPrimary/TitleBlockPrimary";
 import styles from "./News.module.css";
 
+import { useLanguage } from "../../hooks/use-language";
+import type { PageNewsFullDataI } from "./types/news-page.types";
+import NewsTable from "./components/NewsTable/NewsTable";
+import NewsCategories from "./components/NewsCategories/NewsCategories";
+import type { NewI } from "../../types/news.types";
+
 function News() {
+    const [pageData, setPageData] = useState<PageNewsFullDataI | null>(null);
+    const [filterData, setFilterData] = useState<NewI[]>([]);
+    const [activeNewsCategory, setActiveNewsCategory] = useState<number>(1)
+
+    const { language } = useLanguage();
+
+    useEffect(() => {
+        (async () => {
+            const newsModule = await import(
+                `../../mockData/news/News.mockData.${language}.ts`
+            );
+
+            const pageModule = await import(
+                `./mockData/news-page.mockData.${language}.ts`
+            );
+
+            const pageNewsFullData: PageNewsFullDataI = {
+                news: newsModule.news,
+                page: pageModule,
+            };
+
+            setPageData(pageNewsFullData);
+            setFilterData(newsModule.news);
+        })();
+    }, [language]);
+
+    if (!pageData) {
+        return null;
+    }
+
+    const onFilterChange = (id: number) => {
+        setActiveNewsCategory(id)
+        if (id === 1) {
+            setFilterData(pageData.news);
+    
+            return;
+        }
+        const filteredData = pageData.news.filter((news) => {
+            return news.categoryId === id;
+        });
+        setFilterData(filteredData);
+    };
+
+
     return (
-        <div className={styles["news"]}>
-            <TitleBlockGrey title="Новости" />
+        <div className={styles["news-page"]}>
+            <TitleBlockGrey title={pageData.page.headerPage.title} />
+            <div className={styles["filter-and-page"]}>
+                <NewsCategories
+                    newsCategories={pageData.page.newsCategories}
+                    onFilterChange={onFilterChange}
+                    activeCategory={activeNewsCategory}
+                />
+                <NewsTable pageData={filterData} />
+            </div>
         </div>
     );
 }

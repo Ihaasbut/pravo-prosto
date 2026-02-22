@@ -8,3 +8,9 @@
         padding: 150px 0 50px;
     }
 }
+
+@media (max-width: 424px) {
+    .title-block-wrapper {
+        padding: 150px 0 15px;
+    }
+}

@@ -1,4 +1,4 @@
-import type { ServicesCategoryI } from "../types/mockData";
+import type { ServicesCategoryI } from "../../types/mockData";
 
 export const serviceCategories: ServicesCategoryI[] = [
     {

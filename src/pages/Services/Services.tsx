@@ -15,11 +15,11 @@ function Services() {
     useEffect(() => {
         (async () => {
             const servicesModule = await import(
-                `../../mockData/mockData.${language}.ts`
+                `../../mockData/services/Services.mockData.${language}.ts`
             );
 
             const pageModule = await import(
-                `./mockData/services.mockData.${language}.ts`
+                `./mockData/services-page.mockData.${language}.ts`
             );
           
             const pageServicesFullData: PageServicesFullDataI = {

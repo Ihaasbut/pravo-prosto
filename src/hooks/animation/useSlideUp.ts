@@ -16,7 +16,7 @@ export const useSlideUp = (containerRef: RefObject<HTMLElement | null>) => {
                 stagger: 0.3,
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top 50%",
+                    start: "top 70%",
                     toggleActions: "play none none none",
                 },
             });
