@@ -5,6 +5,7 @@ export type PageServicesFullDataI = {
     serviceCategories: ServicesCategoryI[];
     page: PageServicesI;
 };
+
 export type PageServicesI = {
     headerPage: TitleBlockPropsI;
 };

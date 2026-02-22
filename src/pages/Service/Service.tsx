@@ -11,16 +11,18 @@ import TitleBlockGrey from "../../components/TitleBlockPrimary/TitleBlockPrimary
 import Typography from "../../components/Typography/Typography";
 import { useSlideRight } from "../../hooks/animation/useSlideRight";
 import cn from "classnames";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ServiceBanner from "./components/ServiceBanner/ServiceBanner";
+import { useIsMobile } from "../../hooks/use-isMobile";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 function Service() {
     const params = useParams();
     const [pageData, setPageData] = useState<ServiceDetailI | null>(null);
     const { language } = useLanguage();
     const containerRef = useRef<HTMLDivElement>(null);
+    const isMobile = useIsMobile();
     useSlideRight(containerRef, pageData);
 
     useEffect(() => {
@@ -50,7 +52,7 @@ function Service() {
     }
 
     return (
-        <div className={styles["service"]}>
+        <div className={styles["service"]}  ref={containerRef}>
             <TitleBlockGrey
                 title={pageData.title}
                 description={pageData.description}
@@ -58,37 +60,80 @@ function Service() {
             />
             <div className="container">
                 <div className="content">
-                    <div className={styles["what-we-do"]} ref={containerRef}>
+                    <div
+                        className={cn(styles["what-we-do"], "block-margin")}
+                    >
                         <Typography variant="h3" as={"h3"} className="title">
                             Что мы делаем
                         </Typography>
-                        <div className={styles["what-we-do-wrapper"]}>
-                            {pageData.features.map((feature, index) => (
-                                <div
-                                    className={
-                                        styles["inner"]
-                              
-                                    }
-                                    key={index}
-                                >
-                                    <Typography
-                                        variant="body-m"
-                                        as={"p"}
-                                        className={styles["inner-title"]}
-                                    >
-                                        {feature.title}
-                                    </Typography>
-                                    <Typography variant="body-s" as={"p"}>
-                                        {feature.description}
-                                    </Typography>{" "}
+
+                        {isMobile ? (
+                            <div className={styles["what-we-do-wrapper"]}>
+                                <Swiper spaceBetween={10} slidesPerView={1.2}>
+                                    {pageData.features.map((feature, index) => (
+                                        <SwiperSlide key={index} className={styles["slide-wrapper"]}>
+                                            <div className={styles["inner"]}>
+                                                <Typography
+                                                    variant="body-m"
+                                                    as={"p"}
+                                                    className={
+                                                        styles["inner-title"]
+                                                    }
+                                                >
+                                                    {feature.title}
+                                                </Typography>
+                                                <Typography
+                                                    variant="body-s"
+                                                    as={"p"}
+                                                >
+                                                    {feature.description}
+                                                </Typography>
+                                                <div
+                                                    className={cn(
+                                                        styles["inner-wrapper"],
+                                                        "animate-from-top",
+                                                    )}
+                                                ></div>
+                                            </div>
+                                        </SwiperSlide>
+                                    ))}
+                                </Swiper>
+                            </div>
+                        ) : (
+                            <div className={styles["what-we-do-wrapper"]}>
+                                {pageData.features.map((feature, index) => (
                                     <div
-                                        className={cn(styles["inner-wrapper"], "animate-from-top") }
-                                    ></div>
-                                </div>
-                            ))}
-                        </div>
+                                        className={styles["inner"]}
+                                        key={index}
+                                    >
+                                        <Typography
+                                            variant="body-m"
+                                            as={"p"}
+                                            className={styles["inner-title"]}
+                                        >
+                                            {feature.title}
+                                        </Typography>
+                                        <Typography variant="body-s" as={"p"}>
+                                            {feature.description}
+                                        </Typography>
+                                        <div
+                                            className={cn(
+                                                styles["inner-wrapper"],
+                                                "animate-from-top",
+                                            )}
+                                        ></div>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
+
+                <ServiceBanner
+                    description={pageData.banner.description}
+                    buttonText={pageData.banner.buttonText}
+                    image={pageData.banner.image}
+                />
             </div>
         </div>
     );

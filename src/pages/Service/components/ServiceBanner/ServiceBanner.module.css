@@ -1,0 +1,32 @@
+.service-banner {
+    padding: 15px 30px;
+    background: var( --color-bg-element-secondary);
+    width: 100%;
+    border-top: 2px solid var(--grey-line2);
+    border-bottom: 2px solid var(--grey-line2);
+    color: var(--color-text-secondary);
+}
+
+.info {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.description {
+    font-weight: 700;
+}
+
+.info button {
+    width: max-content;
+}
+
+.info span {
+    color: var(--blue-1);
+    font-weight: 900;
+}
+
+.service-banner {
+    display: none;
+}

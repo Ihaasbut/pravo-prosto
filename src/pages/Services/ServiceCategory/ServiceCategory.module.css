@@ -1,10 +1,12 @@
-.services-category:last-child {
-    margin-bottom: 100px;
+.is-mobile {
+    display: none;
 }
+
 .title-category {
     margin-top: 100px;
     margin-bottom: 50px;
 }
+
 .services {
     display: grid;
     gap: 30px;
@@ -42,4 +44,40 @@
     margin-bottom: 30px;
 }
 
+.swiper-wrapper {
+    height: auto !important;
+}
 
+@media (max-width: 1440px) {
+    .services {
+        gap: 15px;
+    }
+
+    .service {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .service {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .is-mobile {
+        display: block;
+    }
+
+    .services {
+        display: none;
+    }
+
+    .service-wrapper {
+        display: block;
+    }
+}

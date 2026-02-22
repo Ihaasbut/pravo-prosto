@@ -1,320 +1,64 @@
 .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    width: 100%;
+    background: var(--color-bg-primary);
+    border-bottom: 2px solid var(--grey-line);
+    z-index: 50;
+}
+
+.wrapper-header {
+    position: relative;
+}
+
+.header-buttons {
     display: flex;
-    align-items: center;
-    background-color: var(--color-bg-primary);
-    z-index: 22;
+    gap: 30px;
+    justify-content: end;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    gap: 15px;
+}
+
+.header-logo,
+.burger-mobile-wrapper {
+    display: none;
 }
 
 .header-logo path {
-    transition: background 0.4s ease-out;
     fill: var(--color-bg-element-secondary);
 }
 
-.burger-mobile,
 .header-logo {
-    display: none;
-}
-/* .header-logo {
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
-
-/* .header path {
-    transition: background 0.4s ease-out;
-    fill: var(--color-bg-element-secondary);
-} */
-
-.buttons-theme {
-    position: absolute;
-    right: 150px;
-    top: 40px;
-    z-index: 25;
-    width: 168px;
-    display: flex;
-}
-.buttons-theme::before {
-    content: "";
-    width: 50%;
-    background-color: var(--blue-1);
-    height: 46px;
-    position: absolute;
-    z-index: 8;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-out;
-}
-
-.buttons-theme.active::before {
-    transform: translateX(0);
-}
-
-.color-theme-1,
-.color-theme-2 {
-    color: var(--color-text-primary);
-    cursor: pointer;
-    font-size: 20px;
-    background-color: transparent;
-    border: 2px solid var(--blue-1);
-    z-index: 25;
-    position: absolute;
-    top: 0;
     width: 84px;
-    height: 46px;
-    transition:
-        color 0.3s ease-out,
-        scale 0.3s ease-out;
-}
-
-.color-theme-1 {
-    left: 0;
-    color: var(--color-text-primary);
-}
-
-.color-theme-2 {
-    background-color: transparent;
-    color: var(--no-change-fff);
-    left: 50%;
-}
-
-.buttons-theme.active .color-theme-2:hover {
-    color: var(--blue-1);
-}
-.buttons-theme.active .color-theme-1:hover {
-    color: var(--color-text-primary);
-}
-.buttons-theme.active .color-theme-2:active {
-    scale: 0.92;
-}
-
-.buttons-theme .color-theme-1:hover {
-    color: var(--blue-1);
-}
-
-.buttons-theme .color-theme-1:active {
-    scale: 0.92;
-}
-
-
-.buttons-language {
-    position: absolute;
-    right: 340px;
-    top: 40px;
-    z-index: 25;
-    width: 168px;
-    display: flex;
-}
-.buttons-language::before {
-    content: "";
-    width: 50%;
-    background-color: var(--blue-1);
-    height: 46px;
-    position: absolute;
-    z-index: 8;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-out;
-}
-
-.buttons-language.active::before {
-    transform: translateX(0);
-}
-
-.buttons-language.active .color-language-2:hover {
-    color: var(--blue-1);
-}
-.buttons-language.active .color-language-1:hover {
-    color: var(--no-change-fff);
-}
-.buttons-language.active .color-language-2:active {
-    scale: 0.92;
-}
-
-.buttons-language .color-language-1:hover {
-    color: var(--blue-1);
-}
-
-.buttons-language .color-language-1:active {
-    scale: 0.92;
-}
-
-.color-language-1,
-.color-language-2 {
-    color: var(--color-text-primary);
-    cursor: pointer;
-    font-size: 20px;
-    background-color: transparent;
-    border: 2px solid var(--blue-1);
-    z-index: 25;
-    position: absolute;
-    top: 0;
-    width: 84px;
-    height: 46px;
-    transition:
-        color 0.3s ease-out,
-        scale 0.3s ease-out;
-}
-
-.color-language-1 {
-    left: 0;
-}
-
-.color-language-2 {
-    left: 50%;
-}
-
-.color-language-theme-light-1,
-.buttons-language.active .color-language-theme-light-2 {
-    color: var(--color-text-primary);
-}
-
-.buttons-language.active .color-language-theme-light-1,
-.color-language-theme-light-2 {
-    color: var(--color-text-secondary);
-}
-
-@media (max-width: 1200px) {
-    .color-language-1,
-    .color-language-2,
-    .color-theme-1,
-    .color-theme-2 {
-        font-size: 16px;
-    }
-    .buttons-theme {
-        right: 130px;
-        top: 30px;
-    }
-    .buttons-language {
-        right: 325px;
-        top: 30px;
-    }
 }
 
 @media (max-width: 1023px) {
     .header {
         position: fixed;
     }
+
     .header-logo {
         display: block;
-        position: absolute;
-        left: 15px;
-        top: 20px;
-        left: 8px;
-        scale: 0.85;
+        position: relative;
+        z-index: 60;
     }
 
-    .burger-mobile {
-        display: block;
+    .header-buttons {
+        position: relative;
+        top: 0;
+        gap: 5px;
+    }
+
+    .wrapper-header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
     }
 
     .burger-mobile-wrapper {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        padding: 30px 0;
-        background: var(--color-bg-primary);
-        border-bottom: 1px solid var(--grey-line);
-    }
-
-    .buttons-theme {
-        right: 15px;
-        top: 20px;
-    }
-
-    .buttons-language {
-        right: 195px;
-        top: 19px;
-    }
-
-    .buttons-theme {
-        right: -15px;
-        top: 19px;
-        width: 100px;
-    }
-
-    .buttons-theme::before {
-        display: none;
-    }
-
-    .color-theme-1,
-    .color-theme-2 {
-        left: 0;
-        width: 70px;
-        height: 46px;
-    }
-    .is-mobile {
-        display: none;
-    }
-
-    .buttons-language {
-        right: 70px;
-        top: 19px;
-        width: 100px;
-    }
-
-    .buttons-language::before {
-        display: none;
-    }
-
-    .color-language-1,
-    .color-language-2 {
-        left: 0;
-        width: 70px;
-        height: 46px;
-    }
-    .is-mobile {
-        display: none;
-    }
-}
-
-@media (max-width: 767px) {
-    .color-theme-1,
-    .color-theme-2,
-    .color-language-1,
-    .color-language-2 {
-        height: 40px;
-    }
-    .buttons-language,
-    .buttons-theme {
-        top: 22px;
-    }
-    .color-language-1,
-    .color-language-2 {
-        width: 48px;
-    }
-    .buttons-language {
-        right: 31px;
-    }
-}
-
-@media (max-width: 424px) {
-    .color-language-1,
-    .color-language-2,
-    .color-theme-1,
-    .color-theme-2 {
-        font-size: 14px;
-    }
-    .buttons-theme {
-        right: -35px;
-    }
-
-    .header-logo {
-        left: 0;
-    }
-
-    .buttons-language {
-        right: 5px;
-    }
-
-    .color-theme-1,
-    .color-theme-2 {
-        width: 60px;
-    }
-    .color-language-1,
-    .color-language-2 {
-        width: 42px;
+        display: block;
     }
 }

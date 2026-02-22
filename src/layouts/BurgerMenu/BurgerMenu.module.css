@@ -103,7 +103,9 @@
 
 @media (max-width: 1023px) {
     .burger-menu {
-        position: relative;
+        position: absolute;
+        width: 100%;
+        top: 36px;
     }
 
     .inner {
@@ -126,7 +128,7 @@
         bottom: 0;
         top: 93%;
         bottom: 0;
-    } 
+    }
 }
 
 @media (max-width: 424px) {

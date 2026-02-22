@@ -3,11 +3,20 @@
     border: 2px solid var(--blue-1);
     text-transform: uppercase;
     cursor: pointer;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition:
+        background 0.3s ease-in-out,
+        color 0.3s ease-in-out;
     font-weight: 600;
+    white-space: nowrap;
 }
 
-.button-fill, 
+.button p {
+    width: max-content;
+    display: inline-block;
+    text-align: center;
+}
+
+.button-fill,
 .button-outline:hover {
     background-color: var(--blue-1);
     color: var(--no-change-fff);
@@ -25,7 +34,7 @@
 
 @media (max-width: 1440px) {
     .button {
-        padding: 20px 50px;
+        padding: 20px 40px;
     }
 }
 

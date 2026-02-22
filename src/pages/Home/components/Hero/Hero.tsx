@@ -7,6 +7,7 @@ import HeroEmbla from "./HeroEmbla/HeroEmbla";
 import type { HeroPropsI } from "./types/hero.types";
 
 
+
 function Hero({ hero }: HeroPropsI) {
     return (
         <div className="container">
@@ -19,7 +20,7 @@ function Hero({ hero }: HeroPropsI) {
                         <Typography variant="body-l" as="p">
                             {hero.description}
                         </Typography>
-
+            
                         <Button variant="fill"> {hero.button} </Button>
                     </div>
                 </div>

@@ -18,10 +18,11 @@ function Sidebar({ isMenuOpen, onToggleMenu }: SiderBarPropsI) {
                 // aria-controls="burger-menu"
                 // aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
             ></div>
-            <BurgerMenu
+            
+            <div className={styles["dekstop"]}><BurgerMenu
                 onToggleMenu={onToggleMenu}
                 isMenuOpen={isMenuOpen}
-            />
+            /></div>
         </nav>
     );
 }

@@ -1,3 +1,5 @@
+import type { ServiceBannerI } from "../pages/Service/types/service-page.types";
+
 export type ServicesCategoryI = {
     area: string;
     services: ServiceI[];
@@ -13,6 +15,7 @@ export type ServiceDetailI = {
     title: string;
     description: string;
     features: FeaturesI[];
+    banner: ServiceBannerI;
 };
 
 export type FeaturesI = {

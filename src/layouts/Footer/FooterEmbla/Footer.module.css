@@ -1,0 +1,27 @@
+.embla {
+
+    color: var(--color-text-secondary);
+    padding: 5px 5px;
+    border-bottom: 20x solid var(--grey-line);
+}
+
+.embla p {
+    font-size: 53px;
+}
+
+.embla__slide  {
+    width: max-content;
+}
+
+@media (max-width: 1023px) {
+    .embla p {
+        font-size: 40px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .embla p {
+        font-size: 30px;
+    }
+}

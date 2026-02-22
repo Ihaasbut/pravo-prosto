@@ -43,16 +43,14 @@ function Services() {
                 description={pageData.page.headerPage.description}
                 buttonText={pageData.page.headerPage.buttonText}
             />
-            <div className="container">
-                <div className="content">
+           
                     {pageData.serviceCategories.map((category) => (
                         <ServiceCategory
                             area={category.area}
                             services={category.services}
                         />
                     ))}
-                </div>
-            </div>
+  
         </div>
     );
 }

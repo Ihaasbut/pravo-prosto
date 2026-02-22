@@ -58,6 +58,11 @@ export const serviceCategories: ServicesCategoryI[] = [
                                 "Проводим юридический аудит документации для due diligence или партнёрств",
                         },
                     ],
+                    banner: {
+                        image: "/service-banner.webp",
+                        description: "Мы не просто пишем «по шаблону» — мы включаемся в суть бизнеса и создаём документы, которые защищают вас в реальной жизни, а не только в теории.",
+                        buttonText: "Оставить заявку",
+                    },
                 },
             },
             {
@@ -114,6 +119,11 @@ export const serviceCategories: ServicesCategoryI[] = [
                                 "Координируем юридические процессы с международными партнёрами, настраиваем отношения между российским и зарубежным юрлицом",
                         },
                     ],
+                    banner: {
+                        image: "rgmng",
+                        description: "njerg",
+                        buttonText: "Оставить заявку",
+                    },
                 },
             },
             {
@@ -170,6 +180,11 @@ export const serviceCategories: ServicesCategoryI[] = [
                                 "Добиваемся реального исполнения: работа с ФССП, блокировки, взыскание активов, контроль за сроками и действиями",
                         },
                     ],
+                    banner: {
+                        image: "rgmng",
+                        description: "njerg",
+                        buttonText: "Оставить заявку",
+                    },
                 },
             },
             {
@@ -226,6 +241,11 @@ export const serviceCategories: ServicesCategoryI[] = [
                                 "Представляем интересы в арбитражах и судах, собираем доказательства, оформляем позицию",
                         },
                     ],
+                    banner: {
+                        image: "rgmng",
+                        description: "njerg",
+                        buttonText: "Оставить заявку",
+                    },
                 },
             },
             {
@@ -282,6 +302,11 @@ export const serviceCategories: ServicesCategoryI[] = [
                                 "Адаптируем бизнес под требования льгот без риска потери правовой и налоговой безопасности",
                         },
                     ],
+                    banner: {
+                        image: "rgmng",
+                        description: "njerg",
+                        buttonText: "Оставить заявку",
+                    },
                 },
             },
         ],
@@ -343,6 +368,11 @@ export const serviceCategories: ServicesCategoryI[] = [
                                 "Проводим юридический аудит документации для due diligence или партнёрств",
                         },
                     ],
+                    banner: {
+                        image: "rgmng",
+                        description: "njerg",
+                        buttonText: "Оставить заявку",
+                    },
                 },
             },
             {
@@ -399,6 +429,11 @@ export const serviceCategories: ServicesCategoryI[] = [
                                 "Проводим юридический аудит документации для due diligence или партнёрств",
                         },
                     ],
+                    banner: {
+                        image: "rgmng",
+                        description: "njerg",
+                        buttonText: "Оставить заявку",
+                    },
                 },
             },
             {
@@ -456,6 +491,11 @@ export const serviceCategories: ServicesCategoryI[] = [
                                 "Проводим юридический аудит документации для due diligence или партнёрств",
                         },
                     ],
+                    banner: {
+                        image: "rgmng",
+                        description: "njerg",
+                        buttonText: "Оставить заявку",
+                    },
                 },
             },
             {
@@ -510,6 +550,11 @@ export const serviceCategories: ServicesCategoryI[] = [
                                 "Проводим юридический аудит документации для due diligence или партнёрств",
                         },
                     ],
+                    banner: {
+                        image: "rgmng",
+                        description: "njerg",
+                        buttonText: "Оставить заявку",
+                    },
                 },
             },
         ],
@@ -570,6 +615,11 @@ export const serviceCategories: ServicesCategoryI[] = [
                                 "Проводим юридический аудит документации для due diligence или партнёрств",
                         },
                     ],
+                    banner: {
+                        image: "rgmng",
+                        description: "njerg",
+                        buttonText: "Оставить заявку",
+                    },
                 },
             },
             {
@@ -625,6 +675,11 @@ export const serviceCategories: ServicesCategoryI[] = [
                                 "Проводим юридический аудит документации для due diligence или партнёрств",
                         },
                     ],
+                    banner: {
+                        image: "rgmng",
+                        description: "njerg",
+                        buttonText: "Оставить заявку",
+                    },
                 },
             },
             {
@@ -680,6 +735,11 @@ export const serviceCategories: ServicesCategoryI[] = [
                                 "Проводим юридический аудит документации для due diligence или партнёрств",
                         },
                     ],
+                    banner: {
+                        image: "rgmng",
+                        description: "njerg",
+                        buttonText: "Оставить заявку",
+                    },
                 },
             },
         ],

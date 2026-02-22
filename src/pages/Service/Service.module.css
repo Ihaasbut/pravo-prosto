@@ -1,5 +1,4 @@
 .title {
-    margin-top: 100px;
     margin-bottom: 50px;
 }
 
@@ -33,5 +32,12 @@
     font-weight: 700;
 }
 
-.inner:hover {
+@media (max-width: 767px) {
+    .what-we-do-wrapper {
+        display: block;
+    }
+    
+    .slide-wrapper {
+        height: auto;
+    }
 }

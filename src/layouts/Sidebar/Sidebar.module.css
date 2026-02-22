@@ -112,11 +112,10 @@
         width: 100px;
     }
 
-    /* .sidebar-logo {
-        transform: scale(0.8);
-        left: 2px;
-        top: 30px;
-    } */
+    .sidebar-logo {
+        left: 0;
+        width: 90px;
+    }
 }
 
 @media (max-width: 1023px) {
@@ -126,7 +125,7 @@
     .sidebar-logo {
         display: none;
     }
-    .menu-dekstop {
+    .dekstop {
         display: none;
     }
 }

@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 80px;
+    gap: 50px;
 }
 
 .text-group {
@@ -15,4 +15,11 @@
     gap: 40px;
 }
 
-
+@media (max-width: 1023px) {
+    .inner {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 40px;
+    }
+}

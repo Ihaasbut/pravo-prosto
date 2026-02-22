@@ -2,12 +2,16 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import type { RefObject } from "react";
 import type { ServiceDetailI } from "../../types/mockData";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const useSlideRight = (
-    containerRef: RefObject<HTMLDivElement | null>,
+    containerRef: RefObject<HTMLElement | null>,
     deps: ServiceDetailI | null,
 ) => {
     useGSAP(
+        
         () => {
             gsap.from(".animate-from-top", {
                 x: `-100%`,

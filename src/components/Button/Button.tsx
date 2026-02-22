@@ -6,7 +6,7 @@ import Typography from "../Typography/Typography";
 function Button({ children, variant }: ButtonPropsI) {
     return (
         <button className={cn(styles["button"], styles[`button-${variant}`])}>
-            <Typography variant="button" as={"span"}>
+            <Typography variant="button" as={"p"}>
                 {children}
             </Typography>
         </button>

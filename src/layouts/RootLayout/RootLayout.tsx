@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../Footer/Footer";
 import styles from "./RootLayout.module.css";
 import Sidebar from "../Sidebar/Sidebar";
 import { useState } from "react";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+
 
 function RootLayout() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

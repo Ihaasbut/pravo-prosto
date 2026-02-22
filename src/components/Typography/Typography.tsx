@@ -6,17 +6,19 @@ type TypographyVariant =
     | "h1"
     | "h2"
     | "h3"
+    | "footer-title"
+    | "h1-footer"
     | "body-l"
     | "body-m"
     | "body-s"
-    | "button"
-
+    | "button";
 
 interface TypographyPropsI {
     variant: TypographyVariant;
     children: ReactNode;
     className?: string;
     as?: ElementType;
+    href?: string;
 }
 
 function Typography({

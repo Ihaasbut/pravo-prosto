@@ -2,3 +2,9 @@
     padding: 200px 0 50px;
     background-color: var(--grey-line);
 }
+
+@media (max-width: 767px) {
+    .title-block-wrapper {
+        padding: 150px 0 50px;
+    }
+}
