@@ -2,6 +2,7 @@
     padding-top: 30px;
     padding-bottom: 30px;
 }
+
 .inner {
     display: flex;
     justify-content: space-between;
@@ -14,6 +15,7 @@
     flex-direction: column;
     gap: 40px;
 }
+
 
 @media (max-width: 1023px) {
     .inner {

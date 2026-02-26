@@ -1,0 +1,69 @@
+.team-person {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.image-and-about {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.about {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--grey-line-2);
+    color: var(--color-text-secondary);
+    padding: 30px;
+    z-index: 10;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about.active {
+    transform: translateX(0);
+}
+
+.image {
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    display: block;
+    height: 375px;
+    object-fit: cover; 
+}
+
+.comment {
+
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-team {
+    display: inline-flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--blue-1);
+    font-weight: 800;
+}
+
+@media (max-width: 1535px) {
+          .about {
+                    padding: 15px;
+                    gap: 10px;
+          }
+}

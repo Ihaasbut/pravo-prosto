@@ -6,11 +6,13 @@ type TypographyVariant =
     | "h1"
     | "h2"
     | "h3"
+    | "h4"
     | "footer-title"
     | "h1-footer"
     | "body-l"
     | "body-m"
     | "body-s"
+    | "body-xs"
     | "button";
 
 interface TypographyPropsI {

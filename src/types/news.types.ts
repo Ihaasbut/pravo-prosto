@@ -1,3 +1,5 @@
+import type { ComponentType } from "react";
+
 export type NewI = {
     title: string;
     categoryId: number;
@@ -6,27 +8,29 @@ export type NewI = {
     slug: string;
     date: string;
     blocks: (
-        | NewTextBlockI
-        | NewImageBlockI
-        | NewTitleTextBlockI
-        | NewListBlockI
+        | NewsTextBlockI
+        | NewsImageBlockI
+        | NewsTitleTextBlockI
+        | NewsListBlockI
     )[];
 };
 
-export type NewTextBlockI = {
+interface NewsOneComponentBlock {
+    component: ComponentType;
+}
+export interface NewsTextBlockI extends NewsOneComponentBlock {
     text: string;
-};
+}
 
-export type NewImageBlockI = {
+export interface NewsImageBlockI extends NewsOneComponentBlock {
     image: string;
-};
+}
 
-export type NewTitleTextBlockI = {
+export interface NewsTitleTextBlockI extends NewsOneComponentBlock {
     title: string;
     text: string;
-};
+}
 
-export type NewListBlockI = {
+export interface NewsListBlockI extends NewsOneComponentBlock {
     list: string[];
-};
-
+}

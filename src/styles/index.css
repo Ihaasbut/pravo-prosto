@@ -88,6 +88,10 @@ a {
         padding-right: 15px;
         padding-left: 15px;
     }
+    
+    .content {
+        padding: 0 15px;
+    }
 }
 
 @media (max-width: 767px) {

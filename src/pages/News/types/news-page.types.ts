@@ -13,6 +13,7 @@ export type PageNewsFullDataI = {
 
 export type NewsTableI = {
     pageData: NewI[];
+    className: string;
 };
 
 export type NewsCategoryI = {

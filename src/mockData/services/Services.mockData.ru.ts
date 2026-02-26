@@ -120,8 +120,8 @@ export const serviceCategories: ServicesCategoryI[] = [
                         },
                     ],
                     banner: {
-                        image: "rgmng",
-                        description: "njerg",
+                        image: "/service-banner.webp",
+                        description: "Работаем с продуктами, стартапами, сервисными компаниями и компаниями с международной структурой. Всё просто — но юридически точно",
                         buttonText: "Оставить заявку",
                     },
                 },
@@ -182,7 +182,7 @@ export const serviceCategories: ServicesCategoryI[] = [
                     ],
                     banner: {
                         image: "rgmng",
-                        description: "njerg",
+                        description: "Реалистично оцениваем шансы, не затягиваем процесс и говорим без «воды». За результат отвечаем",
                         buttonText: "Оставить заявку",
                     },
                 },
@@ -243,7 +243,7 @@ export const serviceCategories: ServicesCategoryI[] = [
                     ],
                     banner: {
                         image: "rgmng",
-                        description: "njerg",
+                        description: "Мы действуем на опережение: чтобы ваш продукт не скопировали, права не оспорили, а договоры реально работали в суде",
                         buttonText: "Оставить заявку",
                     },
                 },
@@ -304,7 +304,7 @@ export const serviceCategories: ServicesCategoryI[] = [
                     ],
                     banner: {
                         image: "rgmng",
-                        description: "njerg",
+                        description: "Понимаем, как устроена практика Минцифры и ФНС, и знаем, как защитить ваш статус, даже если проект нестандартный",
                         buttonText: "Оставить заявку",
                     },
                 },

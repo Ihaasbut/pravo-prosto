@@ -16,6 +16,7 @@ import Team from "./pages/Team/Team.tsx";
 import Contacts from "./pages/Contacts/Contacts.tsx";
 import News from "./pages/News/News.tsx";
 import Service from "./pages/Service/Service.tsx";
+import NewsOne from "./pages/NewsOne/NewsOne.tsx";
 
 const router = createBrowserRouter([
     {
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "news/:slug",
-                element: <Service />,
+                element: <NewsOne />,
             },
             {
                 path: "contacts",

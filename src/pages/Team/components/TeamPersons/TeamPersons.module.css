@@ -1,0 +1,30 @@
+.team-persons {
+          display: grid;
+          grid-template-columns: repeat(3,1fr);
+          gap: 30px;
+}
+
+.is-mobile {
+          display: none;
+}
+
+@media (max-width: 1440px) {
+          .team-persons {
+                    grid-template-columns: repeat(3,1fr);
+          }
+}
+
+@media (max-width: 1200px) {
+          .team-persons {
+                    grid-template-columns: repeat(2,1fr);
+          }
+}
+
+@media (max-width: 1023px) {
+          .is-dekstop {
+                    display: none;
+          }
+          .is-mobile {
+                    display: block;
+          }
+}
