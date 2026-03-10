@@ -10,7 +10,8 @@
 .typography.text-16,
 .typography.footer-title,
 .typography.h1-footer,
-.typography.h4 {
+.typography.h4,
+.typography.h5 {
     line-height: calc(1em + 4px);
 }
 
@@ -31,6 +32,11 @@
 
 .h4 {
     font-size: 28px;
+}
+
+.h5 {
+    font-size: clamp(1.95rem, 2.2vw, 10rem);
+    color: var(--no-change-black);
 }
 
 .body-l {

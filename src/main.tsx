@@ -17,6 +17,7 @@ import Contacts from "./pages/Contacts/Contacts.tsx";
 import News from "./pages/News/News.tsx";
 import Service from "./pages/Service/Service.tsx";
 import NewsOne from "./pages/NewsOne/NewsOne.tsx";
+import ModalProvider from "./context/ModalProvider.tsx";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +28,9 @@ const router = createBrowserRouter([
         path: "/:lang",
         element: (
             <LanguageProvider>
-                <RootLayout />
+                <ModalProvider>
+                    <RootLayout />
+                </ModalProvider>
             </LanguageProvider>
         ),
         children: [

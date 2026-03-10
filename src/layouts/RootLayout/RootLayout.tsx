@@ -4,16 +4,14 @@ import Sidebar from "../Sidebar/Sidebar";
 import { useState } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-
+import Form from "../../components/Form/Form";
 
 function RootLayout() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
     const onToggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-
 
     return (
         <>
@@ -27,10 +25,12 @@ function RootLayout() {
                     <span className={styles["background-line"]}></span>
                     <main>
                         <Outlet />
+                       
                     </main>
                     <Footer />
                 </div>
             </div>
+            <Form />
         </>
     );
 }

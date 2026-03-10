@@ -6,6 +6,7 @@ import { useLanguage } from "../../hooks/use-language";
 import ServiceCategory from "./ServiceCategory/ServiceCategory";
 import type { PageServicesFullDataI } from "./types/services-page.types";
 
+
 function Services() {
     const [pageData, setPageData] = useState<PageServicesFullDataI | null>(
         null,

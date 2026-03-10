@@ -7,6 +7,7 @@ type TypographyVariant =
     | "h2"
     | "h3"
     | "h4"
+    | "h5"
     | "footer-title"
     | "h1-footer"
     | "body-l"

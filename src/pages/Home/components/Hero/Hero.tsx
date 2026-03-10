@@ -5,10 +5,11 @@ import "swiper/swiper.css";
 import Button from "../../../../components/Button/Button";
 import HeroEmbla from "./HeroEmbla/HeroEmbla";
 import type { HeroPropsI } from "./types/hero.types";
-
-
+import { useModal } from "../../../../hooks/use-modal";
 
 function Hero({ hero }: HeroPropsI) {
+    const { onHandleClickModal } = useModal();
+    
     return (
         <div className="container">
             <div className={styles["hero"]}>
@@ -20,8 +21,11 @@ function Hero({ hero }: HeroPropsI) {
                         <Typography variant="body-l" as="p">
                             {hero.description}
                         </Typography>
-            
-                        <Button variant="fill"> {hero.button} </Button>
+
+                        <Button variant="fill" onClick={onHandleClickModal}>
+                            {" "}
+                            {hero.button}{" "}
+                        </Button>
                     </div>
                 </div>
 
