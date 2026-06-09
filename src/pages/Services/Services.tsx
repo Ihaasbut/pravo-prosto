@@ -5,7 +5,7 @@ import styles from "./Services.module.css";
 import { useLanguage } from "../../hooks/use-language";
 import ServiceCategory from "./ServiceCategory/ServiceCategory";
 import type { PageServicesFullDataI } from "./types/services-page.types";
-import PagePreloader from "../../components/PagePreloader/PagePreloader";
+import PageSkeleton from "../../components/PageSkeleton/PageSkeleton";
 
 function Services() {
     const [pageData, setPageData] = useState<PageServicesFullDataI | null>(
@@ -33,7 +33,7 @@ function Services() {
     }, [language]);
 
     if (!pageData) {
-        return <PagePreloader label="Loading services page" />;
+        return <PageSkeleton variant="services" />;
     }
 
     return (

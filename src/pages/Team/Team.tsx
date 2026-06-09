@@ -4,7 +4,7 @@ import styles from "./Team.module.css";
 import TeamPersons from "./components/TeamPersons/TeamPersons";
 import type { PageTeamFullDataI } from "./types/team-page.types";
 import { useLanguage } from "../../hooks/use-language";
-import PagePreloader from "../../components/PagePreloader/PagePreloader";
+import PageSkeleton from "../../components/PageSkeleton/PageSkeleton";
 
 function Team() {
     const [pageData, setPageData] = useState<PageTeamFullDataI | null>(null);
@@ -30,7 +30,7 @@ function Team() {
     }, [language]);
 
     if (!pageData) {
-        return <PagePreloader label="Loading team page" />;
+        return <PageSkeleton variant="team" />;
     }
 
     return (

@@ -2,7 +2,7 @@ import { useLanguage } from "../../hooks/use-language";
 import Hero from "./components/Hero/Hero";
 import { useEffect, useState } from "react";
 import type { PageHomeFullDataI } from "./types/home-page.types";
-import PagePreloader from "../../components/PagePreloader/PagePreloader";
+import PageSkeleton from "../../components/PageSkeleton/PageSkeleton";
 
 function Home() {
     const [pageData, setPageData] = useState<PageHomeFullDataI | null>(null);
@@ -18,7 +18,7 @@ function Home() {
     }, [language]);
 
     if (!pageData) {
-        return <PagePreloader label="Loading home page" />;
+        return <PageSkeleton variant="home" />;
     }
 
     return (

@@ -4,7 +4,7 @@ import YandexMap from "../../components/YandexMap/YandexMap";
 import { useLanguage } from "../../hooks/use-language";
 import type { TitleBlockPropsI } from "../../types/titleBlock.types";
 import styles from "./Contacts.module.css";
-import PagePreloader from "../../components/PagePreloader/PagePreloader";
+import PageSkeleton from "../../components/PageSkeleton/PageSkeleton";
 
 function Contacts() {
     const [pageData, setPageData] = useState<TitleBlockPropsI | null>(null);
@@ -21,7 +21,7 @@ function Contacts() {
     }, [language]);
 
     if (!pageData) {
-        return <PagePreloader label="Loading contacts page" />;
+        return <PageSkeleton variant="contacts" />;
     }
 
     return (

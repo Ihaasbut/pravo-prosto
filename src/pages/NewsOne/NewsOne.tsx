@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import cn from "classnames";
 
 import NewsTable from "../../components/NewsTable/NewsTable";
-import PagePreloader from "../../components/PagePreloader/PagePreloader";
+import PageSkeleton from "../../components/PageSkeleton/PageSkeleton";
 
 function NewsOne() {
     const [pageData, setPageData] = useState<NewI | null>(null);
@@ -33,7 +33,7 @@ function NewsOne() {
     }, [language, params.slug]);
 
     if (!pageData || !pageSidebar) {
-        return <PagePreloader label="Loading article page" />;
+        return <PageSkeleton variant="news-detail" />;
     }
 
     return (

@@ -15,7 +15,7 @@ import ServiceBanner from "./components/ServiceBanner/ServiceBanner";
 import { useIsMobile } from "../../hooks/use-isMobile";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { ServicePageStaticI } from "./types/service-page.types";
-import PagePreloader from "../../components/PagePreloader/PagePreloader";
+import PageSkeleton from "../../components/PageSkeleton/PageSkeleton";
 
 function Service() {
     const params = useParams();
@@ -55,11 +55,7 @@ function Service() {
     }, [language, params.slug]);
 
     if (!pageData || !staticData) {
-        return (
-            <PagePreloader
-                label={staticData?.loadErrorText ?? "Loading service page"}
-            />
-        );
+        return <PageSkeleton variant="service" />;
     }
 
     return (
