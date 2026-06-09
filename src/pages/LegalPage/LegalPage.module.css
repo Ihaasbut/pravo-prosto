@@ -1,0 +1,53 @@
+.legal-page {
+    width: 100%;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin: 100px 0;
+    max-width: 980px;
+}
+
+.intro,
+.section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.section-title {
+    color: var(--color-text-primary);
+}
+
+.paragraph {
+    line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+    .content-wrapper {
+        gap: 40px;
+        margin: 50px 0;
+    }
+
+    .sections {
+        gap: 35px;
+    }
+
+    .section {
+        gap: 18px;
+    }
+}

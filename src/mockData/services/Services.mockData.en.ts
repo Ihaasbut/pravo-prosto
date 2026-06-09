@@ -60,7 +60,8 @@ export const serviceCategories: ServicesCategoryI[] = [
                     ],
                     banner: {
                         image: "/service-banner.webp",
-                        description: "We don't just write 'from a template' — we dive into the substance of your business and create documents that protect you in real life, not just in theory.",
+                        description:
+                            "We don't just write 'from a template' — we dive into the substance of your business and create documents that protect you in real life, not just in theory.",
                         buttonText: "Submit a request",
                     },
                 },
@@ -91,7 +92,7 @@ export const serviceCategories: ServicesCategoryI[] = [
                         {
                             title: "Restructuring, spin-offs, and mergers",
                             description:
-                                "We help buy or sell a company, draft SPA/APA, negotiate terms, and protect your position at the table",
+                                "We support spin-offs, mergers, and internal restructuring: preparing the documents, aligning the corporate structure, and reducing risk for founders and the product",
                         },
                         {
                             title: "Legal due diligence",
@@ -121,7 +122,8 @@ export const serviceCategories: ServicesCategoryI[] = [
                     ],
                     banner: {
                         image: "/service-banner.webp",
-                        description: "We work with products, startups, service companies, and businesses with international structures. Straightforward — but legally precise.",
+                        description:
+                            "We structure deals and corporate changes so your business stays clear to investors, banks, and the team running it.",
                         buttonText: "Submit a request",
                     },
                 },
@@ -181,8 +183,9 @@ export const serviceCategories: ServicesCategoryI[] = [
                         },
                     ],
                     banner: {
-                        image: "rgmng",
-                        description: "We assess chances realistically, don't drag out the process, and speak straight. We stand behind results.",
+                        image: "/service-banner.webp",
+                        description:
+                            "We assess the case realistically, keep the dispute moving, and stay in control from the first claim to enforcement.",
                         buttonText: "Submit a request",
                     },
                 },
@@ -242,8 +245,9 @@ export const serviceCategories: ServicesCategoryI[] = [
                         },
                     ],
                     banner: {
-                        image: "rgmng",
-                        description: "We act proactively: so your product isn't copied, your rights aren't challenged, and your contracts actually hold up in court.",
+                        image: "/service-banner.webp",
+                        description:
+                            "We secure product rights before a dispute becomes a crisis: formalizing ownership, closing gaps, and strengthening your evidence base.",
                         buttonText: "Submit a request",
                     },
                 },
@@ -289,7 +293,7 @@ export const serviceCategories: ServicesCategoryI[] = [
                         {
                             title: "IT reporting preparation and maintenance",
                             description:
-                                "We specify who creates what, who owns the results, and who can use them and how",
+                                "We help build the reporting package, internal confirmations, and compliance calendar needed to support benefits and accreditation in practice",
                         },
                         {
                             title: "Support in disputes over IT company status",
@@ -303,15 +307,16 @@ export const serviceCategories: ServicesCategoryI[] = [
                         },
                     ],
                     banner: {
-                        image: "rgmng",
-                        description: "We understand how the Ministry of Digital Development and FTS operate in practice, and we know how to protect your status — even if your project is non-standard.",
+                        image: "/service-banner.webp",
+                        description:
+                            "We help maintain IT company status in real operating conditions, with documentation, logic, and enough resilience for audits.",
                         buttonText: "Submit a request",
                     },
                 },
             },
         ],
     },
-        {
+    {
         area: "Expert Areas",
         services: [
             {
@@ -321,7 +326,50 @@ export const serviceCategories: ServicesCategoryI[] = [
                     "Preparation of legal hypotheses",
                     "Risk assessment of complex solutions",
                 ],
-                slug: "/",
+                slug: "pravovoi-rnd-i-audit",
+                detailPage: {
+                    title: "Legal R&D and Audit",
+                    description:
+                        "When a legal question has no template answer, we break down the business model, identify the applicable regulation, and propose workable legal scenarios. This format is suited for new products, complex launches, and decisions where the cost of a mistake is high.",
+                    features: [
+                        {
+                            title: "Analysis of non-standard legal models",
+                            description:
+                                "We assess how regulation applies to a new product, platform, service, or internal process with no obvious market precedent",
+                        },
+                        {
+                            title: "Legal hypotheses and options memos",
+                            description:
+                                "We prepare structured opinions with several implementation options, their limits, and the risks attached to each scenario",
+                        },
+                        {
+                            title: "Risk mapping before launch",
+                            description:
+                                "We identify critical legal, tax, and operational risks before a product release, integration, or market entry",
+                        },
+                        {
+                            title: "Audit of product and process documentation",
+                            description:
+                                "We review current contracts, policies, and internal documents to spot gaps that could affect scaling, investment, or compliance",
+                        },
+                        {
+                            title: "Support for management decisions",
+                            description:
+                                "We help founders and managers compare scenarios, document reasoning, and move forward with a legally defensible position",
+                        },
+                        {
+                            title: "Legal position for partners and investors",
+                            description:
+                                "We package complex conclusions into a clear format suitable for negotiations, approvals, or due diligence discussions",
+                        },
+                    ],
+                    banner: {
+                        image: "/service-banner.webp",
+                        description:
+                            "We turn uncertain legal questions into structured decisions your team can actually act on.",
+                        buttonText: "Submit a request",
+                    },
+                },
             },
             {
                 title: "Legal Consulting for AI/ML",
@@ -330,7 +378,50 @@ export const serviceCategories: ServicesCategoryI[] = [
                     "Risks of content generation, personal data",
                     "Support for AI integration into products",
                 ],
-                slug: "/",
+                slug: "konsalting-po-ai-ml",
+                detailPage: {
+                    title: "Legal Consulting for AI/ML",
+                    description:
+                        "We help teams launch and scale AI products without overlooking risks around data, generated content, model licensing, and product claims. We adapt legal requirements to the realities of ML pipelines, APIs, copilots, and internal AI tools.",
+                    features: [
+                        {
+                            title: "AI product compliance review",
+                            description:
+                                "We assess the legal architecture of the service: what data it uses, what it generates, and where the key compliance boundaries are",
+                        },
+                        {
+                            title: "Terms, policies, and user disclosures",
+                            description:
+                                "We prepare public documents and in-product disclaimers covering generated content, limitations, moderation, and acceptable use",
+                        },
+                        {
+                            title: "Generated content and IP risks",
+                            description:
+                                "We analyze authorship, training data constraints, reuse risks, and the legal boundaries for commercial exploitation of outputs",
+                        },
+                        {
+                            title: "Vendor, API, and model licensing review",
+                            description:
+                                "We check agreements with model providers and infrastructure vendors to align your product with licensing and usage restrictions",
+                        },
+                        {
+                            title: "Personal data and sensitive data controls",
+                            description:
+                                "We help structure consent, processing logic, and internal restrictions when AI features interact with personal or confidential data",
+                        },
+                        {
+                            title: "Incident and regulator response support",
+                            description:
+                                "We help formulate positions and responses if the product triggers complaints, takedown demands, or regulatory questions",
+                        },
+                    ],
+                    banner: {
+                        image: "/service-banner.webp",
+                        description:
+                            "We make AI launches legally clearer without slowing down product development.",
+                        buttonText: "Submit a request",
+                    },
+                },
             },
             {
                 title: "Biometrics and Digital Identification Systems",
@@ -340,14 +431,100 @@ export const serviceCategories: ServicesCategoryI[] = [
                     "Support for ESIA, SBP, digital passports, and FinTech projects",
                     "Preparation of internal regulations, Roskomnadzor notifications, legal opinions",
                 ],
-                slug: "/",
+                slug: "biometriya-i-cifrovaya-identifikaciya",
+                detailPage: {
+                    title: "Biometrics and Digital Identification Systems",
+                    description:
+                        "Biometric and identification projects operate at the intersection of personal data, sector regulation, and technical architecture. We help structure those projects so the product logic, user flows, and document framework can withstand partner, regulator, and audit scrutiny.",
+                    features: [
+                        {
+                            title: "Mapping biometric and identification data flows",
+                            description:
+                                "We document what data is collected, where it is stored, who processes it, and how it moves through the system",
+                        },
+                        {
+                            title: "Consent and document package preparation",
+                            description:
+                                "We draft consents, notices, public documents, and internal forms for lawful work with biometric and identification data",
+                        },
+                        {
+                            title: "Internal policies and regulatory notifications",
+                            description:
+                                "We prepare local acts, access rules, retention logic, and filings required for regulated identification processes",
+                        },
+                        {
+                            title: "Contracts with vendors and processors",
+                            description:
+                                "We formalize roles and liability for integrators, processors, identification providers, and technical partners",
+                        },
+                        {
+                            title: "Audit of user identification scenarios",
+                            description:
+                                "We review onboarding, verification, storage, and reuse scenarios to identify legal weaknesses before launch or scaling",
+                        },
+                        {
+                            title: "Support in regulator and partner discussions",
+                            description:
+                                "We help explain the legal model to banks, platform partners, compliance teams, and supervisory authorities",
+                        },
+                    ],
+                    banner: {
+                        image: "/service-banner.webp",
+                        description:
+                            "We align complex identification projects with real regulatory and partner expectations.",
+                        buttonText: "Submit a request",
+                    },
+                },
             },
             {
                 title: "Due Diligence and Counterparty Verification",
                 highlights: [
                     "Comprehensive legal analysis of IT products before investment",
                 ],
-                slug: "/",
+                slug: "due-diligence-i-proverka-kontragentov",
+                detailPage: {
+                    title: "Due Diligence and Counterparty Verification",
+                    description:
+                        "We run legal checks before investments, partnerships, acquisitions, and other critical decisions. The goal is not just to list documents, but to show where the real legal and business risk sits and what can be fixed before the deal moves forward.",
+                    features: [
+                        {
+                            title: "Corporate and structural review",
+                            description:
+                                "We assess ownership, governance, authority, encumbrances, and the legal structure of the target company or counterparty",
+                        },
+                        {
+                            title: "Contracts and rights chain verification",
+                            description:
+                                "We review commercial contracts, team arrangements, and IP transfer documents to confirm the business actually owns what it sells",
+                        },
+                        {
+                            title: "Regulatory and compliance review",
+                            description:
+                                "We identify licensing, accreditation, personal data, and other compliance risks that may affect the deal or future operations",
+                        },
+                        {
+                            title: "Litigation and enforcement check",
+                            description:
+                                "We analyze disputes, claims, enforcement actions, and other red flags that may signal hidden liabilities",
+                        },
+                        {
+                            title: "Counterparty reliability assessment",
+                            description:
+                                "We verify public records, connections, risk indicators, and practical signs that the partner may be unstable or unsafe to work with",
+                        },
+                        {
+                            title: "Actionable due diligence report",
+                            description:
+                                "We deliver a report with red flags, priorities, and concrete recommendations for negotiations, cleanup, or deal structuring",
+                        },
+                    ],
+                    banner: {
+                        image: "/service-banner.webp",
+                        description:
+                            "We show where the actual legal risk is before it turns into an expensive surprise.",
+                        buttonText: "Submit a request",
+                    },
+                },
             },
         ],
     },
@@ -360,7 +537,50 @@ export const serviceCategories: ServicesCategoryI[] = [
                     "Help capitalize code, brand, games",
                     "Preparation for audits and investments",
                 ],
-                slug: "/",
+                slug: "uchet-ip-i-nma",
+                detailPage: {
+                    title: "IP and Intangible Assets Accounting",
+                    description:
+                        "We help IT businesses treat code, brands, databases, and digital products as managed assets rather than scattered files and assumptions. We align legal formalization with accounting logic so the asset base stands up to audits, investment review, and internal reporting.",
+                    features: [
+                        {
+                            title: "Inventory of IP and intangible assets",
+                            description:
+                                "We identify which developments, brands, databases, and other results can be recognized, documented, and managed as assets",
+                        },
+                        {
+                            title: "Primary documents and asset recognition support",
+                            description:
+                                "We help prepare acts, supporting files, and internal documents needed to confirm creation and acceptance of intangible assets",
+                        },
+                        {
+                            title: "Capitalization and accounting policy setup",
+                            description:
+                                "We help define recognition criteria, useful lives, depreciation logic, and the accounting treatment that fits your business model",
+                        },
+                        {
+                            title: "Alignment of legal and accounting documents",
+                            description:
+                                "We reconcile contracts, rights transfer documents, and accounting records so the ownership chain matches the financial statements",
+                        },
+                        {
+                            title: "Preparation for audits and investments",
+                            description:
+                                "We structure the asset package so auditors, investors, and buyers can quickly understand what exists and on what basis",
+                        },
+                        {
+                            title: "Support for finance and management teams",
+                            description:
+                                "We advise on edge cases, internal controls, and documentation standards for ongoing accounting of digital assets",
+                        },
+                    ],
+                    banner: {
+                        image: "/service-banner.webp",
+                        description:
+                            "We help turn digital developments into documented assets the business can rely on.",
+                        buttonText: "Submit a request",
+                    },
+                },
             },
             {
                 title: "IT Benefits and Tax Base Control",
@@ -368,7 +588,50 @@ export const serviceCategories: ServicesCategoryI[] = [
                     "Help maintain accredited company status",
                     "Check conditions, documents, and reporting",
                 ],
-                slug: "/",
+                slug: "kontrol-it-lgot-i-nalogov",
+                detailPage: {
+                    title: "IT Benefits and Tax Base Control",
+                    description:
+                        "Tax benefits for IT companies require constant monitoring, not a one-time setup. We help track the indicators that matter, keep the supporting logic in order, and prepare the business for audits, reorganizations, and changes in revenue structure.",
+                    features: [
+                        {
+                            title: "Monitoring compliance with IT benefit criteria",
+                            description:
+                                "We track headcount, revenue composition, activity profile, and other indicators that affect eligibility for tax incentives",
+                        },
+                        {
+                            title: "Revenue and expense structure review",
+                            description:
+                                "We help separate qualifying and non-qualifying income streams and assess how they influence the tax base and benefit status",
+                        },
+                        {
+                            title: "Supporting document package preparation",
+                            description:
+                                "We organize the internal and external documents needed to justify benefits during tax reviews and spot checks",
+                        },
+                        {
+                            title: "Risk assessment before business changes",
+                            description:
+                                "We analyze how changes in contracts, group structure, product model, or accounting logic may affect tax incentives",
+                        },
+                        {
+                            title: "Support during audits and objections",
+                            description:
+                                "We help respond to requests, explain the business model, and protect the company's position if questions arise",
+                        },
+                        {
+                            title: "Periodic compliance review",
+                            description:
+                                "We conduct regular checks to identify issues early and keep the company in a stable compliance zone",
+                        },
+                    ],
+                    banner: {
+                        image: "/service-banner.webp",
+                        description:
+                            "We help keep IT tax benefits under control before a reporting issue turns into a tax dispute.",
+                        buttonText: "Submit a request",
+                    },
+                },
             },
             {
                 title: "Management Accounting (Cash Flow, P&L)",
@@ -376,7 +639,50 @@ export const serviceCategories: ServicesCategoryI[] = [
                     "Financial model setup for business",
                     "Transparency and efficiency control",
                 ],
-                slug: "/",
+                slug: "upravlencheskii-uchet-dds-pl",
+                detailPage: {
+                    title: "Management Accounting (Cash Flow, P&L)",
+                    description:
+                        "We build management accounting for IT businesses in a way that reflects how the company actually earns, spends, and scales. This helps founders and managers see unit economics, cash gaps, margin drivers, and operational discipline in one system.",
+                    features: [
+                        {
+                            title: "Management reporting model setup",
+                            description:
+                                "We design the structure of Cash Flow, P&L, and related reports based on your business model and decision-making needs",
+                        },
+                        {
+                            title: "Revenue and cost center structuring",
+                            description:
+                                "We help classify income streams, teams, products, and projects so reporting reflects real business performance",
+                        },
+                        {
+                            title: "Cash gap and payment discipline control",
+                            description:
+                                "We help track inflows, outflows, obligations, and forecast periods of liquidity pressure before they become operational problems",
+                        },
+                        {
+                            title: "Unit economics and profitability analysis",
+                            description:
+                                "We build a reporting logic that shows margin by product, client segment, service line, or delivery model",
+                        },
+                        {
+                            title: "Budgeting and scenario planning",
+                            description:
+                                "We prepare planning models for growth, hiring, and investment scenarios so management decisions are grounded in numbers",
+                        },
+                        {
+                            title: "Dashboards for founders and managers",
+                            description:
+                                "We help turn raw accounting data into clear management views for regular operational and strategic review",
+                        },
+                    ],
+                    banner: {
+                        image: "/service-banner.webp",
+                        description:
+                            "We make financial reporting understandable enough to support real management decisions.",
+                        buttonText: "Submit a request",
+                    },
+                },
             },
         ],
     },

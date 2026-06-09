@@ -23,11 +23,6 @@
     position: relative;
 }
 
-.service-wrapper:hover {
-    transform: scale(1.05);
-    border: none;
-}
-
 .service-wrapper:active {
     transform: scale(0.95);
 }
@@ -48,6 +43,13 @@
     height: auto !important;
 }
 
+@media (hover: hover) {
+    .service-wrapper:hover {
+        transform: scale(1.05);
+        border: none;
+    }
+}
+
 @media (max-width: 1440px) {
     .services {
         gap: 15px;
@@ -62,7 +64,7 @@
     .services {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .service {
         padding: 20px;
     }

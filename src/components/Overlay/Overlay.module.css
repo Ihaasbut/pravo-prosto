@@ -12,6 +12,10 @@
     pointer-events: none;
 }
 
+.overlay-dark {
+    background: var(--no-change-black);
+}
+
 .overlay-active {
     opacity: 1;
     pointer-events: visible;

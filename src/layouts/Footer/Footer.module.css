@@ -44,11 +44,11 @@
     width: 300px;
 }
 
-@media (hover:hover){
-          .wrapper a:hover,
-          .wrapper p:hover {
-              color: var(--blue-1);
-          }
+@media (hover: hover) {
+    .wrapper a:hover,
+    .wrapper p:hover {
+        color: var(--blue-1);
+    }
 }
 
 @media (max-width: 1440px) {

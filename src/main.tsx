@@ -18,6 +18,7 @@ import News from "./pages/News/News.tsx";
 import Service from "./pages/Service/Service.tsx";
 import NewsOne from "./pages/NewsOne/NewsOne.tsx";
 import ModalProvider from "./context/ModalProvider.tsx";
+import LegalPage from "./pages/LegalPage/LegalPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -61,6 +62,14 @@ const router = createBrowserRouter([
             {
                 path: "contacts",
                 element: <Contacts />,
+            },
+            {
+                path: "privacy-policy",
+                element: <LegalPage pageKey="privacyPolicy" />,
+            },
+            {
+                path: "user-agreement",
+                element: <LegalPage pageKey="userAgreement" />,
             },
         ],
     },

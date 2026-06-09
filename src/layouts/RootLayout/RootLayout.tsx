@@ -1,13 +1,22 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import styles from "./RootLayout.module.css";
 import Sidebar from "../Sidebar/Sidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Form from "../../components/Form/Form";
 
 function RootLayout() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "auto",
+        });
+    }, [location.pathname]);
 
     const onToggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -25,7 +34,6 @@ function RootLayout() {
                     <span className={styles["background-line"]}></span>
                     <main>
                         <Outlet />
-                       
                     </main>
                     <Footer />
                 </div>

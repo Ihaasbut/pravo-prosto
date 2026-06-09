@@ -14,10 +14,14 @@ import cn from "classnames";
 import ServiceBanner from "./components/ServiceBanner/ServiceBanner";
 import { useIsMobile } from "../../hooks/use-isMobile";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { ServicePageStaticI } from "./types/service-page.types";
 
 function Service() {
     const params = useParams();
     const [pageData, setPageData] = useState<ServiceDetailI | null>(null);
+    const [staticData, setStaticData] = useState<ServicePageStaticI | null>(
+        null,
+    );
     const { language } = useLanguage();
     const containerRef = useRef<HTMLDivElement>(null);
     const isMobile = useIsMobile();
@@ -28,7 +32,11 @@ function Service() {
             const servicesModule = await import(
                 `../../mockData/services/Services.mockData.${language}.ts`
             );
+            const servicePageModule = await import(
+                `./mockData/service-page.mockData.${language}.ts`
+            );
 
+            setStaticData(servicePageModule.servicePageStaticData);
             const serviceCategory = servicesModule.serviceCategories.find(
                 (category: ServicesCategoryI) => {
                     return category.services.some(
@@ -37,16 +45,16 @@ function Service() {
                 },
             );
 
-            const service = serviceCategory.services.find(
+            const service = serviceCategory?.services.find(
                 (service: ServiceI) => service.slug === params.slug,
             );
 
-            setPageData(service.detailPage);
+            setPageData(service?.detailPage ?? null);
         })();
     }, [language, params.slug]);
 
-    if (!pageData) {
-        return "Услуга не загрузилась";
+    if (!pageData || !staticData) {
+        return staticData?.loadErrorText ?? null;
     }
 
     return (
@@ -63,7 +71,7 @@ function Service() {
                         ref={containerRef}
                     >
                         <Typography variant="h3" as={"h3"} className="title">
-                            Что мы делаем
+                            {staticData.whatWeDoTitle}
                         </Typography>
 
                         {isMobile ? (
@@ -148,6 +156,7 @@ function Service() {
                     description={pageData.banner.description}
                     buttonText={pageData.banner.buttonText}
                     image={pageData.banner.image}
+                    labelText={staticData.bannerLabel}
                 />
             </div>
         </div>

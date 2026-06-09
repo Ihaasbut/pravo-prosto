@@ -5,8 +5,12 @@ import type { ServiceBannerI } from "../../types/service-page.types";
 import styles from "./ServiceBanner.module.css";
 import cn from "classnames";
 
-function ServiceBanner({ description, buttonText }: ServiceBannerI) {
-    const { onHandleClickModal } = useModal();
+function ServiceBanner({
+    description,
+    buttonText,
+    labelText = "[ from our side ]",
+}: ServiceBannerI) {
+    const { openModal } = useModal();
     return (
         <div className={cn(styles["service-banner"], "block-margin")}>
             <div className={styles["inner"]}>
@@ -16,10 +20,9 @@ function ServiceBanner({ description, buttonText }: ServiceBannerI) {
                         as={"p"}
                         className={styles["description"]}
                     >
-                        <span>[ от себя ] </span> {description}
+                        <span>{labelText} </span> {description}
                     </Typography>
-                    <Button variant="fill" onClick={onHandleClickModal}>
-                        {" "}
+                    <Button variant="fill" onClick={openModal}>
                         {buttonText}{" "}
                     </Button>
                 </div>

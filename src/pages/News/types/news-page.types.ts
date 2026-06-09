@@ -14,6 +14,7 @@ export type PageNewsFullDataI = {
 export type NewsTableI = {
     pageData: NewI[];
     className: string;
+    useSiblingLinks?: boolean;
 };
 
 export type NewsCategoryI = {
@@ -23,7 +24,7 @@ export type NewsCategoryI = {
 
 export type NewsCategoriesI = {
     newsCategories: NewsCategoryI[];
-    onFilterChange: (id:number) => void;
+    onFilterChange: (id: number) => void;
     activeCategory: number;
 };
 
@@ -32,6 +33,6 @@ export type NewsFilterI = {
 };
 
 export type NewsCategoriesDataI = {
-          news: NewI[];
-          activeCategory:number
-}
+    news: NewI[];
+    activeCategory: number;
+};

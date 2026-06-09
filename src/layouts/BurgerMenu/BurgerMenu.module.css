@@ -19,10 +19,6 @@
         transform 0.3s ease;
 }
 
-.burger-menu:hover span {
-    background: var(--no-change-fff);
-}
-
 .logo {
     position: absolute;
     left: 30px;
@@ -70,12 +66,18 @@
     color: var(--no-change-fff);
     transition: color 0.3s ease-out;
 }
-.nav-link:hover {
+.nav-link-active {
     color: var(--no-change-grey);
 }
 
-.nav-link-active {
-    color: var(--no-change-grey);
+@media (hover: hover) {
+    .burger-menu:hover span {
+        background: var(--no-change-fff);
+    }
+
+    .nav-link:hover {
+        color: var(--no-change-grey);
+    }
 }
 
 @media (min-width: 2200px) {

@@ -8,9 +8,46 @@ function ButtonLanguage() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const changeUrl = (newlang: string) => {
+    const changeUrl = async (newlang: string) => {
         const pathname = location.pathname;
         const segments = pathname.split("/").filter(Boolean);
+
+        if (
+            segments.length === 3 &&
+            segments[1] === "services" &&
+            segments[2]
+        ) {
+            const currentServicesModule = await import(
+                `../../../mockData/services/Services.mockData.${language}.ts`
+            );
+            const nextServicesModule = await import(
+                `../../../mockData/services/Services.mockData.${newlang}.ts`
+            );
+
+            for (
+                let categoryIndex = 0;
+                categoryIndex < currentServicesModule.serviceCategories.length;
+                categoryIndex++
+            ) {
+                const serviceIndex = currentServicesModule.serviceCategories[
+                    categoryIndex
+                ].services.findIndex((service) => service.slug === segments[2]);
+
+                if (serviceIndex !== -1) {
+                    const nextSlug =
+                        nextServicesModule.serviceCategories[categoryIndex]
+                            ?.services[serviceIndex]?.slug;
+
+                    if (nextSlug) {
+                        navigate(`/${newlang}/services/${nextSlug}`, {
+                            replace: true,
+                        });
+                        return;
+                    }
+                }
+            }
+        }
+
         const newPath =
             segments.length > 0
                 ? `/${newlang}/${segments.slice(1).join("/")}`
@@ -26,18 +63,18 @@ function ButtonLanguage() {
             >
                 <button
                     className={styles["left"]}
-                    onClick={() => {
+                    onClick={async () => {
                         handleChangeLanguage("en");
-                        changeUrl("en");
+                        await changeUrl("en");
                     }}
                 >
                     en
                 </button>
                 <button
                     className={styles["right"]}
-                    onClick={() => {
+                    onClick={async () => {
                         handleChangeLanguage("ru");
-                        changeUrl("ru");
+                        await changeUrl("ru");
                     }}
                 >
                     ru

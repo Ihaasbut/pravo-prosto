@@ -4,7 +4,7 @@ import styles from "./NewsOne.module.css";
 import type { NewI } from "../../types/news.types";
 import { useLanguage } from "../../hooks/use-language";
 import { useParams } from "react-router-dom";
-import cn from "classnames"
+import cn from "classnames";
 
 import NewsTable from "../../components/NewsTable/NewsTable";
 
@@ -23,8 +23,11 @@ function NewsOne() {
             const newsOne = newsModule.news.find(
                 (newsOne: NewI) => newsOne.slug === params.slug,
             );
+            const sidebarNews = newsModule.news
+                .filter((newsItem: NewI) => newsItem.slug !== params.slug)
+                .slice(0, 3);
             setPageData(newsOne);
-            setPageSidebar(newsModule.news.slice(0, 3));
+            setPageSidebar(sidebarNews);
         })();
     }, [language, params.slug]);
 
@@ -37,7 +40,7 @@ function NewsOne() {
             <TitleBlockGrey title={pageData.title} />
 
             <div className={styles["detail-and-news"]}>
-                <div className={cn(styles["detail"],  "block-margin")}>
+                <div className={cn(styles["detail"], "block-margin")}>
                     {pageData.blocks.map((block, id) => {
                         const Component = block.component;
                         return <Component key={id} {...block} />;
@@ -46,13 +49,13 @@ function NewsOne() {
 
                 <div className={styles["sidebar-wrapper"]}>
                     <div className="container">
-                      
-                            <div className={styles["sidebar"]}>
-                                <NewsTable
-                                    pageData={pageSidebar}
-                                    className="news-detail"
-                                />
-                            </div>
+                        <div className={styles["sidebar"]}>
+                            <NewsTable
+                                pageData={pageSidebar}
+                                className="news-detail"
+                                useSiblingLinks
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

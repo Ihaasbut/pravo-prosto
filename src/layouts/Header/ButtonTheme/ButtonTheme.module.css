@@ -48,13 +48,11 @@
     color: var(--no-change-fff);
 }
 
-
 @media (max-width: 1023px) {
-    
     .wrapper {
         width: 57px;
     }
-    
+
     .header-toggle .left,
     .header-toggle .right {
         font-size: 16px;
@@ -88,7 +86,7 @@
     }
 }
 
-@media (hover:hover) {
+@media (hover: hover) {
     .header-toggle .left:hover {
         color: var(--blue-1);
     }
@@ -96,7 +94,7 @@
     .header-toggle.active .right:hover {
         color: var(--blue-1);
     }
-    
+
     .header-toggle.active .left:hover {
         color: var(--no-change-fff);
     }

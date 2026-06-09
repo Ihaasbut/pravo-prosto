@@ -20,11 +20,11 @@ export const footerData: FooterI = {
         },
         userAgreement: {
             title: "Пользовательское соглашение",
-            slug: "/polzovatelskoe-soglashenie",
+            slug: "/ru/user-agreement",
         },
         privacyPolicy: {
             title: "Политика конфиденциальности",
-            slug: "/privacy-policy",
+            slug: "/ru/privacy-policy",
         },
     },
 };

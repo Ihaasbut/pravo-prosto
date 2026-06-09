@@ -4,10 +4,6 @@
     position: relative;
 }
 
-.sidebar-wrapper:hover {
-    background: var(--blue-1);
-}
-
 .sidebar {
     position: sticky;
     top: 0;
@@ -33,26 +29,11 @@
     transition: fill 0.2s ease-out;
     fill: var(--color-bg-element-secondary);
 }
-.sidebar-wrapper:hover path {
-    fill: var(--no-change-fff);
-}
-
-.sidebar-wrapper:hover path.logo_detail {
-    fill: red;
-}
-
 .sidebar-wrapper span:first-child {
     transform: translateX(0);
     transition:
         transform 0.3s ease-out,
         width 0.1s ease-out;
-}
-
-.sidebar-wrapper:hover span:first-child {
-    transform: translateX(-20px);
-    width: 15px;
-    border-radius: 10px;
-    background: var(--no-change-fff);
 }
 
 .sidebar-wrapper span:nth-child(2) {
@@ -62,13 +43,6 @@
         width 0.1s ease-out;
 }
 
-.sidebar-wrapper:hover span:nth-child(2) {
-    transform: translateX(-12px);
-    width: 30px;
-    background: var(--no-change-fff);
-    border-radius: 10px;
-}
-
 .sidebar-wrapper span:last-child {
     transform: translateX(0);
     transition:
@@ -76,26 +50,44 @@
         width 0.1s ease-out;
 }
 
-.sidebar-wrapper:hover span:last-child {
-    transform: translateX(-5px);
-    width: 45px;
-    background: var(--no-change-fff);
-    border-radius: 10px;
-}
-
-/* .sidebar-wrapper span:nth-child(2) {
-    transform: translateX(0);
-    transition: transform 0.5s ease, width 0.5s ease;
-}
-
-.sidebar-wrapper:hover span:nth-child(2) {
-    transform: translateX(-20px);
-    width: 30px;
-} */
-
 /* .sidebar-wrapper {
     position: relative;
 } */
+
+@media (hover: hover) {
+    .sidebar-wrapper:hover {
+        background: var(--blue-1);
+    }
+
+    .sidebar-wrapper:hover path {
+        fill: var(--no-change-fff);
+    }
+
+    .sidebar-wrapper:hover path.logo_detail {
+        fill: red;
+    }
+
+    .sidebar-wrapper:hover span:first-child {
+        transform: translateX(-20px);
+        width: 15px;
+        border-radius: 10px;
+        background: var(--no-change-fff);
+    }
+
+    .sidebar-wrapper:hover span:nth-child(2) {
+        transform: translateX(-12px);
+        width: 30px;
+        background: var(--no-change-fff);
+        border-radius: 10px;
+    }
+
+    .sidebar-wrapper:hover span:last-child {
+        transform: translateX(-5px);
+        width: 45px;
+        background: var(--no-change-fff);
+        border-radius: 10px;
+    }
+}
 
 @media (min-width: 2200px) {
     .sidebar {

@@ -10,7 +10,13 @@ type ThemeProviderI = {
 };
 
 export const ThemeProvider = ({ children }: ThemeProviderI) => {
-    const [theme, setTheme] = useState<Theme>("light");
+    const [theme, setTheme] = useState<Theme>(() => {
+        const savedTheme = window.localStorage.getItem("theme");
+
+        return savedTheme === "dark" || savedTheme === "light"
+            ? savedTheme
+            : "light";
+    });
 
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);

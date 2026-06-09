@@ -16,19 +16,13 @@
     text-align: center;
 }
 
-.button-fill,
-.button-outline:hover {
+.button-fill {
     background-color: var(--blue-1);
     color: var(--no-change-fff);
 }
 
 .button-outline {
     background-color: transparent;
-    color: var(--color-text-primary);
-}
-
-.button-fill:hover {
-    background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
 }
 
@@ -47,5 +41,17 @@
 @media (max-width: 767px) {
     .button {
         width: 100%;
+    }
+}
+
+@media (hover: hover) {
+    .button-outline:hover {
+        background-color: var(--blue-1);
+        color: var(--no-change-fff);
+    }
+
+    .button-fill:hover {
+        background-color: var(--color-bg-primary);
+        color: var(--color-text-primary);
     }
 }

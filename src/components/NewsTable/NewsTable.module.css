@@ -28,18 +28,20 @@
     background: var(--grey-line-2);
     overflow: hidden;
     position: relative;
+    aspect-ratio: 16 / 10;
 }
 
 .image {
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .image img {
     width: 100%;
     display: block;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    max-height: 300px;
 }
 
 .image::before {
@@ -82,6 +84,10 @@
     display: none;
 }
 
+.news-table-detail {
+    width: 100%;
+}
+
 @media (hover: hover) {
     .wrapper:hover {
         transform: scale(1.05);
@@ -104,5 +110,18 @@
 
     .is-mobile {
         display: block;
+    }
+
+    .news-table-detail .is-mobile {
+        display: none;
+    }
+
+    .news-table-detail .is-dekstop {
+        display: flex;
+    }
+
+    .news-table-detail .news-detail {
+        width: 100%;
+        gap: 20px;
     }
 }

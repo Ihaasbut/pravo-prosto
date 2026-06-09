@@ -3,28 +3,27 @@ import { Link } from "react-router-dom";
 import styles from "./NewsTable.module.css";
 import cn from "classnames";
 import Typography from "../Typography/Typography";
-import {  useEffect, useMemo, useRef } from "react";
+import { useRef } from "react";
 import { useSlideUp } from "../../hooks/animation/useSlideUp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { NewsTableI } from "../../pages/News/types/news-page.types";
 
-
-function NewsTable({ pageData, className }: NewsTableI) {
+function NewsTable({
+    pageData,
+    className,
+    useSiblingLinks = false,
+}: NewsTableI) {
     const containerRef = useRef<HTMLDivElement>(null);
-
-    const test = [1, 5, 8, 33, 25, 50]; //122
-
-    const fnTest = useMemo(()=> {
-        return test.reduce((acc,x) => acc+x,0)
-    }, [test])
-
-    useEffect(()=>{
-        console.log(fnTest)
-    },[fnTest])
+    const getNewsLink = (slug: string) =>
+        useSiblingLinks ? `../${slug}` : slug;
 
     useSlideUp(containerRef);
     return (
-        <div className="content">
+        <div
+            className={cn("content", {
+                [styles["news-table-detail"]]: useSiblingLinks,
+            })}
+        >
             <div
                 className={cn(styles["is-mobile"], "block-margin")}
                 ref={containerRef}
@@ -47,7 +46,8 @@ function NewsTable({ pageData, className }: NewsTableI) {
                     {pageData.map((element, index) => (
                         <SwiperSlide key={index}>
                             <Link
-                                to={element.slug}
+                                to={getNewsLink(element.slug)}
+                                relative={useSiblingLinks ? "path" : undefined}
                                 className={styles["wrapper"]}
                             >
                                 <div className={styles["inner"]}>
@@ -60,7 +60,7 @@ function NewsTable({ pageData, className }: NewsTableI) {
                                         >
                                             <img
                                                 src={element.image}
-                                                alt="Картинка Новости"
+                                                alt={element.title}
                                             />
                                             <div className={styles["badge"]}>
                                                 {element.categoryName}
@@ -98,7 +98,8 @@ function NewsTable({ pageData, className }: NewsTableI) {
             >
                 {pageData.map((element, index) => (
                     <Link
-                        to={element.slug}
+                        to={getNewsLink(element.slug)}
+                        relative={useSiblingLinks ? "path" : undefined}
                         className={styles["wrapper"]}
                         key={index}
                     >
@@ -112,7 +113,7 @@ function NewsTable({ pageData, className }: NewsTableI) {
                                 >
                                     <img
                                         src={element.image}
-                                        alt="Картинка Новости"
+                                        alt={element.title}
                                     />
                                     <div className={styles["badge"]}>
                                         {element.categoryName}

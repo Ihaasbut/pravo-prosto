@@ -10,7 +10,7 @@ function TitleBlockHome({
     buttonText,
     descriptionStyle,
 }: TitleBlockPropsI) {
-    const { onHandleClickModal } = useModal()
+    const { openModal } = useModal();
     return (
         <div className={styles["title-block"]}>
             <div className="container">
@@ -31,7 +31,9 @@ function TitleBlockHome({
                             )}
                         </div>
                         {buttonText && (
-                            <Button variant="outline" onClick={onHandleClickModal}> {buttonText}</Button>
+                            <Button variant="outline" onClick={openModal}>
+                                {buttonText}
+                            </Button>
                         )}
                     </div>
                 </div>

@@ -16,11 +16,6 @@
     gap: 2px;
 }
 
-.button-close:hover {
-    color: var(--no-change-grey);
-    font-size: 28px;
-}
-
 .left,
 .right {
     transition: translateX 0.3s ease--out;
@@ -31,18 +26,25 @@
     transition: transform 0.3s ease-out;
 }
 
-.button-close:hover .left {
-    transform: translateX(-5px);
-}
-
-.button-close:hover .right {
-    transform: translateX(5px);
-}
-
 @media (max-width: 1023px) {
     .button-close {
         left: 50%;
         transform: translate(-50%, -50%);
         top: 5%;
+    }
+}
+
+@media (hover: hover) {
+    .button-close:hover {
+        color: var(--no-change-grey);
+        font-size: 28px;
+    }
+
+    .button-close:hover .left {
+        transform: translateX(-5px);
+    }
+
+    .button-close:hover .right {
+        transform: translateX(5px);
     }
 }

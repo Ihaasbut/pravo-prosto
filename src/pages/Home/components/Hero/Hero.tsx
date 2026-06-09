@@ -8,8 +8,8 @@ import type { HeroPropsI } from "./types/hero.types";
 import { useModal } from "../../../../hooks/use-modal";
 
 function Hero({ hero }: HeroPropsI) {
-    const { onHandleClickModal } = useModal();
-    
+    const { openModal } = useModal();
+
     return (
         <div className="container">
             <div className={styles["hero"]}>
@@ -22,8 +22,7 @@ function Hero({ hero }: HeroPropsI) {
                             {hero.description}
                         </Typography>
 
-                        <Button variant="fill" onClick={onHandleClickModal}>
-                            {" "}
+                        <Button variant="fill" onClick={openModal}>
                             {hero.button}{" "}
                         </Button>
                     </div>

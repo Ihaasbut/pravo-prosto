@@ -5,11 +5,13 @@
 .detail-and-news {
     display: flex;
     gap: 30px;
+    align-items: flex-start;
 }
 
 .detail {
     background: var(--grey-line);
     margin-left: 30px;
+    height: max-content;
 }
 .sidebar {
     width: 300px;
@@ -25,6 +27,7 @@
 @media (max-width: 1023px) {
     .detail-and-news {
         flex-direction: column;
+        gap: 20px;
     }
 
     .newsOne h2 {
@@ -37,11 +40,20 @@
     }
 
     .sidebar {
-          width: 100%;
+        width: 100%;
+        margin-bottom: 50px;
     }
+
     .sidebar-wrapper {
-          border-left: none;
-      }
+        width: 100%;
+        border-left: none;
+    }
+
+    .sidebar-wrapper :global(.container),
+    .sidebar-wrapper :global(.content) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -58,5 +70,11 @@
     .detail {
         margin-right: 5px;
         margin-left: 5px;
+    }
+
+    .sidebar-wrapper :global(.container),
+    .sidebar-wrapper :global(.content) {
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }

@@ -19,7 +19,7 @@ function Form() {
     } = useForm<InputsI>({ mode: "onSubmit" });
 
     const onSubmit: SubmitHandler<InputsI> = (data) => console.log(data);
-    const { isOpenModal, onHandleClickModal } = useModal();
+    const { isOpenModal, closeModal } = useModal();
 
     const [formData, setFormData] = useState<FormI | null>(null);
     const { language } = useLanguage();
@@ -122,7 +122,7 @@ function Form() {
                     <div className={styles["button-close-wrapper"]}>
                         <button
                             className={styles["button-close"]}
-                            onClick={onHandleClickModal}
+                            onClick={closeModal}
                         >
                             <div className={styles["left"]}>[</div>X
                             <div className={styles["right"]}>]</div>
@@ -130,8 +130,9 @@ function Form() {
                     </div>
 
                     <Overlay
-                        onClosedOverlay={onHandleClickModal}
+                        onClosedOverlay={closeModal}
                         isOpened={isOpenModal}
+                        variant="dark"
                     />
                 </div>
             )}

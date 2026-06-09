@@ -12,8 +12,12 @@ type ModalProviderI = {
 function ModalProvider({ children }: ModalProviderI) {
     const [isOpenModal, setIsOpenModal] = useState<IsOpenI>(false);
 
-    const onHandleClickModal = () => {
-        setIsOpenModal((prev) => !prev);
+    const openModal = () => {
+        setIsOpenModal(true);
+    };
+
+    const closeModal = () => {
+        setIsOpenModal(false);
     };
 
     useEffect(() => {
@@ -22,13 +26,13 @@ function ModalProvider({ children }: ModalProviderI) {
         } else {
             document.body.style.overflow = "";
         }
-        
+
         return () => {
             document.body.style.overflow = "";
         };
     }, [isOpenModal]);
 
-    const value: ModalContextValueI = { isOpenModal, onHandleClickModal };
+    const value: ModalContextValueI = { isOpenModal, openModal, closeModal };
 
     return (
         <ModalContext.Provider value={value}>{children}</ModalContext.Provider>
