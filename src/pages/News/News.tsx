@@ -7,6 +7,7 @@ import type { PageNewsFullDataI } from "./types/news-page.types";
 import NewsTable from "../../components/NewsTable/NewsTable";
 import NewsCategories from "./components/NewsCategories/NewsCategories";
 import type { NewI } from "../../types/news.types";
+import PagePreloader from "../../components/PagePreloader/PagePreloader";
 
 function News() {
     const [pageData, setPageData] = useState<PageNewsFullDataI | null>(null);
@@ -39,7 +40,7 @@ function News() {
     }, [language]);
 
     if (!pageData) {
-        return null;
+        return <PagePreloader label="Loading news page" />;
     }
 
     const onFilterChange = (id: number) => {

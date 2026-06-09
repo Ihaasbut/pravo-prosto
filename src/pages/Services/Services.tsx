@@ -5,7 +5,7 @@ import styles from "./Services.module.css";
 import { useLanguage } from "../../hooks/use-language";
 import ServiceCategory from "./ServiceCategory/ServiceCategory";
 import type { PageServicesFullDataI } from "./types/services-page.types";
-
+import PagePreloader from "../../components/PagePreloader/PagePreloader";
 
 function Services() {
     const [pageData, setPageData] = useState<PageServicesFullDataI | null>(
@@ -22,21 +22,20 @@ function Services() {
             const pageModule = await import(
                 `./mockData/services-page.mockData.${language}.ts`
             );
-          
+
             const pageServicesFullData: PageServicesFullDataI = {
                 serviceCategories: servicesModule.serviceCategories,
                 page: pageModule,
             };
-            console.log(pageServicesFullData.page)
-           
+
             setPageData(pageServicesFullData);
         })();
     }, [language]);
 
     if (!pageData) {
-        return null;
+        return <PagePreloader label="Loading services page" />;
     }
- 
+
     return (
         <div className={styles["services"]}>
             <TitleBlockGrey
@@ -44,14 +43,13 @@ function Services() {
                 description={pageData.page.headerPage.description}
                 buttonText={pageData.page.headerPage.buttonText}
             />
-           
-                    {pageData.serviceCategories.map((category) => (
-                        <ServiceCategory
-                            area={category.area}
-                            services={category.services}
-                        />
-                    ))}
-  
+
+            {pageData.serviceCategories.map((category) => (
+                <ServiceCategory
+                    area={category.area}
+                    services={category.services}
+                />
+            ))}
         </div>
     );
 }

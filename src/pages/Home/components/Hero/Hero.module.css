@@ -50,5 +50,19 @@
     .inner {
         margin-top: 80px;
     }
+}
 
+@media (max-width: 1023px) {
+    .hero {
+        height: auto;
+        min-height: calc(100vh - (100px + env(safe-area-inset-top)));
+    }
+}
+
+@supports (height: 100dvh) {
+    @media (max-width: 1023px) {
+        .hero {
+            min-height: calc(100dvh - (100px + env(safe-area-inset-top)));
+        }
+    }
 }

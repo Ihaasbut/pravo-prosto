@@ -1,0 +1,130 @@
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+}
+
+.preloader-compact {
+    position: absolute;
+    min-height: 240px;
+    padding: 40px 30px;
+}
+
+.backdrop {
+    position: absolute;
+    inset: 0;
+    background: #e6e6e3;
+}
+
+.inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loader {
+    position: relative;
+    width: 84px;
+    height: 84px;
+}
+
+.ring,
+.core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+}
+
+.ring {
+    border: 1.5px solid rgba(17, 17, 17, 0.18);
+}
+
+.ring:first-child {
+    inset: 0;
+    animation: pulse-ring 1.8s ease-in-out infinite;
+}
+
+.ring:nth-child(2) {
+    width: 56px;
+    height: 56px;
+    border-color: rgba(17, 17, 17, 0.45);
+    animation: pulse-core 1.8s ease-in-out infinite;
+}
+
+.core {
+    width: 12px;
+    height: 12px;
+    background: #111111;
+    box-shadow: 0 0 0 8px rgba(17, 17, 17, 0.08);
+    animation: blink-core 1.2s ease-in-out infinite;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: #111111;
+    opacity: 0.8;
+}
+
+@keyframes pulse-ring {
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(0.92);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse-core {
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(0.88);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+@keyframes blink-core {
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(0.92);
+        box-shadow: 0 0 0 8px rgba(17, 17, 17, 0.08);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        box-shadow: 0 0 0 14px rgba(17, 17, 17, 0.04);
+    }
+}
+
+@media (max-width: 1023px) {
+    .preloader {
+        padding: 24px;
+    }
+
+    .preloader-compact {
+        min-height: 180px;
+        padding: 30px 15px;
+    }
+
+    .loader {
+        width: 72px;
+        height: 72px;
+    }
+}

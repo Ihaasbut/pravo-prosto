@@ -8,6 +8,7 @@ import type {
     LegalPageKey,
     LegalPagesDataI,
 } from "./types/legal-page.types";
+import PagePreloader from "../../components/PagePreloader/PagePreloader";
 
 type LegalPageProps = {
     pageKey: LegalPageKey;
@@ -32,7 +33,11 @@ function LegalPage({ pageKey }: LegalPageProps) {
     }, [language, pageKey]);
 
     if (!pageData || !legalPagesData) {
-        return legalPagesData?.loadErrorText ?? null;
+        return (
+            <PagePreloader
+                label={legalPagesData?.loadErrorText ?? "Loading legal page"}
+            />
+        );
     }
 
     return (
