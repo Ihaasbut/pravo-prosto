@@ -19,6 +19,9 @@ import Service from "./pages/Service/Service.tsx";
 import NewsOne from "./pages/NewsOne/NewsOne.tsx";
 import ModalProvider from "./context/ModalProvider.tsx";
 import LegalPage from "./pages/LegalPage/LegalPage.tsx";
+import { initTelegramWebApp } from "./telegram-webapp.ts";
+
+initTelegramWebApp();
 
 const router = createBrowserRouter([
     {

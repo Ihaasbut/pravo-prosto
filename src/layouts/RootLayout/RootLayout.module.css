@@ -67,7 +67,7 @@
     }
 
     .main {
-        padding-top: calc(100px + env(safe-area-inset-top));
+        padding-top: calc(100px + var(--safe-area-top));
     }
 
     .background-line:first-child {

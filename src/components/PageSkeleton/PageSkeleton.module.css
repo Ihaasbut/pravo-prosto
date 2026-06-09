@@ -305,7 +305,7 @@
     }
 
     .hero {
-        min-height: calc(100vh - (100px + env(safe-area-inset-top)));
+        min-height: calc(var(--app-height) - (100px + var(--safe-area-top)));
         gap: 30px;
     }
 
