@@ -8,6 +8,10 @@
     width: calc(100% - 130px);
 }
 
+.main {
+    width: 100%;
+}
+
 .background-line {
     position: absolute;
     width: 1px;
@@ -26,7 +30,7 @@
 }
 
 .background-line:nth-child(3) {
-    right: 50Vw;
+    right: 50vw;
 }
 
 .background-line:nth-child(4) {
@@ -62,6 +66,10 @@
         width: 100%;
     }
 
+    .main {
+        padding-top: calc(100px + env(safe-area-inset-top));
+    }
+
     .background-line:first-child {
         right: 15px;
     }
@@ -73,7 +81,7 @@
     .background-line:nth-child(2) {
         right: 66.6vw;
     }
-    
+
     .background-line:nth-child(3) {
         right: 33.3vw;
     }
@@ -83,7 +91,7 @@
     .background-line:first-child {
         right: 5px;
     }
-    
+
     .background-line:nth-child(4) {
         left: 5px;
     }
