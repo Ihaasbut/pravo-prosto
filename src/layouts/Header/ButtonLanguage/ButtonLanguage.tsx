@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "../../../hooks/use-language";
+import type { ServiceI, ServicesCategoryI } from "../../../types/mockData";
 import styles from "./ButtonLanguage.module.css";
 import cn from "classnames";
 
@@ -23,20 +24,27 @@ function ButtonLanguage() {
             const nextServicesModule = await import(
                 `../../../mockData/services/Services.mockData.${newlang}.ts`
             );
+            const currentServiceCategories: ServicesCategoryI[] =
+                currentServicesModule.serviceCategories;
+            const nextServiceCategories: ServicesCategoryI[] =
+                nextServicesModule.serviceCategories;
 
             for (
                 let categoryIndex = 0;
-                categoryIndex < currentServicesModule.serviceCategories.length;
+                categoryIndex < currentServiceCategories.length;
                 categoryIndex++
             ) {
-                const serviceIndex = currentServicesModule.serviceCategories[
+                const serviceIndex = currentServiceCategories[
                     categoryIndex
-                ].services.findIndex((service) => service.slug === segments[2]);
+                ].services.findIndex(
+                    (service: ServiceI) => service.slug === segments[2],
+                );
 
                 if (serviceIndex !== -1) {
                     const nextSlug =
-                        nextServicesModule.serviceCategories[categoryIndex]
-                            ?.services[serviceIndex]?.slug;
+                        nextServiceCategories[categoryIndex]?.services[
+                            serviceIndex
+                        ]?.slug;
 
                     if (nextSlug) {
                         navigate(`/${newlang}/services/${nextSlug}`, {
