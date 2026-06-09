@@ -56,5 +56,6 @@
     .hero {
         height: auto;
         min-height: calc(var(--app-height) - (100px + var(--safe-area-top)));
+        margin-bottom: 20px;
     }
 }
