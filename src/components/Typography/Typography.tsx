@@ -1,4 +1,4 @@
-import type { ElementType, ReactNode } from "react";
+import type { ElementType, HTMLAttributes, ReactNode } from "react";
 import styles from "./Typography.module.css";
 import cn from "classnames";
 
@@ -16,12 +16,14 @@ type TypographyVariant =
     | "body-xs"
     | "button";
 
-interface TypographyPropsI {
+interface TypographyPropsI extends HTMLAttributes<HTMLElement> {
     variant: TypographyVariant;
     children: ReactNode;
     className?: string;
     as?: ElementType;
     href?: string;
+    target?: string;
+    rel?: string;
 }
 
 function Typography({
@@ -29,10 +31,12 @@ function Typography({
     children,
     className = "",
     as: Component = "div",
+    ...restProps
 }: TypographyPropsI) {
     return (
         <Component
             className={cn(styles["typography"], styles[variant], className)}
+            {...restProps}
         >
             {children}
         </Component>
