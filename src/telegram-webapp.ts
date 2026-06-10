@@ -11,7 +11,6 @@ type TelegramWebApp = {
     expand?: () => void;
     disableVerticalSwipes?: () => void;
     requestFullscreen?: () => Promise<unknown> | void;
-    isFullscreen?: boolean;
     safeAreaInset?: TelegramInsets;
     contentSafeAreaInset?: TelegramInsets;
     viewportHeight?: number;
@@ -43,10 +42,9 @@ const setRootVar = (name: string, value?: string) => {
 };
 
 const applyInsets = (insets?: TelegramInsets) => {
-    setRootVar(
-        "--safe-area-top",
-        typeof insets?.top === "number" ? `${insets.top}px` : "0px",
-    );
+    if (typeof insets?.top === "number") {
+        setRootVar("--safe-area-top", `${insets.top}px`);
+    }
 };
 
 const applyViewportHeight = (height?: number) => {
@@ -56,7 +54,7 @@ const applyViewportHeight = (height?: number) => {
 };
 
 const syncViewportVars = (webApp: TelegramWebApp) => {
-    applyInsets(webApp.isFullscreen ? { top: 0 } : webApp.safeAreaInset);
+    applyInsets(webApp.contentSafeAreaInset ?? webApp.safeAreaInset);
     applyViewportHeight(webApp.viewportStableHeight ?? webApp.viewportHeight);
 };
 
@@ -66,7 +64,6 @@ export const initTelegramWebApp = () => {
     }
 
     window.__telegramWebAppInitialized__ = true;
-    document.documentElement.dataset.telegramWebApp = "true";
 
     const webApp = window.Telegram?.WebApp;
 
