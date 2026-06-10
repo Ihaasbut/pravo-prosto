@@ -64,6 +64,7 @@ export const initTelegramWebApp = () => {
     }
 
     window.__telegramWebAppInitialized__ = true;
+    document.documentElement.dataset.telegramWebApp = "true";
 
     const webApp = window.Telegram?.WebApp;
 
@@ -77,12 +78,6 @@ export const initTelegramWebApp = () => {
 
     try {
         webApp.disableVerticalSwipes?.();
-    } catch {
-        // Ignore unsupported clients.
-    }
-
-    try {
-        void webApp.requestFullscreen?.();
     } catch {
         // Ignore unsupported clients.
     }
