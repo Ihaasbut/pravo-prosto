@@ -24,6 +24,14 @@ function RootLayout() {
         });
     }, [location.pathname]);
 
+    useEffect(() => {
+        document.documentElement.dataset.menuOpen = String(isMenuOpen);
+
+        return () => {
+            delete document.documentElement.dataset.menuOpen;
+        };
+    }, [isMenuOpen]);
+
     const onToggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
