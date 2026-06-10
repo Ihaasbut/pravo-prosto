@@ -11,6 +11,7 @@ type TelegramWebApp = {
     expand?: () => void;
     disableVerticalSwipes?: () => void;
     requestFullscreen?: () => Promise<unknown> | void;
+    isFullscreen?: boolean;
     safeAreaInset?: TelegramInsets;
     contentSafeAreaInset?: TelegramInsets;
     viewportHeight?: number;
@@ -42,9 +43,10 @@ const setRootVar = (name: string, value?: string) => {
 };
 
 const applyInsets = (insets?: TelegramInsets) => {
-    if (typeof insets?.top === "number") {
-        setRootVar("--safe-area-top", `${insets.top}px`);
-    }
+    setRootVar(
+        "--safe-area-top",
+        typeof insets?.top === "number" ? `${insets.top}px` : "0px",
+    );
 };
 
 const applyViewportHeight = (height?: number) => {
@@ -54,7 +56,7 @@ const applyViewportHeight = (height?: number) => {
 };
 
 const syncViewportVars = (webApp: TelegramWebApp) => {
-    applyInsets(webApp.safeAreaInset);
+    applyInsets(webApp.isFullscreen ? { top: 0 } : webApp.safeAreaInset);
     applyViewportHeight(webApp.viewportStableHeight ?? webApp.viewportHeight);
 };
 
