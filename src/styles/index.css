@@ -37,11 +37,13 @@ html {
     height: 100%;
     background-color: var(--color-bg-primary);
     overscroll-behavior: none;
+    scrollbar-gutter: stable;
 }
 
 html[data-menu-open="true"],
-html[data-menu-open="true"] body {
-    overflow: hidden;
+html[data-menu-open="true"] body,
+html[data-menu-open="true"] #root {
+    overflow: hidden !important;
 }
 
 body,
@@ -134,13 +136,9 @@ a {
         -webkit-overflow-scrolling: touch;
     }
 
-    на html[data-menu-open="true"] #root {
-        height: var(--app-height);
-        overflow: hidden;
-        overflow-y: hidden;
-        touch-action: none;
-        overscroll-behavior: none;
-        -webkit-overflow-scrolling: auto;
+    html[data-menu-open="true"] #root {
+        height: 100vh;
+        overflow: hidden !important;
     }
 
     .container {
