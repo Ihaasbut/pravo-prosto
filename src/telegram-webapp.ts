@@ -54,7 +54,7 @@ const applyViewportHeight = (height?: number) => {
 };
 
 const syncViewportVars = (webApp: TelegramWebApp) => {
-    applyInsets(webApp.contentSafeAreaInset ?? webApp.safeAreaInset);
+    applyInsets(webApp.safeAreaInset);
     applyViewportHeight(webApp.viewportStableHeight ?? webApp.viewportHeight);
 };
 
@@ -78,6 +78,12 @@ export const initTelegramWebApp = () => {
 
     try {
         webApp.disableVerticalSwipes?.();
+    } catch {
+        // Ignore unsupported clients.
+    }
+
+    try {
+        void webApp.requestFullscreen?.();
     } catch {
         // Ignore unsupported clients.
     }
