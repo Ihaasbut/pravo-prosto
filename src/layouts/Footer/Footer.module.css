@@ -2,6 +2,8 @@
     padding-bottom: 100px;
     background: var(--color-text-primary);
     color: var(--color-text-secondary);
+    z-index: 1;
+    position: relative;
 }
 
 .wrapper {

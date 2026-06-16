@@ -48,7 +48,7 @@ function RootLayout() {
                     <span className={styles["background-line"]}></span>
                     <main className={styles["main"]}>
                         <Outlet />
-                    </main>
+                    </main>{" "}
                     <Footer />
                 </div>
             </div>

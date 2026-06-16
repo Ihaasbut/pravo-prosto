@@ -6,19 +6,22 @@
 .page {
     position: relative;
     width: calc(100% - 130px);
+    z-index: 0;
 }
 
 .main {
+    position: relative;
+    z-index: 1;
     width: 100%;
 }
 
 .background-line {
     position: absolute;
+    top: 0;
+    bottom: 0;
     width: 1px;
     background-color: var(--grey-line);
-    height: 100%;
-    z-index: -1;
-    top: 0;
+    z-index: 0;
 }
 
 .background-line:first-child {
