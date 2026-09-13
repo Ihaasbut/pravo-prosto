@@ -1,0 +1,170 @@
+:root {
+  --line-height: calc(1em+4px);
+}
+
+.typography.h1,
+.typography.h2,
+.typography.h3,
+.typography.text24,
+.typography.text20,
+.typography.text16,
+.typography.footerTitle,
+.typography.h1Footer,
+.typography.h4,
+.typography.h5 {
+  line-height: calc(1em + 4px);
+}
+
+.h1 {
+  font-size: clamp(1.95rem, 5.2vw, 10rem);
+  font-weight: 900;
+}
+
+.h2 {
+  font-size: clamp(1.95rem, 4.2vw, 10rem);
+  font-weight: 900;
+  white-space: pre-line;
+}
+
+.h3 {
+  font-size: clamp(1.95rem, 4vw, 10rem);
+}
+
+.h4 {
+  font-size: 28px;
+}
+
+.h5 {
+  font-size: clamp(1.95rem, 2.2vw, 10rem);
+  color: var(--no-change-black);
+}
+
+.bodyL {
+  font-size: 24px;
+}
+
+.bodyM {
+  font-size: 20px;
+}
+
+.bodyS {
+  font-size: 16px;
+}
+
+.bodyXs {
+  font-size: 14px;
+}
+
+.button {
+  font-size: 18px;
+}
+
+.footerTitle {
+  font-size: clamp(2rem, 7.5vw, 10rem);
+}
+
+.h1Footer {
+  font-size: clamp(2rem, 4.5vw, 10rem);
+  font-weight: 900;
+}
+
+@media (min-width: 2200px) {
+  .bodyL {
+    font-size: 34px;
+  }
+
+  .bodyS {
+    font-size: 26px;
+  }
+
+  .button {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .h1Footer {
+    font-size: clamp(2rem, 4.3vw, 10rem);
+  }
+
+  .h4 {
+    font-size: 24px;
+  }
+
+  .bodyXs {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .bodyL {
+    font-size: 20px;
+  }
+
+  .bodyM {
+    font-size: 18px;
+  }
+
+  .bodyXs {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .h2 {
+    font-size: clamp(2rem, 6.8vw, 10rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .bodyL {
+    font-size: 18px;
+  }
+
+  .bodyXs {
+    font-size: 12px;
+  }
+
+  .h1 {
+    font-size: clamp(2.35rem, 6.2vw, 10rem);
+    font-weight: 900;
+  }
+
+  .h4 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .h1Footer {
+    font-size: clamp(1.85rem, 4.3vw, 10rem);
+  }
+
+  .bodyL {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 424px) {
+  .h1Footer {
+    font-size: clamp(1.75rem, 4.3vw, 10rem);
+  }
+}
+
+@media (max-width: 374px) {
+  .h1 {
+    font-size: clamp(1.95rem, 5.2vw, 10rem);
+  }
+
+  .h1Footer {
+    font-size: clamp(1.5rem, 4.3vw, 10rem);
+  }
+
+  .footerTitle {
+    font-size: clamp(1.9rem, 7.5vw, 10rem);
+  }
+}

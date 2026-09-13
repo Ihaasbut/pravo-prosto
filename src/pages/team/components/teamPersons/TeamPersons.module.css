@@ -1,0 +1,30 @@
+.persons {
+          display: grid;
+          grid-template-columns: repeat(3,1fr);
+          gap: 30px;
+}
+
+.isMobile {
+          display: none;
+}
+
+@media (max-width: 1440px) {
+          .persons {
+                    grid-template-columns: repeat(3,1fr);
+          }
+}
+
+@media (max-width: 1200px) {
+          .persons {
+                    grid-template-columns: repeat(2,1fr);
+          }
+}
+
+@media (max-width: 1023px) {
+          .isDekstop {
+                    display: none;
+          }
+          .isMobile {
+                    display: block;
+          }
+}

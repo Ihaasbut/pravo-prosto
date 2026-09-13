@@ -1,0 +1,15 @@
+.wrapper {
+    padding: 30px;
+}
+
+.titleAndText {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media (max-width: 1023px) {
+    .wrapper {
+        padding: 15px;
+    }
+}

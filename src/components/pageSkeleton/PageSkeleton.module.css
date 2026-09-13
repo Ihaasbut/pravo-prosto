@@ -1,0 +1,381 @@
+.skeleton {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 2px;
+    background: #d8d8d8;
+}
+
+.skeleton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.titleSection {
+    padding: 200px 0 50px;
+    background: var(--grey-line);
+}
+
+.titleInner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.titleText,
+.textGroup,
+.legalContent,
+.legalSection,
+.articleCopy,
+.bannerCopy {
+    display: flex;
+    flex-direction: column;
+}
+
+.titleText {
+    gap: 24px;
+    width: min(760px, 100%);
+}
+
+.legalContent {
+    gap: 60px;
+    max-width: 980px;
+    margin: 100px 0;
+}
+
+.legalSection,
+.articleCopy,
+.bannerCopy,
+.textGroup {
+    gap: 16px;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+}
+
+.heroInner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 120px;
+}
+
+.heroTicker {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.tickerItem {
+    height: 72px;
+}
+
+.titleHeading {
+    height: clamp(44px, 6vw, 88px);
+    width: min(680px, 88%);
+}
+
+.heroTitleLarge {
+    height: clamp(52px, 7vw, 108px);
+    width: min(820px, 92%);
+}
+
+.heroTitleSmall {
+    height: clamp(52px, 7vw, 108px);
+    width: min(540px, 70%);
+}
+
+.sectionHeading {
+    height: 34px;
+    width: min(320px, 55%);
+}
+
+.serviceCardTitle,
+.teamName {
+    height: 28px;
+    width: 80%;
+}
+
+.lineLong {
+    height: 14px;
+    width: 100%;
+}
+
+.lineMedium {
+    height: 14px;
+    width: 72%;
+}
+
+.lineShort,
+.newsDate {
+    height: 14px;
+    width: 42%;
+}
+
+.button {
+    width: 210px;
+    height: 54px;
+}
+
+.blockSection {
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.servicesGrid,
+.newsGrid,
+.teamGrid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.serviceCard,
+.featureCard,
+.teamCard,
+.newsCard,
+.sidebarCard {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.serviceCard {
+    padding: 30px;
+    background: var(--grey-line);
+}
+
+.featureGrid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.featureCard {
+    min-height: 220px;
+    padding: 20px;
+    background: var(--blue-1);
+}
+
+.featureCard .skeleton {
+    background: rgba(255, 255, 255, 0.26);
+}
+
+.banner {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+    margin-bottom: 100px;
+}
+
+.bannerCopy {
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.bannerMedia {
+    min-height: 320px;
+}
+
+.map {
+    width: 100%;
+    min-height: 520px;
+}
+
+.newsLayout {
+    display: flex;
+}
+
+.newsFilters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 30px;
+    margin-top: 100px;
+}
+
+.filterChip {
+    width: 190px;
+    height: 52px;
+}
+
+.newsGrid {
+    margin: 100px 0;
+}
+
+.newsImage,
+.sidebarImage {
+    width: 100%;
+    aspect-ratio: 1 / 0.78;
+}
+
+.newsTitle {
+    height: 18px;
+    width: 85%;
+}
+
+.newsDetailLayout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 30px;
+    align-items: start;
+    margin: 100px 30px;
+}
+
+.newsDetailMain {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.articleHero {
+    width: 100%;
+    min-height: 420px;
+    background: var(--grey-line);
+}
+
+.newsDetailSidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.teamGrid {
+    margin: 100px 0;
+}
+
+.teamImage {
+    width: 100%;
+    height: 375px;
+}
+
+@keyframes skeleton-shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@media (max-width: 1535px) {
+    .featureGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1200px) {
+    .servicesGrid,
+    .newsGrid,
+    .teamGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .featureGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1023px) {
+    .titleSection {
+        padding: 150px 0 50px;
+    }
+
+    .titleInner,
+    .banner,
+    .newsLayout,
+    .newsDetailLayout {
+        display: block;
+    }
+
+    .hero {
+        min-height: calc(var(--app-height) - (100px + var(--safe-area-top)));
+        gap: 30px;
+    }
+
+    .heroInner {
+        margin-top: 80px;
+    }
+
+    .newsFilters {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 0 15px;
+        margin-top: 20px;
+    }
+
+    .filterChip {
+        flex: 0 0 160px;
+    }
+
+    .newsGrid,
+    .teamGrid,
+    .legalContent,
+    .blockSection {
+        margin: 50px 0;
+    }
+
+    .bannerCopy {
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    .newsDetailLayout {
+        margin: 50px 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .servicesGrid,
+    .newsGrid,
+    .teamGrid,
+    .featureGrid,
+    .heroTicker {
+        grid-template-columns: 1fr;
+    }
+
+    .titleHeading,
+    .heroTitleLarge,
+    .heroTitleSmall {
+        width: 100%;
+    }
+
+    .map {
+        min-height: 360px;
+    }
+
+    .newsDetailLayout {
+        margin: 50px 15px;
+    }
+}
+
+@media (max-width: 424px) {
+    .titleSection {
+        padding: 150px 0 15px;
+    }
+
+    .newsDetailLayout {
+        margin: 50px 5px;
+    }
+
+    .newsFilters {
+        padding: 0 5px;
+    }
+}

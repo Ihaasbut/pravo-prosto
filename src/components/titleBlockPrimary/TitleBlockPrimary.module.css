@@ -1,0 +1,16 @@
+.wrapper {
+  padding: 200px 0 50px;
+  background-color: var(--grey-line);
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 150px 0 50px;
+  }
+}
+
+@media (max-width: 424px) {
+  .wrapper {
+    padding: 150px 0 15px;
+  }
+}

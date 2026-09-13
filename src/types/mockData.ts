@@ -1,4 +1,4 @@
-import type { ServiceBannerI } from "../pages/Service/components/ServiceBanner/ServiceBanner.types";
+import type { ServiceBannerI } from "../pages/service/components/serviceBanner/ServiceBanner.types";
 
 export interface ServicesCategoryI {
     area: string;

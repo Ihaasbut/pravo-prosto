@@ -1,0 +1,110 @@
+.wrapper {
+  position: relative;
+  width: 168px;
+  height: 46px;
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  justify-content: flex-start;
+  position: absolute;
+  z-index: 10;
+}
+
+.toggle .left,
+.toggle .right {
+  background: transparent;
+  border: 2px solid var(--blue-1);
+  font-size: 20px;
+  text-transform: uppercase;
+  height: 46px;
+  width: 84px;
+  cursor: pointer;
+}
+
+.toggle::before {
+  content: "";
+  background: var(--blue-1);
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+  z-index: -1;
+}
+
+.toggle.active::before {
+  transform: translateX(0);
+}
+
+.toggle .right {
+  color: var(--no-change-fff);
+}
+
+.toggle.active .right {
+  color: var(--color-text-primary);
+}
+
+.toggle .left {
+  color: var(--color-text-primary);
+}
+
+.toggle.active .left {
+  color: var(--no-change-fff);
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+    width: 40px;
+  }
+
+  .toggle .left,
+  .toggle .right {
+    width: 40px;
+    font-size: 16px;
+  }
+
+  .toggle::before {
+    width: 100%;
+    transform: translateX(0);
+  }
+
+  .toggle.active::before {
+    transform: translateX(0);
+  }
+
+  .toggle.active .left {
+    display: none;
+  }
+
+  .toggle .right {
+    display: none;
+  }
+
+  .toggle.active .right {
+    display: block;
+    color: var(--no-change-fff);
+  }
+
+  .toggle .left {
+    display: block;
+    color: var(--no-change-fff);
+  }
+}
+
+@media (hover: hover) {
+  .toggle .left:hover {
+    color: var(--blue-1);
+  }
+
+  .toggle.active .right:hover {
+    color: var(--blue-1);
+  }
+
+  .toggle.active .left:hover {
+    color: var(--no-change-fff);
+  }
+}

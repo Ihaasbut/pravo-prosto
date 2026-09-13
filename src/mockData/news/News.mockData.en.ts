@@ -1,7 +1,7 @@
 import type { ComponentType } from "react";
 import type { NewI } from "../../types/news.types";
-import NewsTitleTextBlock from "../../pages/NewsOne/components/NewsTitleTextBlock/NewsTitleTextBlock";
-import NewsTextBlock from "../../pages/NewsOne/components/NewsTextBlock/NewsTextBlock";
+import NewsTitleTextBlock from "../../pages/newsOne/components/newsTitleTextBlock/NewsTitleTextBlock";
+import NewsTextBlock from "../../pages/newsOne/components/newsTextBlock/NewsTextBlock";
 
 export const news: NewI[] = [
     {
