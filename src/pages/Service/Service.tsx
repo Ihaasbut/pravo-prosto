@@ -14,7 +14,7 @@ import cn from "classnames";
 import ServiceBanner from "./components/ServiceBanner/ServiceBanner";
 import { useIsMobile } from "../../hooks/use-isMobile";
 import { Swiper, SwiperSlide } from "swiper/react";
-import type { ServicePageStaticI } from "./types/service-page.types";
+import type { ServicePageStaticI } from "./Service.types";
 import PageSkeleton from "../../components/PageSkeleton/PageSkeleton";
 
 function Service() {

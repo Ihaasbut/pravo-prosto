@@ -6,7 +6,7 @@ import Typography from "../Typography/Typography";
 import { useRef } from "react";
 import { useSlideUp } from "../../hooks/animation/useSlideUp";
 import { Swiper, SwiperSlide } from "swiper/react";
-import type { NewsTableI } from "../../pages/News/types/news-page.types";
+import type { NewsTableI } from "./NewsTable.types";
 
 function NewsTable({
     pageData,

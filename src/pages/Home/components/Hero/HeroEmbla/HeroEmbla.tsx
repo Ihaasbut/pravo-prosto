@@ -2,15 +2,12 @@ import "./HeroEmbla.css";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import Typography from "../../../../../components/Typography/Typography";
-import type { HeroEmblaPropsI } from "../types/hero.types";
+import type { HeroEmblaPropsI } from "./HeroEmbla.types";
 
 function HeroEmbla({ serviceKeywords }: HeroEmblaPropsI) {
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-    const autoScrollSpeed = isMobile ? 1 : 2;
-
     const [emblaRef] = useEmblaCarousel({ loop: true }, [
         AutoScroll({
-            speed: autoScrollSpeed,
+            speed: 1,
             stopOnInteraction: false,
             stopOnMouseEnter: true,
         }),

@@ -1,14 +1,11 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState } from "react";
 import {
     LanguageContext,
     type Language,
     type LanguageContextValue,
 } from "./language-context";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-
-type LanguageProviderI = {
-    children: ReactNode;
-};
+import type { LanguageProviderI } from "./LanguageProvider.types";
 
 export const LanguageProvider = ({ children }: LanguageProviderI) => {
     const params = useParams<{ lang: Language }>();

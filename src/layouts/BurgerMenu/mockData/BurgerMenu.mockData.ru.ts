@@ -1,4 +1,4 @@
-import type { NavLinkI } from "../burgerMenu.types";
+import type { NavLinkI } from "../BurgerMenu.types";
 
 export const navLinks: NavLinkI[] = [
     {

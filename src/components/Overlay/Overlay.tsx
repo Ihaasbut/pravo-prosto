@@ -1,5 +1,5 @@
 import styles from "./Overlay.module.css";
-import type { OverlayProps } from "./Overlay.type";
+import type { OverlayProps } from "./Overlay.types";
 import cn from "classnames";
 
 function Overlay({

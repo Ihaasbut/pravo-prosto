@@ -1,4 +1,4 @@
-import type { NewsCategoriesI } from "../../types/news-page.types";
+import type { NewsCategoriesI } from "./NewsCategories.types";
 import styles from "./NewsCategories.module.css";
 import cn from "classnames";
 

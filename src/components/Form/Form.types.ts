@@ -1,4 +1,4 @@
-export type InputsI = {
+export interface InputsI {
     name: string;
     nameError: string;
     phone: string;
@@ -7,10 +7,10 @@ export type InputsI = {
     companyError: string;
     description: string;
     descriptionError: string;
-};
+}
 
-export type FormI = {
+export interface FormI {
     titleForm: string;
     input: InputsI;
     buttonText: string;
-};
+}

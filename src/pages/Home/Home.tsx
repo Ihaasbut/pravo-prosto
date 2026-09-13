@@ -1,7 +1,7 @@
 import { useLanguage } from "../../hooks/use-language";
 import Hero from "./components/Hero/Hero";
 import { useEffect, useState } from "react";
-import type { PageHomeFullDataI } from "./types/home-page.types";
+import type { PageHomeFullDataI } from "./Home.types";
 import PageSkeleton from "../../components/PageSkeleton/PageSkeleton";
 
 function Home() {

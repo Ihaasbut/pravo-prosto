@@ -3,7 +3,7 @@ import AutoScroll from "embla-carousel-auto-scroll";
 import Typography from "../../../components/Typography/Typography";
 import cn from "classnames";
 import styles from "./Footer.module.css";
-import type { FooterEmblaProps } from "../types/footer.types";
+import type { FooterEmblaProps } from "./FooterEmbla.types";
 
 function FooterEmbla({ text }: FooterEmblaProps) {
     const isMobile = typeof window !== "undefined" && window.innerWidth < 768;

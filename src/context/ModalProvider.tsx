@@ -1,13 +1,10 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState } from "react";
 import {
     ModalContext,
     type IsOpenI,
     type ModalContextValueI,
 } from "./modal-context";
-
-type ModalProviderI = {
-    children: ReactNode;
-};
+import type { ModalProviderI } from "./ModalProvider.types";
 
 function ModalProvider({ children }: ModalProviderI) {
     const [isOpenModal, setIsOpenModal] = useState<IsOpenI>(false);

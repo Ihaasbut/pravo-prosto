@@ -2,7 +2,7 @@ import { useState } from "react";
 import Typography from "../../../../components/Typography/Typography";
 import styles from "./TeamPerson.module.css";
 import cn from "classnames";
-import type { TeamPersonPropsI } from "../../types/team-page.types";
+import type { TeamPersonPropsI } from "./TeamPerson.types";
 
 function TeamPerson({ props }: TeamPersonPropsI) {
     const [isOpenInfo, setIsOpen] = useState<boolean>(false);

@@ -5,7 +5,7 @@ import Overlay from "../Overlay/Overlay";
 import Typography from "../Typography/Typography";
 import styles from "./Form.module.css";
 import { IMaskInput } from "react-imask";
-import type { FormI, InputsI } from "./form.types";
+import type { FormI, InputsI } from "./Form.types";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../hooks/use-language";
 

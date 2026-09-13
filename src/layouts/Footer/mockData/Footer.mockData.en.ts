@@ -1,4 +1,4 @@
-import type { FooterI } from "../types/footer.types";
+import type { FooterI } from "../Footer.types";
 
 export const footerData: FooterI = {
     notice: "Pravo Prosto LLC © 2018–2025",

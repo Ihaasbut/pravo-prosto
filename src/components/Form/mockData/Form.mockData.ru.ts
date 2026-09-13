@@ -1,4 +1,4 @@
-import type { FormI } from "../form.types";
+import type { FormI } from "../Form.types";
 
 export const formData: FormI = {
     titleForm: "Оставьте заявку",

@@ -1,4 +1,4 @@
-import type { ServicePageStaticI } from "../types/service-page.types";
+import type { ServicePageStaticI } from "../Service.types";
 
 export const servicePageStaticData: ServicePageStaticI = {
     whatWeDoTitle: "Что мы делаем",

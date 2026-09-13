@@ -1,4 +1,4 @@
-import type { HeroI } from "../components/Hero/types/hero.types";
+import type { HeroI } from "../components/Hero/Hero.types";
 
 export const hero: HeroI = {
     title: "Mathematically accurate legal solutions",

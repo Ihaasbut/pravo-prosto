@@ -3,18 +3,17 @@ import TitleBlockGrey from "../../components/TitleBlockPrimary/TitleBlockPrimary
 import styles from "./News.module.css";
 
 import { useLanguage } from "../../hooks/use-language";
-import type { PageNewsFullDataI } from "./types/news-page.types";
+import type { NewsCategoriesDataI, PageNewsFullDataI } from "./News.types";
 import NewsTable from "../../components/NewsTable/NewsTable";
 import NewsCategories from "./components/NewsCategories/NewsCategories";
-import type { NewI } from "../../types/news.types";
 import PageSkeleton from "../../components/PageSkeleton/PageSkeleton";
 
 function News() {
     const [pageData, setPageData] = useState<PageNewsFullDataI | null>(null);
-    const [filterData, setFilterData] = useState<{
-        news: NewI[];
-        activeCategory: number;
-    }>({ news: [], activeCategory: 1 });
+    const [filterData, setFilterData] = useState<NewsCategoriesDataI>({
+        news: [],
+        activeCategory: 1,
+    });
     // const [activeNewsCategory, setActiveNewsCategory] = useState<number>(1);
 
     const { language } = useLanguage();
@@ -83,7 +82,7 @@ export default News;
 // import styles from "./News.module.css";
 
 // import { useLanguage } from "../../hooks/use-language";
-// import type { PageNewsFullDataI } from "./types/news-page.types";
+// import type { PageNewsFullDataI } from "./News.types";
 // import NewsTable from "./components/NewsTable/NewsTable";
 // import NewsCategories from "./components/NewsCategories/NewsCategories";
 // import type { NewI } from "../../types/news.types";

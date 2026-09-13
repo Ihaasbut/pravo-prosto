@@ -1,7 +1,7 @@
 import Button from "../../../../components/Button/Button";
 import Typography from "../../../../components/Typography/Typography";
 import { useModal } from "../../../../hooks/use-modal";
-import type { ServiceBannerI } from "../../types/service-page.types";
+import type { ServiceBannerI } from "./ServiceBanner.types";
 import styles from "./ServiceBanner.module.css";
 import cn from "classnames";
 
