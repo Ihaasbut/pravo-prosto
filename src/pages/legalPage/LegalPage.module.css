@@ -1,0 +1,57 @@
+.legal {
+    width: 100%;
+}
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin: 100px 0;
+    max-width: 980px;
+}
+
+@media (max-width: 767px) {
+    .contentWrapper {
+        gap: 40px;
+        margin: 50px 0;
+    }
+}
+
+.intro,
+.sectionContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+@media (max-width: 767px) {
+    .sections {
+        gap: 35px;
+    }
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (max-width: 767px) {
+    .section {
+        gap: 18px;
+    }
+}
+
+.sectionTitle {
+    color: var(--color-text);
+}
+
+.paragraph {
+    line-height: 1.6;
+}

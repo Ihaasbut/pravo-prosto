@@ -1,0 +1,31 @@
+.section {
+  margin: 40px 0 16px;
+}
+
+.persons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px 40px;
+  align-items: start;
+}
+
+@media (max-width: 1023px) {
+  .section {
+    margin: 28px 0 8px;
+  }
+
+  .persons {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    margin: 20px 0 8px;
+  }
+
+  .persons {
+    gap: 28px;
+  }
+}

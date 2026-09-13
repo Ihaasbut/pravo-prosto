@@ -7,18 +7,18 @@ import {
     Navigate,
     RouterProvider,
 } from "react-router-dom";
-import RootLayout from "./layouts/RootLayout/RootLayout.tsx";
-import Home from "./pages/Home/Home.tsx";
+import RootLayout from "./layouts/rootLayout/RootLayout.tsx";
+import Home from "./pages/home/Home.tsx";
 import { ThemeProvider } from "./context/ThemeProvider.tsx";
-import Services from "./pages/Services/Services.tsx";
+import Services from "./pages/services/Services.tsx";
 import { LanguageProvider } from "./context/LanguageProvider.tsx";
-import Team from "./pages/Team/Team.tsx";
-import Contacts from "./pages/Contacts/Contacts.tsx";
-import News from "./pages/News/News.tsx";
-import Service from "./pages/Service/Service.tsx";
-import NewsOne from "./pages/NewsOne/NewsOne.tsx";
+import Team from "./pages/team/Team.tsx";
+import Contacts from "./pages/contacts/Contacts.tsx";
+import News from "./pages/news/News.tsx";
+import Service from "./pages/service/Service.tsx";
+import NewsOne from "./pages/newsOne/NewsOne.tsx";
 import ModalProvider from "./context/ModalProvider.tsx";
-import LegalPage from "./pages/LegalPage/LegalPage.tsx";
+import LegalPage from "./pages/legalPage/LegalPage.tsx";
 import { initTelegramWebApp } from "./telegram-webapp.ts";
 
 initTelegramWebApp();

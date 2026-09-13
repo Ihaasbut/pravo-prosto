@@ -1,0 +1,22 @@
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 70;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
+}
+
+.dark {
+  background: var(--color-black);
+}
+
+.active {
+  opacity: 1;
+  pointer-events: visible;
+}

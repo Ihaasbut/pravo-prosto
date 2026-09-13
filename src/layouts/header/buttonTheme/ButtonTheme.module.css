@@ -1,0 +1,119 @@
+.wrapper {
+  position: relative;
+  width: 136px;
+  height: 36px;
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+    width: 52px;
+  }
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  justify-content: flex-start;
+  position: absolute;
+  z-index: 20;
+}
+
+@media (max-width: 1023px) {
+  .toggle.active .right {
+    display: block;
+  }
+}
+
+@media (hover: hover) {
+  .toggle.active .right:hover {
+    color: var(--color-accent);
+  }
+}
+
+.toggle .left,
+.toggle .right {
+  background: transparent;
+  border: 2px solid var(--color-accent);
+  font-size: 16px;
+  text-transform: uppercase;
+  height: 36px;
+  width: 68px;
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  .toggle .left {
+    font-size: 14px;
+    width: 52px;
+  }
+
+  .toggle .right {
+    font-size: 14px;
+    width: 52px;
+  }
+
+  .toggle .right {
+    display: none;
+  }
+
+  .toggle .left {
+    display: block;
+    color: var(--color-white);
+  }
+}
+
+@media (hover: hover) {
+  .toggle .left:hover {
+    color: var(--color-accent);
+  }
+}
+
+.toggle::before {
+  content: "";
+  background: var(--color-accent);
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+  z-index: -1;
+}
+
+@media (max-width: 1023px) {
+  .toggle::before {
+    width: 100%;
+    transform: translateX(0);
+  }
+}
+
+.toggle.active::before {
+  transform: translateX(0);
+}
+
+@media (max-width: 1023px) {
+  .toggle.active::before {
+    transform: translateX(0);
+  }
+}
+
+.right {
+  color: var(--color-white);
+}
+
+.toggle.active .left {
+  color: var(--color-white);
+}
+
+@media (max-width: 1023px) {
+  .toggle.active .left {
+    display: none;
+  }
+}
+
+@media (hover: hover) {
+  .toggle.active .left:hover {
+    color: var(--color-white);
+  }
+}

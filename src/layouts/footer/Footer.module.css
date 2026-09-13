@@ -1,0 +1,147 @@
+.footer {
+  padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
+  background: var(--color-text);
+  color: var(--color-text-inverse);
+  z-index: 1;
+  position: relative;
+}
+
+.wrapper {
+  border-top: 1px solid var(--color-surface);
+}
+
+.wrapper a {
+  color: var(--color-text-inverse);
+  cursor: pointer;
+}
+
+.inner {
+  display: flex;
+  gap: 28px;
+  flex-direction: column;
+  padding: 36px 0 24px;
+}
+
+@media (max-width: 1023px) {
+  .inner {
+    gap: 18px;
+    padding: 24px 0 18px;
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.telephones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.55em;
+  row-gap: 0.1em;
+}
+
+.telephone {
+  white-space: nowrap;
+}
+
+.telephoneSeparator {
+  color: var(--color-grey);
+  cursor: default;
+  pointer-events: none;
+  font-weight: 400;
+}
+
+.copyright {
+  display: flex;
+  gap: 16px 24px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-surface);
+}
+
+@media (max-width: 1440px) {
+  .copyright {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1023px) {
+  .copyright {
+    justify-content: flex-start;
+    gap: 12px 20px;
+    padding-top: 16px;
+  }
+}
+
+.address {
+  width: 340px;
+}
+
+@media (hover: hover) {
+  .address:hover {
+    color: var(--color-accent);
+  }
+}
+
+@media (max-width: 1023px) {
+  .address {
+    width: 100%;
+  }
+}
+
+.notice {
+  cursor: default;
+  width: 300px;
+}
+
+@media (max-width: 1023px) {
+  .notice {
+    width: 100%;
+  }
+}
+
+.titleCompanyLink {
+  width: max-content;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .titleCompanyLink:hover {
+    color: var(--color-accent);
+  }
+}
+
+.titleCompany {
+  cursor: pointer;
+}
+
+.privacyPolicy,
+.userAgreement {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .privacyPolicy:hover {
+    color: var(--color-accent);
+  }
+
+  .userAgreement:hover {
+    color: var(--color-accent);
+  }
+}
+
+@media (hover: hover) {
+  .email:hover {
+    color: var(--color-accent);
+  }
+
+  .telephone:hover {
+    color: var(--color-accent);
+  }
+}

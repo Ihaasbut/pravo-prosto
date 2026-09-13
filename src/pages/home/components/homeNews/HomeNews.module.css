@@ -1,0 +1,28 @@
+.section {
+  padding-top: 32px;
+  padding-bottom: 48px;
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding-top: 24px;
+    padding-bottom: 36px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding-top: 20px;
+    padding-bottom: 28px;
+  }
+}
+
+.list {
+  margin-top: 36px;
+}
+
+@media (max-width: 767px) {
+  .list {
+    margin-top: 24px;
+  }
+}

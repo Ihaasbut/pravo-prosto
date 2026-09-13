@@ -1,0 +1,26 @@
+.wrapper {
+  padding: 0;
+}
+
+.titleAndText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.titleAndText .title {
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+@media (max-width: 767px) {
+  .titleAndText .title {
+    font-size: 18px;
+  }
+}
+
+.wrapper .text,
+.wrapper .textOnly {
+  font-size: 17px;
+  line-height: 1.65;
+}

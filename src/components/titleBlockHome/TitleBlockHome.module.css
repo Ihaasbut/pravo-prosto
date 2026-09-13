@@ -1,0 +1,27 @@
+.titleBlock {
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px 40px;
+  /* flex-wrap: wrap; */
+}
+
+@media (max-width: 1023px) {
+  .inner {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+  }
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

@@ -1,0 +1,29 @@
+.header {
+  padding: 96px 0 24px;
+}
+
+.header :global(h2 + p) {
+  max-width: 38rem;
+}
+
+@media (max-width: 1023px) {
+  .header {
+    padding: 24px 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 16px 0 16px;
+  }
+}
+
+.list {
+  margin: 28px 0 8px;
+}
+
+@media (max-width: 767px) {
+  .list {
+    margin: 20px 0 8px;
+  }
+}

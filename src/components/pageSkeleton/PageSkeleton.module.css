@@ -1,0 +1,667 @@
+.skeleton {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #d8d8d8;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.titleSection {
+  padding: 200px 0 50px;
+  background: var(--color-surface);
+}
+
+.titleSectionCompact {
+  padding: 112px 0 28px;
+}
+
+@media (max-width: 1023px) {
+  .titleSection {
+    padding: 24px 0 28px;
+  }
+
+  .titleSectionCompact {
+    padding: 24px 0 20px;
+  }
+}
+
+@media (max-width: 424px) {
+  .titleSection {
+    padding: 12px 0 16px;
+  }
+}
+
+.titleInner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+@media (max-width: 1023px) {
+  .titleInner {
+    display: block;
+  }
+}
+
+.titleText,
+.textGroup,
+.legalContent,
+.legalSection,
+.articleCopy,
+.bannerCopy {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleText {
+  gap: 24px;
+  width: min(760px, 100%);
+}
+
+.legalContent {
+  gap: 60px;
+  max-width: 980px;
+  margin: 100px 0;
+}
+
+@media (max-width: 1023px) {
+  .legalContent {
+    margin: 50px 0;
+  }
+}
+
+.legalSection,
+.articleCopy,
+.bannerCopy,
+.textGroup {
+  gap: 16px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding-top: 160px;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 1023px) {
+  .hero {
+    gap: 30px;
+    padding-top: 48px;
+    padding-bottom: 24px;
+  }
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.heroTicker {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@media (max-width: 767px) {
+  .heroTicker {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tickerItem {
+  height: 72px;
+}
+
+.titleHeading {
+  height: clamp(44px, 6vw, 88px);
+  width: min(680px, 88%);
+}
+
+@media (max-width: 767px) {
+  .titleHeading {
+    width: 100%;
+  }
+}
+
+.heroTitleLarge {
+  height: clamp(52px, 7vw, 108px);
+  width: min(820px, 92%);
+}
+
+@media (max-width: 767px) {
+  .heroTitleLarge {
+    width: 100%;
+  }
+}
+
+.heroTitleSmall {
+  height: clamp(52px, 7vw, 108px);
+  width: min(540px, 70%);
+}
+
+@media (max-width: 767px) {
+  .heroTitleSmall {
+    width: 100%;
+  }
+}
+
+.sectionHeading {
+  height: 34px;
+  width: min(320px, 55%);
+}
+
+.serviceCardTitle,
+.teamName {
+  height: 28px;
+  width: 80%;
+}
+
+.lineLong {
+  height: 14px;
+  width: 100%;
+}
+
+.lineMedium {
+  height: 14px;
+  width: 72%;
+}
+
+.lineShort,
+.newsDate {
+  height: 14px;
+  width: 42%;
+}
+
+.button {
+  width: 210px;
+  height: 54px;
+}
+
+.blockSection {
+  margin: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (max-width: 1023px) {
+  .blockSection {
+    margin: 50px 0;
+  }
+}
+
+.homeBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 0 48px;
+}
+
+@media (max-width: 1023px) {
+  .homeBlock {
+    padding: 24px 0 36px;
+  }
+}
+
+.homeSurface {
+  background: var(--color-surface);
+}
+
+.homeAboutGrid,
+.homeProcessGrid,
+.homeTeamPreview {
+  display: grid;
+  gap: 16px;
+}
+
+.homeAboutGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.homeProcessGrid,
+.homeTeamPreview {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.homeAboutCard,
+.homeProcessCard,
+.homeTeamPreviewCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.homeAboutCard,
+.homeProcessCard {
+  min-height: 220px;
+  padding: 24px;
+  background: var(--color-surface);
+}
+
+.homeTeamPreviewImage {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto;
+}
+
+.homeRequest {
+  background: var(--color-surface);
+  padding: 56px 0 64px;
+}
+
+.homeRequestInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 480px);
+  gap: 48px;
+  align-items: center;
+}
+
+.homeRequestForm {
+  min-height: 420px;
+}
+
+@media (max-width: 1200px) {
+  .homeProcessGrid,
+  .homeTeamPreview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1023px) {
+  .homeAboutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .homeRequestInner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .homeProcessGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.servicesGrid,
+.newsGrid,
+.homeNewsGrid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1200px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.homeNewsGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1200px) {
+  .homeNewsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .homeNewsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.serviceCard,
+.featureCard,
+.teamCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.serviceCard {
+  padding: 30px;
+  background: var(--color-surface);
+}
+
+.featureGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 220px;
+  padding: 24px;
+}
+
+.featureCard:nth-child(4n + 1),
+.featureCard:nth-child(4n + 4) {
+  grid-column: span 8;
+  min-height: 260px;
+}
+
+.featureCard:nth-child(4n + 2),
+.featureCard:nth-child(4n + 3) {
+  grid-column: span 4;
+}
+
+.featureCard:nth-child(8n + 1),
+.featureCard:nth-child(8n + 6) {
+  background: var(--color-coral);
+}
+
+.featureCard:nth-child(8n + 2),
+.featureCard:nth-child(8n + 7) {
+  background: var(--color-blue);
+}
+
+.featureCard:nth-child(8n + 3),
+.featureCard:nth-child(8n + 8) {
+  background: var(--color-accent);
+}
+
+.featureCard:nth-child(8n + 4) {
+  background: var(--color-purple);
+}
+
+.featureCard:nth-child(8n + 5) {
+  background: var(--color-bg-inverse);
+}
+
+@media (max-width: 767px) {
+  .featureCard,
+  .featureCard:nth-child(4n + 1),
+  .featureCard:nth-child(4n + 2),
+  .featureCard:nth-child(4n + 3),
+  .featureCard:nth-child(4n + 4) {
+    grid-column: span 12;
+    min-height: 160px;
+  }
+}
+
+.featureCard .skeleton {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.banner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 30px;
+  align-items: stretch;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 1023px) {
+  .banner {
+    display: block;
+  }
+}
+
+.bannerCopy {
+  justify-content: center;
+  padding: 40px 0;
+}
+
+@media (max-width: 1023px) {
+  .bannerCopy {
+    margin-bottom: 30px;
+    padding: 0;
+  }
+}
+
+.bannerMedia {
+  min-height: 320px;
+}
+
+.map {
+  width: 100%;
+  min-height: 520px;
+}
+
+@media (max-width: 767px) {
+  .map {
+    min-height: 360px;
+  }
+}
+
+.contactsInfo {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 40px;
+  padding: 8px 0 40px;
+}
+
+.contactCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 16px;
+}
+
+@media (max-width: 1023px) {
+  .contactsInfo {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 4px 0 28px;
+  }
+}
+
+.titleFilters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.filterChip {
+  width: 108px;
+  height: 32px;
+}
+
+.newsGrid {
+  margin: 36px 0 80px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 1200px) {
+  .newsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1023px) {
+  .newsGrid {
+    margin: 20px 0 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .newsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.newsCard,
+.sidebarCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 18px 16px;
+  background: var(--color-accent);
+}
+
+.newsCard {
+  aspect-ratio: 16 / 10;
+}
+
+.newsCard:nth-child(4n + 2),
+.sidebarCard:nth-child(3n + 2) {
+  background: var(--color-coral);
+}
+
+.newsCard:nth-child(4n + 3),
+.sidebarCard:nth-child(3n + 3) {
+  background: var(--color-purple);
+}
+
+.newsCard:nth-child(4n + 4) {
+  background: var(--color-blue);
+}
+
+.sidebarCard {
+  min-height: 0;
+  aspect-ratio: 16 / 10;
+  padding: 14px 16px;
+}
+
+.newsCard .skeleton,
+.sidebarCard .skeleton {
+  background: rgba(24, 24, 24, 0.16);
+}
+
+.newsBadge {
+  height: 12px;
+  width: 38%;
+}
+
+.newsTitle {
+  height: 18px;
+  width: 85%;
+  margin-top: auto;
+}
+
+.newsDetailLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 40px;
+  align-items: start;
+  padding: 36px 0 72px;
+}
+
+@media (max-width: 1023px) {
+  .newsDetailLayout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 24px 0 48px;
+  }
+}
+
+.newsDetailMain {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.articleHero {
+  width: 100%;
+  min-height: 120px;
+  background: var(--color-surface);
+}
+
+.newsDetailSidebar {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 1023px) {
+  .newsDetailSidebar {
+    position: static;
+    padding-top: 8px;
+    border-top: 1px solid var(--color-surface);
+  }
+}
+
+.teamGrid {
+  margin: 40px 0 80px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px 40px;
+}
+
+.teamCard {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+
+@media (max-width: 1200px) {
+  .teamCard {
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .teamGrid {
+    margin: 28px 0 56px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .teamCard {
+    grid-template-columns: 128px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 424px) {
+  .teamCard {
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 12px;
+  }
+}
+
+.teamImage {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto;
+}
+
+.teamCardText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

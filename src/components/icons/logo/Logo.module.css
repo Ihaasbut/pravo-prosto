@@ -1,0 +1,9 @@
+.root {
+  line-height: 0;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
