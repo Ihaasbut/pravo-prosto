@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
+import cn from "classnames";
+
 import styles from "./Logo.module.css";
+
 import type { LogoPropsI } from "./Logo.types";
 
 function Logo({ className }: LogoPropsI) {
   return (
-    <Link to={""} className={className}>
+    <Link to={""} className={cn(styles.root, className)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="341"
         height="170"
         viewBox="0 0 341 170"
         fill="none"
-        style={{ width: "95px", height: "fit-content" }}
         className={styles.svg}
       >
         <g clipPath="url(#clip0_2_24)">

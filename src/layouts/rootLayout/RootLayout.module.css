@@ -3,10 +3,34 @@
   width: 100%;
 }
 
+@media (max-width: 1023px) {
+  .menuAndPage {
+    display: block;
+  }
+}
+
 .page {
   position: relative;
-  width: calc(100% - 130px);
+  width: calc(100% - 108px);
   z-index: 0;
+}
+
+@media (min-width: 2200px) {
+  .page {
+    width: calc(100% - 124px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .page {
+    width: calc(100% - 92px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .page {
+    width: 100%;
+  }
 }
 
 .main {
@@ -15,78 +39,40 @@
   width: 100%;
 }
 
+@media (max-width: 1023px) {
+  .main {
+    padding-top: calc(100px + var(--safe-area-top));
+  }
+}
+
 .backgroundLine {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 1px;
-  background-color: var(--grey-line);
+  background-color: var(--color-surface);
   z-index: 0;
 }
 
 .backgroundLine:first-child {
-  right: 130px;
-}
-
-.backgroundLine:nth-child(2) {
-  right: 28.5vw;
-}
-
-.backgroundLine:nth-child(3) {
-  right: 50vw;
-}
-
-.backgroundLine:nth-child(4) {
-  right: 71.5vw;
+  right: 108px;
 }
 
 @media (min-width: 2200px) {
-  .page {
-    width: calc(100% - 150px);
-  }
-
   .backgroundLine:first-child {
-    right: 150px;
+    right: 124px;
   }
 }
 
 @media (max-width: 1200px) {
-  .page {
-    width: calc(100% - 100px);
-  }
-
   .backgroundLine:first-child {
-    right: 100px;
+    right: 92px;
   }
 }
 
 @media (max-width: 1023px) {
-  .menuAndPage {
-    display: block;
-  }
-
-  .page {
-    width: 100%;
-  }
-
-  .main {
-    padding-top: calc(100px + var(--safe-area-top));
-  }
-
   .backgroundLine:first-child {
     right: 15px;
-  }
-
-  .backgroundLine:nth-child(4) {
-    left: 15px;
-  }
-
-  .backgroundLine:nth-child(2) {
-    right: 66.6vw;
-  }
-
-  .backgroundLine:nth-child(3) {
-    right: 33.3vw;
   }
 }
 
@@ -94,7 +80,39 @@
   .backgroundLine:first-child {
     right: 5px;
   }
+}
 
+.backgroundLine:nth-child(2) {
+  right: 28.5vw;
+}
+
+@media (max-width: 1023px) {
+  .backgroundLine:nth-child(2) {
+    right: 66.6vw;
+  }
+}
+
+.backgroundLine:nth-child(3) {
+  right: 50vw;
+}
+
+@media (max-width: 1023px) {
+  .backgroundLine:nth-child(3) {
+    right: 33.3vw;
+  }
+}
+
+.backgroundLine:nth-child(4) {
+  right: 71.5vw;
+}
+
+@media (max-width: 1023px) {
+  .backgroundLine:nth-child(4) {
+    left: 15px;
+  }
+}
+
+@media (max-width: 424px) {
   .backgroundLine:nth-child(4) {
     left: 5px;
   }

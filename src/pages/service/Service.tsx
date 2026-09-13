@@ -1,167 +1,126 @@
 import { useParams } from "react-router-dom";
-import styles from "./Service.module.css";
+import { useEffect, useState } from "react";
 import type {
-    ServiceI,
-    ServicesCategoryI,
-    ServiceDetailI,
+  ServiceI,
+  ServicesCategoryI,
+  ServiceDetailI,
+  ServiceExtrasI,
 } from "../../types/mockData";
-import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../../hooks/use-language";
 import TitleBlockGrey from "../../components/titleBlockPrimary/TitleBlockPrimary";
-import Typography from "../../components/typography/Typography";
-import { useSlideRight } from "../../hooks/animation/useSlideRight";
-import cn from "classnames";
-import ServiceBanner from "./components/serviceBanner/ServiceBanner";
-import { useIsMobile } from "../../hooks/use-isMobile";
-import { Swiper, SwiperSlide } from "swiper/react";
 import type { ServicePageStaticI } from "./Service.types";
 import PageSkeleton from "../../components/pageSkeleton/PageSkeleton";
+import ServiceBanner from "./components/serviceBanner/ServiceBanner";
+import ServiceFaq from "./components/serviceFaq/ServiceFaq";
+import ServiceRelated from "./components/serviceRelated/ServiceRelated";
+import ServiceStages from "./components/serviceStages/ServiceStages";
+import WhatWeDo from "./components/whatWeDo/WhatWeDo";
+
+interface ServicePageDataI {
+  detail: ServiceDetailI;
+  extras: ServiceExtrasI | null;
+  related: Pick<ServiceI, "title" | "slug" | "highlights">[];
+}
 
 function Service() {
-    const params = useParams();
-    const [pageData, setPageData] = useState<ServiceDetailI | null>(null);
-    const [staticData, setStaticData] = useState<ServicePageStaticI | null>(
-        null,
-    );
-    const { language } = useLanguage();
-    const containerRef = useRef<HTMLDivElement>(null);
-    const isMobile = useIsMobile();
-    useSlideRight(containerRef, pageData);
+  const params = useParams();
+  const [pageData, setPageData] = useState<ServicePageDataI | null>(null);
+  const [staticData, setStaticData] = useState<ServicePageStaticI | null>(null);
+  const { language } = useLanguage();
 
-    useEffect(() => {
-        (async () => {
-            const servicesModule = await import(
-                `../../mockData/services/Services.mockData.${language}.ts`
-            );
-            const servicePageModule = await import(
-                `./mockData/service-page.mockData.${language}.ts`
-            );
+  useEffect(() => {
+    (async () => {
+      const servicesModule = await import(
+        `../../mockData/services/Services.mockData.${language}.ts`
+      );
+      const extrasModule = await import(
+        `../../mockData/services/serviceExtras.mockData.${language}.ts`
+      );
+      const servicePageModule = await import(
+        `./mockData/service-page.mockData.${language}.ts`
+      );
 
-            setStaticData(servicePageModule.servicePageStaticData);
-            const serviceCategory = servicesModule.serviceCategories.find(
-                (category: ServicesCategoryI) => {
-                    return category.services.some(
-                        (service) => service.slug === params.slug,
-                    );
-                },
-            );
+      setStaticData(servicePageModule.servicePageStaticData);
+      const serviceCategory = servicesModule.serviceCategories.find(
+        (category: ServicesCategoryI) => {
+          return category.services.some(
+            (service) => service.slug === params.slug,
+          );
+        },
+      );
 
-            const service = serviceCategory?.services.find(
-                (service: ServiceI) => service.slug === params.slug,
-            );
+      const service = serviceCategory?.services.find(
+        (service: ServiceI) => service.slug === params.slug,
+      );
 
-            setPageData(service?.detailPage ?? null);
-        })();
-    }, [language, params.slug]);
+      if (!service?.detailPage) {
+        setPageData(null);
+        return;
+      }
 
-    if (!pageData || !staticData) {
-        return <PageSkeleton variant="service" />;
-    }
+      const related = (serviceCategory?.services ?? [])
+        .filter((item: ServiceI) => item.slug !== params.slug)
+        .slice(0, 3)
+        .map((item: ServiceI) => ({
+          title: item.title,
+          slug: item.slug,
+          highlights: item.highlights,
+        }));
 
-    return (
-        <div className={styles.service}>
-            <TitleBlockGrey
-                title={pageData.title}
-                description={pageData.description}
-                descriptionStyle={"justify"}
-            />
-            <div className="container">
-                <div className="content">
-                    <div
-                        className={cn(styles.whatWeDo, "block-margin")}
-                        ref={containerRef}
-                    >
-                        <Typography variant="h3" as={"h3"} className="title">
-                            {staticData.whatWeDoTitle}
-                        </Typography>
+      setPageData({
+        detail: service.detailPage,
+        extras: params.slug
+          ? (extrasModule.serviceExtras[params.slug] ?? null)
+          : null,
+        related,
+      });
+    })();
+  }, [language, params.slug]);
 
-                        {isMobile ? (
-                            <div className={styles.whatWeDoWrapper}>
-                                <Swiper
-                                    spaceBetween={10}
-                                    breakpoints={{
-                                        600: {
-                                            slidesPerView: 2.4,
-                                        },
-                                        500: {
-                                            slidesPerView: 1.6,
-                                        },
-                                        320: {
-                                            slidesPerView: 1.2,
-                                        },
-                                    }}
-                                >
-                                    {pageData.features.map((feature, index) => (
-                                        <SwiperSlide
-                                            key={index}
-                                            className={styles.slideWrapper}
-                                        >
-                                            <div className={styles.inner}>
-                                                <Typography
-                                                    variant="body-m"
-                                                    as={"p"}
-                                                    className={
-                                                        styles.innerTitle
-                                                    }
-                                                >
-                                                    {feature.title}
-                                                </Typography>
-                                                <Typography
-                                                    variant="body-s"
-                                                    as={"p"}
-                                                >
-                                                    {feature.description}
-                                                </Typography>
-                                                <div
-                                                    className={cn(
-                                                        styles.innerWrapper,
-                                                        "animate-from-top",
-                                                    )}
-                                                ></div>
-                                            </div>
-                                        </SwiperSlide>
-                                    ))}
-                                </Swiper>
-                            </div>
-                        ) : (
-                            <div className={styles.whatWeDoWrapper}>
-                                {pageData.features.map((feature, index) => (
-                                    <div
-                                        className={styles.inner}
-                                        key={index}
-                                    >
-                                        <Typography
-                                            variant="body-m"
-                                            as={"p"}
-                                            className={styles.innerTitle}
-                                        >
-                                            {feature.title}
-                                        </Typography>
-                                        <Typography variant="body-s" as={"p"}>
-                                            {feature.description}
-                                        </Typography>
-                                        <div
-                                            className={cn(
-                                                styles.innerWrapper,
-                                                "animate-from-top",
-                                            )}
-                                        ></div>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                </div>
+  if (!pageData || !staticData) {
+    return <PageSkeleton variant="service" />;
+  }
 
-                <ServiceBanner
-                    description={pageData.banner.description}
-                    buttonText={pageData.banner.buttonText}
-                    image={pageData.banner.image}
-                    labelText={staticData.bannerLabel}
-                />
-            </div>
+  return (
+    <div>
+      <TitleBlockGrey
+        title={pageData.detail.title}
+        description={pageData.detail.description}
+        descriptionStyle={"justify"}
+      />
+      <div className="container">
+        <div className="content">
+          <WhatWeDo
+            title={staticData.whatWeDoTitle}
+            features={pageData.detail.features}
+          />
+          {pageData.extras ? (
+            <>
+              <ServiceStages
+                title={staticData.stagesTitle}
+                stages={pageData.extras.stages}
+              />
+              <ServiceFaq
+                title={staticData.faqTitle}
+                items={pageData.extras.faq}
+              />
+            </>
+          ) : null}
+          <ServiceRelated
+            title={staticData.relatedTitle}
+            services={pageData.related}
+          />
         </div>
-    );
+
+        <ServiceBanner
+          description={pageData.detail.banner.description}
+          buttonText={pageData.detail.banner.buttonText}
+          image={pageData.detail.banner.image}
+          labelText={staticData.bannerLabel}
+        />
+      </div>
+    </div>
+  );
 }
 
 export default Service;

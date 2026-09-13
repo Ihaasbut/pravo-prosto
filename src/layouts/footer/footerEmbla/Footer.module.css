@@ -1,27 +1,25 @@
 .embla {
-
-    color: var(--color-text-secondary);
-    padding: 5px 5px;
-    border-bottom: 20x solid var(--grey-line);
+  color: var(--color-text-inverse);
+  padding: 5px 5px;
+  border-bottom: 20x solid var(--color-surface);
 }
 
 .embla p {
-    font-size: 53px;
-}
-
-.slide  {
-    width: max-content;
+  font-size: 30px;
 }
 
 @media (max-width: 1023px) {
-    .embla p {
-        font-size: 40px;
-    }
+  .embla p {
+    font-size: 40px;
+  }
 }
 
-
 @media (max-width: 500px) {
-    .embla p {
-        font-size: 30px;
-    }
+  .embla p {
+    font-size: 30px;
+  }
+}
+
+.slide {
+  width: max-content;
 }

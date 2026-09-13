@@ -1,6 +1,6 @@
 .button {
-  padding: 30px 80px;
-  border: 2px solid var(--blue-1);
+  padding: 16px 40px;
+  border: 2px solid var(--color-accent);
   text-transform: uppercase;
   cursor: pointer;
   transition:
@@ -10,31 +10,15 @@
   white-space: nowrap;
 }
 
-.button p {
-  width: max-content;
-  display: inline-block;
-  text-align: center;
-}
-
-.fill {
-  background-color: var(--blue-1);
-  color: var(--no-change-fff);
-}
-
-.outline {
-  background-color: transparent;
-  color: var(--color-text-primary);
-}
-
 @media (max-width: 1440px) {
   .button {
-    padding: 20px 40px;
+    padding: 14px 32px;
   }
 }
 
 @media (max-width: 1200px) {
   .button {
-    padding: 15px 40px;
+    padding: 12px 28px;
   }
 }
 
@@ -44,14 +28,32 @@
   }
 }
 
+.button p {
+  width: max-content;
+  display: inline-block;
+  text-align: center;
+}
+
+.fill {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+@media (hover: hover) {
+  .fill:hover {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
 @media (hover: hover) {
   .outline:hover {
-    background-color: var(--blue-1);
-    color: var(--no-change-fff);
-  }
-
-  .fill:hover {
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
+    background-color: var(--color-accent);
+    color: var(--color-white);
   }
 }

@@ -1,30 +1,31 @@
+.section {
+  margin: 40px 0 16px;
+}
+
 .persons {
-          display: grid;
-          grid-template-columns: repeat(3,1fr);
-          gap: 30px;
-}
-
-.isMobile {
-          display: none;
-}
-
-@media (max-width: 1440px) {
-          .persons {
-                    grid-template-columns: repeat(3,1fr);
-          }
-}
-
-@media (max-width: 1200px) {
-          .persons {
-                    grid-template-columns: repeat(2,1fr);
-          }
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px 40px;
+  align-items: start;
 }
 
 @media (max-width: 1023px) {
-          .isDekstop {
-                    display: none;
-          }
-          .isMobile {
-                    display: block;
-          }
+  .section {
+    margin: 28px 0 8px;
+  }
+
+  .persons {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    margin: 20px 0 8px;
+  }
+
+  .persons {
+    gap: 28px;
+  }
 }

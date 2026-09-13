@@ -12,12 +12,48 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--no-change-fff);
+  background: var(--color-white);
   padding: 60px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   width: 550px;
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    overflow-x: hidden;
+    padding: 60px 10px;
+    justify-content: flex-start;
+  }
+}
+
+.inline {
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: 40px;
+  width: 100%;
+}
+
+.inline .form input,
+.inline .form textarea {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+@media (max-width: 767px) {
+  .inline {
+    padding: 24px 16px;
+  }
 }
 
 .form {
@@ -26,17 +62,30 @@
   gap: 30px;
 }
 
+@media (hover: hover) {
+  .form .button:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+}
+
+@media (max-width: 767px) {
+  .form {
+    position: relative;
+    margin-bottom: 60px;
+  }
+}
+
 .button {
-  padding: 20px 50px;
-  font-size: 16px;
+  padding: 14px 32px;
 }
 
 .form input,
 .form textarea {
   height: 60px;
   border-radius: 5px;
-  border: 1px solid var(--no-change-grey);
-  background: var(--no-change-fff);
+  border: 1px solid var(--color-grey);
+  background: var(--color-white);
   font-size: 18px;
   user-select: none;
   padding: 10px;
@@ -55,7 +104,7 @@
   user-select: none;
   border: none;
   font-weight: 900;
-  color: var(--no-change-fff);
+  color: var(--color-white);
   background: none;
   cursor: pointer;
   height: max-content;
@@ -63,6 +112,22 @@
   transition: font-size 0.3s ease-out;
   display: flex;
   gap: 2px;
+}
+
+@media (hover: hover) {
+  .close:hover {
+    color: var(--color-grey);
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .close {
+    color: var(--color-black);
+    top: 16px;
+    right: 16px;
+    z-index: 102;
+  }
 }
 
 .left,
@@ -75,21 +140,7 @@
   transition: transform 0.3s ease-out;
 }
 
-span {
-  color: red;
-}
-
 @media (hover: hover) {
-  .form .button:hover {
-    background-color: var(--no-change-fff);
-    color: var(--no-change-black);
-  }
-
-  .close:hover {
-    color: var(--no-change-grey);
-    font-size: 28px;
-  }
-
   .close:hover .left {
     transform: translateX(-5px);
   }
@@ -99,31 +150,6 @@ span {
   }
 }
 
-@media (max-width: 1023px) {
-  .wrapper {
-    width: 100%;
-    height: 100vh;
-    padding: 100px;
-    justify-content: center;
-  }
-
-  .close {
-    color: var(--no-change-black);
-    top: 16px;
-    right: 16px;
-    z-index: 102;
-  }
-}
-
-@media (max-width: 767px) {
-  .wrapper {
-    overflow-x: hidden;
-    padding: 60px 10px;
-    justify-content: flex-start;
-  }
-
-  .form {
-    position: relative;
-    margin-bottom: 60px;
-  }
+span {
+  color: red;
 }

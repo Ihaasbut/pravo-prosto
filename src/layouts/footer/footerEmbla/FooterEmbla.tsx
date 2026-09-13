@@ -6,11 +6,9 @@ import styles from "./Footer.module.css";
 import type { FooterEmblaProps } from "./FooterEmbla.types";
 
 function FooterEmbla({ text }: FooterEmblaProps) {
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-  const autoScrollSpeed = isMobile ? 1 : 2;
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     AutoScroll({
-      speed: autoScrollSpeed,
+      speed: 1,
       stopOnInteraction: false,
       stopOnMouseEnter: true,
     }),

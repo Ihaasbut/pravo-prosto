@@ -34,45 +34,48 @@ function Footer() {
       <div className={cn(styles.wrapper, "container")}>
         <div className="content">
           <div className={styles.inner}>
-            <Typography
-              variant="h1-footer"
-              as={"a"}
-              className={styles.email}
-              href={blockData.links.mail.hrefForHtml}
-            >
-              {blockData.links.mail.mail}
-            </Typography>
-            <div className={styles.telephones}>
+            <div className={styles.contacts}>
               <Typography
                 variant="h1-footer"
                 as={"a"}
-                className={styles.telephone}
-                href={blockData.links.tel1.hrefForHtml}
-                aria-label={`Позвонить на ${blockData.links.tel1.telephone}`}
+                className={styles.email}
+                href={blockData.links.mail.hrefForHtml}
               >
-                {blockData.links.tel1.telephone}
+                {blockData.links.mail.mail}
               </Typography>
+              <div className={styles.telephones}>
+                <Typography
+                  variant="h1-footer"
+                  as={"a"}
+                  className={styles.telephone}
+                  href={blockData.links.tel1.hrefForHtml}
+                  aria-label={`Позвонить на ${blockData.links.tel1.telephone}`}
+                >
+                  {blockData.links.tel1.telephone}
+                </Typography>
 
-              {blockData.links.tel2 && (
-                <>
-                  <Typography
-                    variant="h1-footer"
-                    as={"span"}
-                    className={styles.telephoneSeparator}
-                  >
-                    ,{" "}
-                  </Typography>
-                  <Typography
-                    variant="h1-footer"
-                    as={"a"}
-                    className={styles.telephone}
-                    href={blockData.links.tel2.hrefForHtml}
-                    aria-label={`Позвонить на ${blockData.links.tel2.telephone}`}
-                  >
-                    {blockData.links.tel2.telephone}
-                  </Typography>
-                </>
-              )}
+                {blockData.links.tel2 && (
+                  <>
+                    <Typography
+                      variant="h1-footer"
+                      as={"span"}
+                      className={styles.telephoneSeparator}
+                      aria-hidden="true"
+                    >
+                      /
+                    </Typography>
+                    <Typography
+                      variant="h1-footer"
+                      as={"a"}
+                      className={styles.telephone}
+                      href={blockData.links.tel2.hrefForHtml}
+                      aria-label={`Позвонить на ${blockData.links.tel2.telephone}`}
+                    >
+                      {blockData.links.tel2.telephone}
+                    </Typography>
+                  </>
+                )}
+              </div>
             </div>
             <Link to={`/${language}`} className={styles.titleCompanyLink}>
               <Typography

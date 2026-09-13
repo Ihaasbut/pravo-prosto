@@ -1,7 +1,7 @@
 import Button from "../button/Button";
 import Typography from "../typography/Typography";
 import styles from "./TitleBlockHome.module.css";
-import type { TitleBlockPropsI } from "../../types/titleBlock.types";
+import type { TitleBlockHomePropsI } from "./TitleBlockHome.types";
 import { useModal } from "../../hooks/use-modal";
 
 function TitleBlockHome({
@@ -9,7 +9,9 @@ function TitleBlockHome({
   description,
   buttonText,
   descriptionStyle,
-}: TitleBlockPropsI) {
+  onButtonClick,
+  children,
+}: TitleBlockHomePropsI) {
   const { openModal } = useModal();
   return (
     <div className={styles.titleBlock}>
@@ -30,8 +32,9 @@ function TitleBlockHome({
                 </Typography>
               )}
             </div>
+            {children}
             {buttonText && (
-              <Button variant="outline" onClick={openModal}>
+              <Button variant="outline" onClick={onButtonClick ?? openModal}>
                 {buttonText}
               </Button>
             )}

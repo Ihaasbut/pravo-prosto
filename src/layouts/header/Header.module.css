@@ -1,12 +1,33 @@
 .header {
   position: relative;
   width: 100%;
-  background: var(--color-bg-primary);
+  background: var(--color-bg);
   z-index: 50;
+}
+
+@media (max-width: 1023px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: var(--safe-area-top);
+    border-bottom: 2px solid var(--color-surface);
+  }
 }
 
 .wrapper {
   position: relative;
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
 }
 
 .buttons {
@@ -19,50 +40,53 @@
   gap: 15px;
 }
 
+@media (max-width: 1023px) {
+  .buttons {
+    position: relative;
+    top: 0;
+    gap: 5px;
+    z-index: 60;
+  }
+}
+
 .logo,
 .burgerWrapper {
   display: none;
 }
 
-.logo {
-  width: 84px;
+@media (max-width: 1023px) {
+  .burgerWrapper {
+    display: flex;
+    position: absolute;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 55;
+    pointer-events: none;
+  }
 }
 
-.logo path {
-  fill: var(--color-bg-element-secondary);
+.logo {
+  width: 72px;
 }
 
 @media (max-width: 1023px) {
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding-top: var(--safe-area-top);
-    border-bottom: 2px solid var(--grey-line);
-  }
-
   .logo {
     display: block;
     position: relative;
     z-index: 60;
   }
 
-  .buttons {
-    position: relative;
-    top: 0;
-    gap: 5px;
+  .menuOpen .burgerWrapper {
+    z-index: 80;
   }
 
-  .wrapper {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
+  .menuOpen .buttons,
+  .menuOpen .logo {
+    pointer-events: none;
   }
+}
 
-  .burgerWrapper {
-    display: block;
-  }
+.logo path {
+  fill: var(--color-bg-inverse);
 }

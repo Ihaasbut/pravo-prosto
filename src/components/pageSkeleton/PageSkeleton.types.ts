@@ -1,22 +1,24 @@
 export type PageSkeletonVariant =
-    | "home"
-    | "contacts"
-    | "services"
-    | "news"
-    | "legal"
-    | "service"
-    | "news-detail"
-    | "team";
+  | "home"
+  | "contacts"
+  | "services"
+  | "news"
+  | "legal"
+  | "service"
+  | "news-detail"
+  | "team";
 
 export interface PageSkeletonProps {
-    variant: PageSkeletonVariant;
+  variant: PageSkeletonVariant;
 }
 
 export interface SkeletonBlockProps {
-    className?: string;
+  className?: string;
 }
 
 export interface TitleSectionSkeletonProps {
-    description?: boolean;
-    button?: boolean;
+  description?: boolean;
+  button?: boolean;
+  filters?: boolean;
+  compact?: boolean;
 }

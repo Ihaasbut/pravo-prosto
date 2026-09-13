@@ -10,6 +10,13 @@
     max-width: 980px;
 }
 
+@media (max-width: 767px) {
+    .contentWrapper {
+        gap: 40px;
+        margin: 50px 0;
+    }
+}
+
 .intro,
 .sectionContent {
     display: flex;
@@ -23,31 +30,28 @@
     gap: 50px;
 }
 
+@media (max-width: 767px) {
+    .sections {
+        gap: 35px;
+    }
+}
+
 .section {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
+@media (max-width: 767px) {
+    .section {
+        gap: 18px;
+    }
+}
+
 .sectionTitle {
-    color: var(--color-text-primary);
+    color: var(--color-text);
 }
 
 .paragraph {
     line-height: 1.6;
-}
-
-@media (max-width: 767px) {
-    .contentWrapper {
-        gap: 40px;
-        margin: 50px 0;
-    }
-
-    .sections {
-        gap: 35px;
-    }
-
-    .section {
-        gap: 18px;
-    }
 }

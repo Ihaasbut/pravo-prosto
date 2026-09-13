@@ -8,10 +8,23 @@
     padding: 32px;
 }
 
+@media (max-width: 1023px) {
+    .preloader {
+        padding: 24px;
+    }
+}
+
 .preloaderCompact {
     position: absolute;
     min-height: 240px;
     padding: 40px 30px;
+}
+
+@media (max-width: 1023px) {
+    .preloaderCompact {
+        min-height: 180px;
+        padding: 30px 15px;
+    }
 }
 
 .backdrop {
@@ -32,6 +45,13 @@
     position: relative;
     width: 84px;
     height: 84px;
+}
+
+@media (max-width: 1023px) {
+    .loader {
+        width: 72px;
+        height: 72px;
+    }
 }
 
 .ring,
@@ -110,21 +130,5 @@
     50% {
         transform: translate(-50%, -50%) scale(1.08);
         box-shadow: 0 0 0 14px rgba(17, 17, 17, 0.04);
-    }
-}
-
-@media (max-width: 1023px) {
-    .preloader {
-        padding: 24px;
-    }
-
-    .preloaderCompact {
-        min-height: 180px;
-        padding: 30px 15px;
-    }
-
-    .loader {
-        width: 72px;
-        height: 72px;
     }
 }

@@ -1,48 +1,21 @@
 import styles from "./TeamPersons.module.css";
-import cn from "classnames";
 import type { TeamPersonI, TeamPersonsI } from "../../../../types/team.types";
 import TeamPerson from "../teamPerson/TeamPerson";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 function TeamPersons({ teamData }: TeamPersonsI) {
-    return (
-        <div className="container block-margin">
-            <div className="content">
-                <div
-                    className={cn(styles.persons, styles.isDekstop)}
-                >
-                    {teamData.map((person: TeamPersonI) => (
-                        <TeamPerson props={person} />
-                    ))}
-                </div>
-
-                <div className={styles.isMobile}>
-                    <Swiper
-                        spaceBetween={10}
-                        slidesPerView={1.2}
-                        breakpoints={{
-                            700: {
-                                slidesPerView: 2.1,
-                            },
-                            500: {
-                                slidesPerView: 1.6,
-                            },
-                            320: {
-                                slidesPerView: 1.1,
-                            },
-                        }}
-                    >
-                        {teamData.map((person: TeamPersonI) => (
-                            <SwiperSlide>
-                                {" "}
-                                <TeamPerson props={person} />{" "}
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
-            </div>
+  return (
+    <div className={styles.section}>
+      <div className="container">
+        <div className="content">
+          <div className={styles.persons}>
+            {teamData.map((person: TeamPersonI) => (
+              <TeamPerson key={person.dataPerson} props={person} />
+            ))}
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default TeamPersons;

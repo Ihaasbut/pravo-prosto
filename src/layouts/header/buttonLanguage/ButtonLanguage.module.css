@@ -1,7 +1,13 @@
 .wrapper {
   position: relative;
-  width: 168px;
-  height: 46px;
+  width: 136px;
+  height: 36px;
+}
+
+@media (max-width: 1023px) {
+  .wrapper {
+    width: 36px;
+  }
 }
 
 .toggle {
@@ -15,17 +21,17 @@
 .toggle .left,
 .toggle .right {
   background: transparent;
-  border: 2px solid var(--blue-1);
-  font-size: 20px;
+  border: 2px solid var(--color-accent);
+  font-size: 16px;
   text-transform: uppercase;
-  height: 46px;
-  width: 84px;
+  height: 36px;
+  width: 68px;
   cursor: pointer;
 }
 
 .toggle::before {
   content: "";
-  background: var(--blue-1);
+  background: var(--color-accent);
   top: 0;
   left: 0;
   width: 50%;
@@ -36,75 +42,89 @@
   z-index: -1;
 }
 
-.toggle.active::before {
-  transform: translateX(0);
-}
-
-.toggle .right {
-  color: var(--no-change-fff);
-}
-
-.toggle.active .right {
-  color: var(--color-text-primary);
-}
-
-.toggle .left {
-  color: var(--color-text-primary);
-}
-
-.toggle.active .left {
-  color: var(--no-change-fff);
-}
-
 @media (max-width: 1023px) {
-  .wrapper {
-    width: 40px;
-  }
-
-  .toggle .left,
-  .toggle .right {
-    width: 40px;
-    font-size: 16px;
-  }
-
   .toggle::before {
     width: 100%;
     transform: translateX(0);
   }
+}
 
+.toggle.active::before {
+  transform: translateX(0);
+}
+
+@media (max-width: 1023px) {
   .toggle.active::before {
     transform: translateX(0);
   }
+}
 
-  .toggle.active .left {
-    display: none;
+.toggle .right {
+  color: var(--color-white);
+}
+
+@media (max-width: 1023px) {
+  .toggle .right {
+    width: 36px;
+    font-size: 14px;
   }
 
   .toggle .right {
     display: none;
   }
+}
 
+.toggle.active .right {
+  color: var(--color-text);
+}
+
+@media (max-width: 1023px) {
   .toggle.active .right {
     display: block;
-    color: var(--no-change-fff);
+    color: var(--color-white);
+  }
+}
+
+@media (hover: hover) {
+  .toggle.active .right:hover {
+    color: var(--color-accent);
+  }
+}
+
+.toggle .left {
+  color: var(--color-text);
+}
+
+@media (max-width: 1023px) {
+  .toggle .left {
+    width: 36px;
+    font-size: 14px;
   }
 
   .toggle .left {
     display: block;
-    color: var(--no-change-fff);
+    color: var(--color-white);
   }
 }
 
 @media (hover: hover) {
   .toggle .left:hover {
-    color: var(--blue-1);
+    color: var(--color-accent);
   }
+}
 
-  .toggle.active .right:hover {
-    color: var(--blue-1);
+.toggle.active .left {
+  color: var(--color-white);
+}
+
+@media (max-width: 1023px) {
+  .toggle.active .left {
+    display: none;
   }
+}
 
+@media (hover: hover) {
   .toggle.active .left:hover {
-    color: var(--no-change-fff);
+    color: var(--color-white);
   }
 }

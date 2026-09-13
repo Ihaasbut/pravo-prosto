@@ -30,10 +30,13 @@ function BurgerMenu(props: BurgerMenuPropsI) {
 
   return (
     <>
-      <button onClick={onToggleMenu} className={cn(styles.burgerMenu)}>
-        <span> </span>
-        <span> </span>
-        <span> </span>
+      <button
+        onClick={onToggleMenu}
+        className={cn(styles.burgerMenu, isMenuOpen && styles.menuOpen)}
+      >
+        <span />
+        <span />
+        <span />
       </button>
       <div
         id="burger-menu"

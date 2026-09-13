@@ -1,3 +1,4 @@
+import cn from "classnames";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
 import styles from "./Header.module.css";
 import Logo from "../../components/icons/logo/Logo";
@@ -7,11 +8,15 @@ import type { HeaderPropsI } from "./Header.types";
 
 function Header({ isMenuOpen, onToggleMenu }: HeaderPropsI) {
   return (
-    <div className={styles.header}>
+    <div className={cn(styles.header, isMenuOpen && styles.menuOpen)}>
       <div className="container">
         <div className="content">
           <div className={styles.wrapper}>
             <Logo className={styles.logo} />
+
+            <div className={styles.burgerWrapper}>
+              <BurgerMenu onToggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} />
+            </div>
 
             <div className={styles.buttons}>
               <ButtonLanguage />
@@ -19,10 +24,6 @@ function Header({ isMenuOpen, onToggleMenu }: HeaderPropsI) {
             </div>
           </div>
         </div>
-      </div>
-      
-      <div onClick={onToggleMenu} className={styles.burgerWrapper}>
-        <BurgerMenu onToggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} />
       </div>
     </div>
   );

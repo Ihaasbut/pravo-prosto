@@ -1,7 +1,7 @@
 import type { FooterI } from "../Footer.types";
 
 export const footerData: FooterI = {
-    notice: "Pravo Prosto LLC © 2018–2025",
+    notice: "Pravo Prosto LLC © 2018–2026",
     titleCompany: "PRAVO PROSTO",
     address:
         "420107, Republic of Tatarstan, Kazan, Spartakovskaya St., 2, office 25",

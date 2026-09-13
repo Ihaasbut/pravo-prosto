@@ -3,23 +3,43 @@ import { Link } from "react-router-dom";
 import styles from "./NewsTable.module.css";
 import cn from "classnames";
 import Typography from "../typography/Typography";
-import { useRef } from "react";
-import { useSlideUp } from "../../hooks/animation/useSlideUp";
 import { Swiper, SwiperSlide } from "swiper/react";
-import type { NewsTableI } from "./NewsTable.types";
+import type { NewsCardPropsI, NewsTableI } from "./NewsTable.types";
+
+function NewsCard({ news, to, relative }: NewsCardPropsI) {
+  return (
+    <Link
+      to={to}
+      relative={relative}
+      className={styles.wrapper}
+      data-category={news.categoryId}
+    >
+      <div className={styles.inner}>
+        <span className={styles.badge}>{news.categoryName}</span>
+        <Typography variant="body-s" className={styles.title} as="p">
+          {news.title}
+        </Typography>
+        <Typography variant="body-xs" as="p" className={styles.date}>
+          {news.date}
+        </Typography>
+      </div>
+    </Link>
+  );
+}
 
 function NewsTable({
   pageData,
   className,
   useSiblingLinks = false,
+  toPrefix = "",
+  compact = false,
 }: NewsTableI) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const getNewsLink = (slug: string) => (useSiblingLinks ? `../${slug}` : slug);
+  const getNewsLink = (slug: string) =>
+    useSiblingLinks ? `../${slug}` : `${toPrefix}${slug}`;
 
-  useSlideUp(containerRef);
   return (
-    <div className={cn("content", useSiblingLinks && styles.newsTableDetail)}>
-      <div className={cn(styles.isMobile, "block-margin")} ref={containerRef}>
+    <div className={cn(useSiblingLinks ? styles.newsTableDetail : "content")}>
+      <div className={cn(styles.isMobile, !compact && "block-margin")}>
         <Swiper
           spaceBetween={10}
           slidesPerView={1.2}
@@ -37,67 +57,30 @@ function NewsTable({
         >
           {pageData.map((element, index) => (
             <SwiperSlide key={index}>
-              <Link
+              <NewsCard
+                news={element}
                 to={getNewsLink(element.slug)}
                 relative={useSiblingLinks ? "path" : undefined}
-                className={styles.wrapper}
-              >
-                <div className={styles.inner}>
-                  <div className={styles.imageWrapper}>
-                    <div
-                      className={cn(styles.image, "animate-from-top-mobile")}
-                    >
-                      <img src={element.image} alt={element.title} />
-                      <div className={styles.badge}>{element.categoryName}</div>
-                    </div>
-                  </div>
-                  <Typography
-                    variant="body-s"
-                    className={styles.title}
-                    as={"p"}
-                  >
-                    {element.title}
-                  </Typography>
-                  <Typography variant="body-s" as={"p"} className={styles.date}>
-                    {element.date}
-                  </Typography>
-                </div>
-              </Link>
+              />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
       <div
-        ref={containerRef}
         className={cn(
           styles.isDekstop,
-          "block-margin",
+          !compact && "block-margin",
           className === "newsAll" ? styles.newsAll : styles.newsDetail,
         )}
       >
         {pageData.map((element, index) => (
-          <Link
+          <NewsCard
+            news={element}
             to={getNewsLink(element.slug)}
             relative={useSiblingLinks ? "path" : undefined}
-            className={styles.wrapper}
             key={index}
-          >
-            <div className={styles.inner}>
-              <div className={styles.imageWrapper}>
-                <div className={cn(styles.image, "animate-from-top")}>
-                  <img src={element.image} alt={element.title} />
-                  <div className={styles.badge}>{element.categoryName}</div>
-                </div>
-              </div>
-              <Typography variant="body-s" className={styles.title} as={"p"}>
-                {element.title}
-              </Typography>
-              <Typography variant="body-s" as={"p"} className={styles.date}>
-                {element.date}
-              </Typography>
-            </div>
-          </Link>
+          />
         ))}
       </div>
     </div>
