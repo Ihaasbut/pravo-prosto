@@ -5,14 +5,10 @@ import { useLanguage } from "../../hooks/use-language";
 import styles from "./LegalPage.module.css";
 import type {
     LegalPageI,
-    LegalPageKey,
+    LegalPageProps,
     LegalPagesDataI,
-} from "./types/legal-page.types";
+} from "./LegalPage.types";
 import PageSkeleton from "../../components/PageSkeleton/PageSkeleton";
-
-type LegalPageProps = {
-    pageKey: LegalPageKey;
-};
 
 function LegalPage({ pageKey }: LegalPageProps) {
     const [pageData, setPageData] = useState<LegalPageI | null>(null);

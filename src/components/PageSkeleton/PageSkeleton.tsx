@@ -1,22 +1,9 @@
 import styles from "./PageSkeleton.module.css";
-
-type PageSkeletonVariant =
-    | "home"
-    | "contacts"
-    | "services"
-    | "news"
-    | "legal"
-    | "service"
-    | "news-detail"
-    | "team";
-
-type PageSkeletonProps = {
-    variant: PageSkeletonVariant;
-};
-
-type SkeletonBlockProps = {
-    className?: string;
-};
+import type {
+    PageSkeletonProps,
+    SkeletonBlockProps,
+    TitleSectionSkeletonProps,
+} from "./PageSkeleton.types";
 
 function SkeletonBlock({ className = "" }: SkeletonBlockProps) {
     const classes = className
@@ -29,10 +16,7 @@ function SkeletonBlock({ className = "" }: SkeletonBlockProps) {
 function TitleSectionSkeleton({
     description = true,
     button = false,
-}: {
-    description?: boolean;
-    button?: boolean;
-}) {
+}: TitleSectionSkeletonProps) {
     return (
         <div className={styles["title-section"]}>
             <div className="container">

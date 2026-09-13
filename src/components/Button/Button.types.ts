@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 
-export type ButtonPropsI = {
+export interface ButtonPropsI {
     children: ReactNode;
     variant: "fill" | "outline";
     onClick?: () => void;
     className?: string;
-};
+}

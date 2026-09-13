@@ -4,7 +4,7 @@ import FooterEmbla from "./FooterEmbla/FooterEmbla";
 import cn from "classnames";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../hooks/use-language";
-import type { FooterI } from "./types/footer.types";
+import type { FooterI } from "./Footer.types";
 import { Link } from "react-router-dom";
 
 function Footer() {

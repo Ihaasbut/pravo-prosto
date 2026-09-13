@@ -1,4 +1,4 @@
-import type { LegalPagesDataI } from "../types/legal-page.types";
+import type { LegalPagesDataI } from "../LegalPage.types";
 
 export const legalPagesData: LegalPagesDataI = {
     loadErrorText: "The page failed to load",

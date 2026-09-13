@@ -2,11 +2,11 @@ type TelegramInsets = Partial<
     Record<"top" | "right" | "bottom" | "left", number>
 >;
 
-type TelegramViewportEvent = {
+interface TelegramViewportEvent {
     isStateStable?: boolean;
-};
+}
 
-type TelegramWebApp = {
+interface TelegramWebApp {
     ready?: () => void;
     expand?: () => void;
     disableVerticalSwipes?: () => void;

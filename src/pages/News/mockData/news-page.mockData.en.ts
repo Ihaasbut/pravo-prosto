@@ -1,5 +1,5 @@
 import type { TitleBlockPropsI } from "../../../types/titleBlock.types";
-import type { NewsCategoryI } from "../types/news-page.types";
+import type { NewsCategoryI } from "../News.types";
 
 export const headerPage: TitleBlockPropsI = {
     title: "News",

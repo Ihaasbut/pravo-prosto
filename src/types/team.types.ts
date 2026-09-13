@@ -1,4 +1,4 @@
-export type TeamPersonI = {
+export interface TeamPersonI {
     image: string;
     dataPerson: string;
     post: string;
@@ -6,14 +6,13 @@ export type TeamPersonI = {
     experience: PatternInfoI;
     area: PatternInfoI;
     comment: string;
-};
-
-export type PatternInfoI = {
-    title: string;
-    description: string;
-};
-
-export type TeamPersonsI = {
-          teamData: TeamPersonI[];
 }
 
+export interface PatternInfoI {
+    title: string;
+    description: string;
+}
+
+export interface TeamPersonsI {
+    teamData: TeamPersonI[];
+}

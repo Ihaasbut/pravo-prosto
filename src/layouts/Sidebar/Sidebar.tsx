@@ -1,10 +1,7 @@
 import Logo from "../../components/icons/Logo/Logo";
 import styles from "./Sidebar.module.css";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
-interface SiderBarPropsI {
-    isMenuOpen: boolean;
-    onToggleMenu: () => void;
-}
+import type { SiderBarPropsI } from "./Sidebar.types";
 
 function Sidebar({ isMenuOpen, onToggleMenu }: SiderBarPropsI) {
     return (

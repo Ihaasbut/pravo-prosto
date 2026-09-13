@@ -1,4 +1,4 @@
-import type { PageTeamI } from "../types/team-page.types";
+import type { PageTeamI } from "../Team.types";
 
 export const pageTeam: PageTeamI = {
     title: "Team",

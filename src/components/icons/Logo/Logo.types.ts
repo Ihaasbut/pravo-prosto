@@ -1,3 +1,3 @@
-export type LogoPropsI = {
+export interface LogoPropsI {
     className: string;
-};
+}

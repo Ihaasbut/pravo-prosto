@@ -1,24 +1,25 @@
-import type { ServiceBannerI } from "../pages/Service/types/service-page.types";
+import type { ServiceBannerI } from "../pages/Service/components/ServiceBanner/ServiceBanner.types";
 
-export type ServicesCategoryI = {
+export interface ServicesCategoryI {
     area: string;
     services: ServiceI[];
-};
-export type ServiceI = {
+}
+
+export interface ServiceI {
     title: string;
     highlights: string[];
     slug: string;
     detailPage?: ServiceDetailI;
-};
+}
 
-export type ServiceDetailI = {
+export interface ServiceDetailI {
     title: string;
     description: string;
     features: FeaturesI[];
     banner: ServiceBannerI;
-};
+}
 
-export type FeaturesI = {
+export interface FeaturesI {
     title: string;
     description: string;
-};
+}

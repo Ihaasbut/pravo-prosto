@@ -1,68 +1,68 @@
 .header {
-    position: relative;
-    width: 100%;
-    background: var(--color-bg-primary);
-    z-index: 50;
+  position: relative;
+  width: 100%;
+  background: var(--color-bg-primary);
+  z-index: 50;
 }
 
-.wrapper-header {
-    position: relative;
+.wrapper {
+  position: relative;
 }
 
-.header-buttons {
-    display: flex;
-    gap: 30px;
-    justify-content: end;
-    position: absolute;
-    right: 0;
-    top: 20px;
-    gap: 15px;
+.buttons {
+  display: flex;
+  gap: 30px;
+  justify-content: end;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  gap: 15px;
 }
 
-.header-logo,
-.burger-mobile-wrapper {
-    display: none;
+.logo,
+.burgerWrapper {
+  display: none;
 }
 
-.header-logo path {
-    fill: var(--color-bg-element-secondary);
+.logo {
+  width: 84px;
 }
 
-.header-logo {
-    width: 84px;
+.logo path {
+  fill: var(--color-bg-element-secondary);
 }
 
 @media (max-width: 1023px) {
-    .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding-top: var(--safe-area-top);
-        border-bottom: 2px solid var(--grey-line);
-    }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: var(--safe-area-top);
+    border-bottom: 2px solid var(--grey-line);
+  }
 
-    .header-logo {
-        display: block;
-        position: relative;
-        z-index: 60;
-    }
+  .logo {
+    display: block;
+    position: relative;
+    z-index: 60;
+  }
 
-    .header-buttons {
-        position: relative;
-        top: 0;
-        gap: 5px;
-    }
+  .buttons {
+    position: relative;
+    top: 0;
+    gap: 5px;
+  }
 
-    .wrapper-header {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100px;
-    }
+  .wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
 
-    .burger-mobile-wrapper {
-        display: block;
-    }
+  .burgerWrapper {
+    display: block;
+  }
 }

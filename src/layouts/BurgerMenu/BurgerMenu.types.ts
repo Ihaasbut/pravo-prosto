@@ -1,10 +1,10 @@
-export type NavLinkI = {
+export interface NavLinkI {
     id: string;
     path: string;
     title: string;
-};
+}
 
-export type BurgerMenuPropsI = {
+export interface BurgerMenuPropsI {
     onToggleMenu: () => void;
     isMenuOpen: boolean;
-};
+}

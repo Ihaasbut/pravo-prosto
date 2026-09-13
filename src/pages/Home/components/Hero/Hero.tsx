@@ -4,7 +4,7 @@ import "swiper/swiper.css";
 
 import Button from "../../../../components/Button/Button";
 import HeroEmbla from "./HeroEmbla/HeroEmbla";
-import type { HeroPropsI } from "./types/hero.types";
+import type { HeroPropsI } from "./Hero.types";
 import { useModal } from "../../../../hooks/use-modal";
 
 function Hero({ hero }: HeroPropsI) {

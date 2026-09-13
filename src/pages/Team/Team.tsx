@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import TitleBlockGrey from "../../components/TitleBlockPrimary/TitleBlockPrimary";
 import styles from "./Team.module.css";
 import TeamPersons from "./components/TeamPersons/TeamPersons";
-import type { PageTeamFullDataI } from "./types/team-page.types";
+import type { PageTeamFullDataI } from "./Team.types";
 import { useLanguage } from "../../hooks/use-language";
 import PageSkeleton from "../../components/PageSkeleton/PageSkeleton";
 

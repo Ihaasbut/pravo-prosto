@@ -1,4 +1,4 @@
-import type { ButtonClosePropsI } from "./Button.type";
+import type { ButtonClosePropsI } from "./ButtonClose.types";
 import styles from "./ButtonClose.module.css";
 
 function ButtonClose({ onToggleClose }: ButtonClosePropsI) {

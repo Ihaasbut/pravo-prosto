@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 
-export type NewI = {
+export interface NewI {
     title: string;
     categoryId: number;
     categoryName: string;
@@ -13,11 +13,12 @@ export type NewI = {
         | NewsTitleTextBlockI
         | NewsListBlockI
     )[];
-};
+}
 
 interface NewsOneComponentBlock {
     component: ComponentType;
 }
+
 export interface NewsTextBlockI extends NewsOneComponentBlock {
     text: string;
 }

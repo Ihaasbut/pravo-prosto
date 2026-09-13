@@ -4,7 +4,7 @@ import TitleBlockGrey from "../../components/TitleBlockPrimary/TitleBlockPrimary
 import styles from "./Services.module.css";
 import { useLanguage } from "../../hooks/use-language";
 import ServiceCategory from "./ServiceCategory/ServiceCategory";
-import type { PageServicesFullDataI } from "./types/services-page.types";
+import type { PageServicesFullDataI } from "./Services.types";
 import PageSkeleton from "../../components/PageSkeleton/PageSkeleton";
 
 function Services() {

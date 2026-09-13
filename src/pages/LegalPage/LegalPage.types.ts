@@ -1,17 +1,21 @@
 export type LegalPageKey = "privacyPolicy" | "userAgreement";
 
-export type LegalPageSectionI = {
+export interface LegalPageSectionI {
     title: string;
     paragraphs: string[];
-};
+}
 
-export type LegalPageI = {
+export interface LegalPageI {
     title: string;
     intro: string[];
     sections: LegalPageSectionI[];
-};
+}
 
-export type LegalPagesDataI = {
+export interface LegalPagesDataI {
     loadErrorText: string;
     pages: Record<LegalPageKey, LegalPageI>;
-};
+}
+
+export interface LegalPageProps {
+    pageKey: LegalPageKey;
+}
