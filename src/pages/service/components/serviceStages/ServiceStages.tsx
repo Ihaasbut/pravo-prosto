@@ -1,4 +1,4 @@
-import Typography from "../../../../components/typography/Typography";
+import Typography from "../../../../components/ui/typography/Typography";
 import type { ServiceStagesPropsI } from "./ServiceStages.types";
 import styles from "./ServiceStages.module.css";
 

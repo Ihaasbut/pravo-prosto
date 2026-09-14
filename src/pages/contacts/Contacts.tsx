@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import TitleBlockGrey from "../../components/titleBlockPrimary/TitleBlockPrimary";
-import YandexMap from "../../components/yandexMap/YandexMap";
+import YandexMap from "../../components/sections/yandexMap/YandexMap";
 import { useLanguage } from "../../hooks/use-language";
 import type { ContactsPageI } from "./Contacts.types";
 import styles from "./Contacts.module.css";

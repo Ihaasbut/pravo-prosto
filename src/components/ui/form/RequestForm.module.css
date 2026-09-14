@@ -1,0 +1,55 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field input,
+.field textarea {
+  height: 60px;
+  border: 1px solid var(--color-grey);
+  border-radius: 5px;
+  background: var(--form-field-background, var(--color-white));
+  color: var(--form-field-color, inherit);
+  padding: 10px;
+  font-size: 18px;
+  user-select: none;
+}
+
+.field textarea {
+  height: 120px;
+  resize: none;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.error {
+  color: red;
+}
+
+.button {
+  padding: 14px 32px;
+}
+
+@media (hover: hover) {
+  .form .button:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+}

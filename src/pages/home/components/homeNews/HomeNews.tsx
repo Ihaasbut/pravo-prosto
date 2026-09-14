@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import NewsTable from "../../../../components/newsTable/NewsTable";
+import NewsList from "../../../../components/newsList/NewsList";
 import TitleBlockHome from "../../../../components/titleBlockHome/TitleBlockHome";
 import { useLanguage } from "../../../../hooks/use-language";
 import type { HomeNewsPropsI } from "./HomeNews.types";
@@ -19,12 +19,7 @@ function HomeNews({ newsBlock, news }: HomeNewsPropsI) {
       />
       <div className={styles.list}>
         <div className="container">
-          <NewsTable
-            className="newsAll"
-            pageData={news}
-            toPrefix="news/"
-            compact
-          />
+          <NewsList variant="allPage" pageData={news} />
         </div>
       </div>
     </section>

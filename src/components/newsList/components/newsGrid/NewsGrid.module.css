@@ -1,0 +1,29 @@
+.allPage {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.detailPage {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 1200px) {
+  .allPage {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (width < 1024px) {
+  .desktop {
+    display: none;
+  }
+
+  .detailPage {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+  }
+}

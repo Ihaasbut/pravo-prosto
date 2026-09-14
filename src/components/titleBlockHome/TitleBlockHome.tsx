@@ -1,5 +1,5 @@
-import Button from "../button/Button";
-import Typography from "../typography/Typography";
+import Button from "../ui/button/Button";
+import Typography from "../ui/typography/Typography";
 import styles from "./TitleBlockHome.module.css";
 import type { TitleBlockHomePropsI } from "./TitleBlockHome.types";
 import { useModal } from "../../hooks/use-modal";

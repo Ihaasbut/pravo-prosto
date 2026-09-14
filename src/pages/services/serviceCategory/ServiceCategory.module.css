@@ -2,7 +2,7 @@
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
   .isMobile {
     display: block;
   }
@@ -12,7 +12,7 @@
   margin-top: 36px;
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
   .category {
     margin-top: 24px;
   }
@@ -41,7 +41,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
   .services {
     display: none;
   }
@@ -61,7 +61,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
   .serviceWrapper {
     display: block;
   }
@@ -96,7 +96,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
   .service {
     padding: 18px 16px;
   }

@@ -9,7 +9,7 @@
   align-items: start;
 }
 
-@media (max-width: 1023px) {
+@media (width < 1024px) {
   .section {
     margin: 28px 0 8px;
   }
@@ -20,7 +20,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
   .section {
     margin: 20px 0 8px;
   }

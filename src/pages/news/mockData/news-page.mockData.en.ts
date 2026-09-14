@@ -1,5 +1,5 @@
 import type { TitleBlockPropsI } from "../../../types/titleBlock.types";
-import type { HomeRequestDataI } from "../../home/components/homeRequest/HomeRequest.types";
+import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
 import type { ServicesForWhomDataI } from "../../services/components/servicesForWhom/ServicesForWhom.types";
 import type { NewsCategoryI } from "../News.types";
 
@@ -60,7 +60,7 @@ export const topics: ServicesForWhomDataI = {
   ],
 };
 
-export const request: HomeRequestDataI = {
+export const request: RequestSectionDataI = {
   title: "A similar task?",
   description:
     "Send a document or describe the situation in a few lines. We will say what to do next — or that it is too early.",

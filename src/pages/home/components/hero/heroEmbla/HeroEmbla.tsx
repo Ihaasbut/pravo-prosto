@@ -1,7 +1,7 @@
 import "./HeroEmbla.css";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
-import Typography from "../../../../../components/typography/Typography";
+import Typography from "../../../../../components/ui/typography/Typography";
 import type { HeroEmblaPropsI } from "./HeroEmbla.types";
 
 function HeroEmbla({ serviceKeywords }: HeroEmblaPropsI) {

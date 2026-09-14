@@ -4,10 +4,10 @@ import styles from "./News.module.css";
 
 import { useLanguage } from "../../hooks/use-language";
 import type { NewsCategoriesDataI, PageNewsFullDataI } from "./News.types";
-import NewsTable from "../../components/newsTable/NewsTable";
+import NewsList from "../../components/newsList/NewsList";
 import NewsCategories from "./components/newsCategories/NewsCategories";
 import PageSkeleton from "../../components/pageSkeleton/PageSkeleton";
-import HomeRequest from "../home/components/homeRequest/HomeRequest";
+import RequestSection from "../../components/sections/requestSection/RequestSection";
 import ServicesForWhom from "../services/components/servicesForWhom/ServicesForWhom";
 
 function News() {
@@ -75,11 +75,11 @@ function News() {
       </TitleBlockGrey>
       <div className={styles.list}>
         <div className="container">
-          <NewsTable className="newsAll" pageData={filterData.news} compact />
+          <NewsList variant="allPage" pageData={filterData.news} />
         </div>
       </div>
       <ServicesForWhom audiences={pageData.page.topics} />
-      <HomeRequest request={pageData.page.request} />
+      <RequestSection request={pageData.page.request} />
     </div>
   );
 }

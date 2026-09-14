@@ -22,7 +22,7 @@
   padding: 36px 0 24px;
 }
 
-@media (max-width: 1023px) {
+@media (width < 1024px) {
   .inner {
     gap: 18px;
     padding: 24px 0 18px;
@@ -69,7 +69,7 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (width < 1024px) {
   .copyright {
     justify-content: flex-start;
     gap: 12px 20px;
@@ -87,7 +87,7 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (width < 1024px) {
   .address {
     width: 100%;
   }
@@ -98,7 +98,7 @@
   width: 300px;
 }
 
-@media (max-width: 1023px) {
+@media (width < 1024px) {
   .notice {
     width: 100%;
   }

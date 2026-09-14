@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import cn from "classnames";
 import TitleBlockHome from "../../../../components/titleBlockHome/TitleBlockHome";
-import Typography from "../../../../components/typography/Typography";
+import Typography from "../../../../components/ui/typography/Typography";
 import { useFadeIn } from "../../../../hooks/animation/useFadeIn";
 import type { ServicesForWhomPropsI } from "./ServicesForWhom.types";
 import styles from "./ServicesForWhom.module.css";

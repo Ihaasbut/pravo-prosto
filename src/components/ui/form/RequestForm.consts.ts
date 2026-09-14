@@ -1,0 +1,16 @@
+import type { Language } from "../../../context/language-context";
+import type { RequestFormDataI, RequestFormFieldsI } from "./RequestForm.types";
+import { formData as formDataEn } from "./mockData/RequestForm.mockData.en.ts";
+import { formData as formDataRu } from "./mockData/RequestForm.mockData.ru.ts";
+
+export const REQUEST_FORM_DATA: Record<Language, RequestFormDataI> = {
+  ru: formDataRu,
+  en: formDataEn,
+};
+
+export const REQUEST_FORM_DEFAULT_VALUES: RequestFormFieldsI = {
+  name: "",
+  phone: "",
+  company: "",
+  description: "",
+};

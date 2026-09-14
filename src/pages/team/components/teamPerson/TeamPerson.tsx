@@ -1,4 +1,4 @@
-import Typography from "../../../../components/typography/Typography";
+import Typography from "../../../../components/ui/typography/Typography";
 import styles from "./TeamPerson.module.css";
 import type { TeamPersonPropsI } from "./TeamPerson.types";
 

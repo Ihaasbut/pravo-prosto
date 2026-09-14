@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Typography from "../../../components/typography/Typography";
+import Typography from "../../../components/ui/typography/Typography";
 import styles from "./ServiceCategory.module.css";
 import { useRef } from "react";
 import cn from "classnames";

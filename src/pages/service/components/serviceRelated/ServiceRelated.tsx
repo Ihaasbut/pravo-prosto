@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Typography from "../../../../components/typography/Typography";
+import Typography from "../../../../components/ui/typography/Typography";
 import { useLanguage } from "../../../../hooks/use-language";
 import type { ServiceRelatedPropsI } from "./ServiceRelated.types";
 import styles from "./ServiceRelated.module.css";

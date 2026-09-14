@@ -1,0 +1,51 @@
+.button {
+  padding: 16px 40px;
+  border: 2px solid var(--color-accent);
+  cursor: pointer;
+  transition:
+    background 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+@media (width < 1440px) {
+  .button {
+    padding: 14px 32px;
+  }
+}
+
+@media (width < 1024px) {
+  .button {
+    padding: 12px 28px;
+  }
+}
+
+@media (width < 768px) {
+  .button {
+    width: 100%;
+  }
+}
+
+.fill {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+@media (hover: hover) {
+  .fill:hover {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+@media (hover: hover) {
+  .outline:hover {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+  }
+}

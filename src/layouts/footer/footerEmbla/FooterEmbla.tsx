@@ -1,6 +1,6 @@
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
-import Typography from "../../../components/typography/Typography";
+import Typography from "../../../components/ui/typography/Typography";
 import cn from "classnames";
 import styles from "./Footer.module.css";
 import type { FooterEmblaProps } from "./FooterEmbla.types";

@@ -1,4 +1,4 @@
-import Typography from "../../components/typography/Typography";
+import Typography from "../../components/ui/typography/Typography";
 import styles from "./Footer.module.css";
 import FooterEmbla from "./footerEmbla/FooterEmbla";
 import cn from "classnames";

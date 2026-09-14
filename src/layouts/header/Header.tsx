@@ -1,7 +1,7 @@
 import cn from "classnames";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
 import styles from "./Header.module.css";
-import Logo from "../../components/icons/logo/Logo";
+import Logo from "../../components/ui/icons/logo/Logo";
 import ButtonTheme from "./buttonTheme/ButtonTheme";
 import ButtonLanguage from "./buttonLanguage/ButtonLanguage";
 import type { HeaderPropsI } from "./Header.types";

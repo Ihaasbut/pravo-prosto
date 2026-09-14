@@ -10,7 +10,7 @@
     max-width: 980px;
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
     .contentWrapper {
         gap: 40px;
         margin: 50px 0;
@@ -30,7 +30,7 @@
     gap: 50px;
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
     .sections {
         gap: 35px;
     }
@@ -42,7 +42,7 @@
     gap: 24px;
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
     .section {
         gap: 18px;
     }

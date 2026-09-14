@@ -1,7 +1,7 @@
 import type { TitleBlockPropsI } from "../../../types/titleBlock.types";
+import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
 import type { HomeAboutDataI } from "../components/homeAbout/HomeAbout.types";
 import type { HomeProcessDataI } from "../components/homeProcess/HomeProcess.types";
-import type { HomeRequestDataI } from "../components/homeRequest/HomeRequest.types";
 import type { HeroI } from "../components/hero/Hero.types";
 
 export const hero: HeroI = {
@@ -125,7 +125,7 @@ export const newsBlock: TitleBlockPropsI = {
   buttonText: "Все новости",
 };
 
-export const request: HomeRequestDataI = {
+export const request: RequestSectionDataI = {
   title: "Обсудить задачу",
   description:
     "Напишите, что происходит. Вернёмся с понятным следующим шагом — без общей консультации «обо всём».",

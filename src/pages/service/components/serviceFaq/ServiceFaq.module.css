@@ -40,7 +40,7 @@
   max-width: 72ch;
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
   .summary {
     gap: 12px;
     padding: 16px 0;

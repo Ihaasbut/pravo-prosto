@@ -1,4 +1,4 @@
-import Typography from "../../../../components/typography/Typography";
+import Typography from "../../../../components/ui/typography/Typography";
 import type { ServiceFaqPropsI } from "./ServiceFaq.types";
 import styles from "./ServiceFaq.module.css";
 
