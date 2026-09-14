@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
-import Logo from "../../components/icons/logo/Logo";
-import Typography from "../../components/typography/Typography";
+import Logo from "../../components/ui/icons/logo/Logo";
+import Typography from "../../components/ui/typography/Typography";
 import styles from "./BurgerMenu.module.css";
 import cn from "classnames";
 import type { BurgerMenuPropsI, NavLinkI } from "./BurgerMenu.types";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../hooks/use-language";
-import Overlay from "../../components/overlay/Overlay";
-import ButtonClose from "../../components/buttonClose/ButtonClose";
+import Backdrop from "../../components/ui/backdrop/Backdrop";
+import Cross from "../../components/ui/cross/Cross";
 
 function BurgerMenu(props: BurgerMenuPropsI) {
   const { onToggleMenu, isMenuOpen } = props;
@@ -42,7 +42,7 @@ function BurgerMenu(props: BurgerMenuPropsI) {
         id="burger-menu"
         className={cn(styles.menuWrapper, isMenuOpen && styles.menuActive)}
       >
-        <Overlay onClosedOverlay={onToggleMenu} isOpened={isMenuOpen} />
+        <Backdrop onClose={onToggleMenu} isOpened={isMenuOpen} />
 
         <div className={styles.inner}>
           <Logo className={styles.logo} />
@@ -64,7 +64,7 @@ function BurgerMenu(props: BurgerMenuPropsI) {
             ))}
           </ul>
 
-          <ButtonClose onToggleClose={onToggleMenu} />
+          <Cross className={styles.close} onClick={onToggleMenu} />
         </div>
       </div>
     </>

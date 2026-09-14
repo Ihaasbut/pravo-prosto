@@ -7,7 +7,7 @@
   color: var(--color-text-inverse);
 }
 
-@media (max-width: 1023px) {
+@media (width < 1024px) {
   .banner {
     padding: 20px;
   }
@@ -20,7 +20,7 @@
   justify-content: space-between;
 }
 
-@media (max-width: 1023px) {
+@media (width < 1024px) {
   .info {
     flex-direction: column;
     align-items: flex-start;
@@ -36,7 +36,7 @@
   width: max-content;
 }
 
-@media (max-width: 1023px) {
+@media (width < 1024px) {
   .info button {
     width: 100%;
   }

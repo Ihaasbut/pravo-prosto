@@ -6,7 +6,7 @@ import type { PageTeamFullDataI } from "./Team.types";
 import { useLanguage } from "../../hooks/use-language";
 import PageSkeleton from "../../components/pageSkeleton/PageSkeleton";
 import HomeProcess from "../home/components/homeProcess/HomeProcess";
-import HomeRequest from "../home/components/homeRequest/HomeRequest";
+import RequestSection from "../../components/sections/requestSection/RequestSection";
 
 function Team() {
   const [pageData, setPageData] = useState<PageTeamFullDataI | null>(null);
@@ -45,7 +45,7 @@ function Team() {
 
       <TeamPersons teamData={pageData.team} />
       <HomeProcess process={pageData.page.process} />
-      <HomeRequest request={pageData.page.request} />
+      <RequestSection request={pageData.page.request} />
     </div>
   );
 }

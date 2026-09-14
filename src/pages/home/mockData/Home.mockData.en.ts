@@ -1,7 +1,7 @@
 import type { TitleBlockPropsI } from "../../../types/titleBlock.types";
+import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
 import type { HomeAboutDataI } from "../components/homeAbout/HomeAbout.types";
 import type { HomeProcessDataI } from "../components/homeProcess/HomeProcess.types";
-import type { HomeRequestDataI } from "../components/homeRequest/HomeRequest.types";
 import type { HeroI } from "../components/hero/Hero.types";
 
 export const hero: HeroI = {
@@ -125,7 +125,7 @@ export const newsBlock: TitleBlockPropsI = {
   buttonText: "All news",
 };
 
-export const request: HomeRequestDataI = {
+export const request: RequestSectionDataI = {
   title: "Discuss a task",
   description:
     "Tell us what is going on. We will come back with a clear next step — not a generic “consultation on everything”.",

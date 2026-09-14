@@ -8,7 +8,7 @@
   font-size: 30px;
 }
 
-@media (max-width: 1023px) {
+@media (width < 1024px) {
   .embla p {
     font-size: 40px;
   }

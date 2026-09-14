@@ -5,15 +5,15 @@ import type { NewI } from "../../types/news.types";
 import { useLanguage } from "../../hooks/use-language";
 import { useParams } from "react-router-dom";
 
-import NewsTable from "../../components/newsTable/NewsTable";
+import NewsList from "../../components/newsList/NewsList";
 import PageSkeleton from "../../components/pageSkeleton/PageSkeleton";
-import HomeRequest from "../home/components/homeRequest/HomeRequest";
-import type { HomeRequestDataI } from "../home/components/homeRequest/HomeRequest.types";
+import RequestSection from "../../components/sections/requestSection/RequestSection";
+import type { RequestSectionDataI } from "../../components/sections/requestSection/RequestSection.types";
 
 interface NewsOnePageDataI {
   article: NewI;
   sidebar: NewI[];
-  request: HomeRequestDataI;
+  request: RequestSectionDataI;
 }
 
 function NewsOne() {
@@ -79,17 +79,12 @@ function NewsOne() {
               <p className={styles.sidebarTitle}>
                 {language === "en" ? "More news" : "Ещё новости"}
               </p>
-              <NewsTable
-                pageData={pageData.sidebar}
-                className="newsDetail"
-                useSiblingLinks
-                compact
-              />
+              <NewsList pageData={pageData.sidebar} variant="detailPage" />
             </aside>
           </div>
         </div>
       </div>
-      <HomeRequest request={pageData.request} />
+      <RequestSection request={pageData.request} />
     </div>
   );
 }

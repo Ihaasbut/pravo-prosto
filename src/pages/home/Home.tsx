@@ -6,7 +6,7 @@ import PageSkeleton from "../../components/pageSkeleton/PageSkeleton";
 import HomeAbout from "./components/homeAbout/HomeAbout";
 import HomeNews from "./components/homeNews/HomeNews";
 import HomeProcess from "./components/homeProcess/HomeProcess";
-import HomeRequest from "./components/homeRequest/HomeRequest";
+import RequestSection from "../../components/sections/requestSection/RequestSection";
 import HomeServices from "./components/homeServices/HomeServices";
 import HomeTeam from "./components/homeTeam/HomeTeam";
 
@@ -65,7 +65,7 @@ function Home() {
       <HomeProcess process={pageData.process} />
       <HomeTeam teamBlock={pageData.teamBlock} team={pageData.team} />
       <HomeNews newsBlock={pageData.newsBlock} news={pageData.featuredNews} />
-      <HomeRequest request={pageData.request} />
+      <RequestSection request={pageData.request} />
     </>
   );
 }

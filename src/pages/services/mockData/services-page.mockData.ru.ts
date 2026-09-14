@@ -1,5 +1,5 @@
 import type { TitleBlockPropsI } from "../../../types/titleBlock.types";
-import type { HomeRequestDataI } from "../../home/components/homeRequest/HomeRequest.types";
+import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
 import type { ServicesForWhomDataI } from "../components/servicesForWhom/ServicesForWhom.types";
 
 export const headerPage: TitleBlockPropsI = {
@@ -36,7 +36,7 @@ export const audiences: ServicesForWhomDataI = {
   ],
 };
 
-export const request: HomeRequestDataI = {
+export const request: RequestSectionDataI = {
   title: "Не нашли нужный контур?",
   description:
     "Опишите задачу своими словами. Разберём, какая услуга здесь нужна — или скажем, если это не к нам.",

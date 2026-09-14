@@ -1,0 +1,9 @@
+.slider {
+  display: none;
+}
+
+@media (width < 1024px) {
+  .slider {
+    display: block;
+  }
+}

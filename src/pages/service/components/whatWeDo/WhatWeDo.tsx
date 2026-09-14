@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import cn from "classnames";
-import Typography from "../../../../components/typography/Typography";
+import Typography from "../../../../components/ui/typography/Typography";
 import { useSlideUp } from "../../../../hooks/animation/useSlideUp";
 import type { WhatWeDoPropsI } from "./WhatWeDo.types";
 import styles from "./WhatWeDo.module.css";

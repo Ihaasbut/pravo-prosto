@@ -4,7 +4,7 @@ import Sidebar from "../sidebar/Sidebar";
 import { useEffect, useState } from "react";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import Form from "../../components/form/Form";
+import ModalForm from "../../components/sections/modalForm/ModalForm";
 
 function RootLayout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,8 +55,8 @@ function RootLayout() {
           <Footer />
         </div>
       </div>
-      
-      <Form />
+
+      <ModalForm />
     </>
   );
 }

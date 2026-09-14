@@ -4,7 +4,7 @@ export const useIsMobile = () => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        const somethimg = window.matchMedia(`(max-width: 767px)`);
+        const somethimg = window.matchMedia(`(width < 768px)`);
         const update = () => {
             setIsMobile(somethimg.matches);
         };

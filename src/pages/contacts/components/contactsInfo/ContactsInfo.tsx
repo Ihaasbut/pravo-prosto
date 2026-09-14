@@ -1,4 +1,4 @@
-import Typography from "../../../../components/typography/Typography";
+import Typography from "../../../../components/ui/typography/Typography";
 import type { ContactsInfoPropsI } from "./ContactsInfo.types";
 import styles from "./ContactsInfo.module.css";
 

@@ -10,7 +10,7 @@ const getScrollTriggerScroller = () => {
     return undefined;
   }
 
-  if (window.innerWidth > 1023) {
+  if (window.innerWidth >= 1024) {
     return undefined;
   }
 

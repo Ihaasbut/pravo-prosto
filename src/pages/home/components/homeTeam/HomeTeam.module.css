@@ -4,14 +4,14 @@
   padding-bottom: 48px;
 }
 
-@media (max-width: 1023px) {
+@media (width < 1024px) {
   .section {
     padding-top: 24px;
     padding-bottom: 36px;
   }
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
   .section {
     padding-top: 20px;
     padding-bottom: 28px;
@@ -64,7 +64,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (width < 768px) {
   .grid {
     gap: 24px 16px;
   }

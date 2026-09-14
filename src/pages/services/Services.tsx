@@ -6,7 +6,7 @@ import { useLanguage } from "../../hooks/use-language";
 import ServiceCategory from "./serviceCategory/ServiceCategory";
 import type { PageServicesFullDataI } from "./Services.types";
 import PageSkeleton from "../../components/pageSkeleton/PageSkeleton";
-import HomeRequest from "../home/components/homeRequest/HomeRequest";
+import RequestSection from "../../components/sections/requestSection/RequestSection";
 import ServicesForWhom from "./components/servicesForWhom/ServicesForWhom";
 
 function Services() {
@@ -56,7 +56,7 @@ function Services() {
         />
       ))}
       <ServicesForWhom audiences={pageData.page.audiences} />
-      <HomeRequest request={pageData.page.request} />
+      <RequestSection request={pageData.page.request} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import TitleBlockHome from "../../../../components/titleBlockHome/TitleBlockHome";
-import Typography from "../../../../components/typography/Typography";
+import Typography from "../../../../components/ui/typography/Typography";
 import { useLanguage } from "../../../../hooks/use-language";
 import type { HomeTeamPropsI } from "./HomeTeam.types";
 import styles from "./HomeTeam.module.css";

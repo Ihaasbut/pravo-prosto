@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import cn from "classnames";
 import TitleBlockHome from "../../../../components/titleBlockHome/TitleBlockHome";
-import Typography from "../../../../components/typography/Typography";
+import Typography from "../../../../components/ui/typography/Typography";
 import { useSlideRight } from "../../../../hooks/animation/useSlideRight";
 import type { HomeProcessPropsI } from "./HomeProcess.types";
 import styles from "./HomeProcess.module.css";

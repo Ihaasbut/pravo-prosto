@@ -1,5 +1,5 @@
 import cn from "classnames";
-import Logo from "../../components/icons/logo/Logo";
+import Logo from "../../components/ui/icons/logo/Logo";
 import styles from "./Sidebar.module.css";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
 import type { SiderBarPropsI } from "./Sidebar.types";
