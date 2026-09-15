@@ -30,7 +30,6 @@ function ServiceRelated({ title, services }: ServiceRelatedPropsI) {
               {service.highlights[0] ? (
                 <Typography
                   variant="body-s"
-                  as="p"
                   className={styles.highlight}
                 >
                   {service.highlights[0]}

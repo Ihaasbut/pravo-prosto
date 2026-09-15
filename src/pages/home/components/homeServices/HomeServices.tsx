@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import TitleBlockHome from "../../../../components/titleBlockHome/TitleBlockHome";
+import TitleBlockTransparent from "../../../../components/sections/titleBlockTransparent/TitleBlockTransparent";
 import ServiceCategory from "../../../services/serviceCategory/ServiceCategory";
 import { useLanguage } from "../../../../hooks/use-language";
 import type { HomeServicesPropsI } from "./HomeServices.types";
@@ -11,10 +11,8 @@ function HomeServices({ servicesBlock, category }: HomeServicesPropsI) {
 
   return (
     <section className={styles.section}>
-      <TitleBlockHome
-        title={servicesBlock.title}
-        description={servicesBlock.description}
-        buttonText={servicesBlock.buttonText}
+      <TitleBlockTransparent
+        data={servicesBlock}
         onButtonClick={() => navigate(`/${language}/services`)}
       />
       <ServiceCategory

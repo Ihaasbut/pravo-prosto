@@ -26,7 +26,7 @@ function ServiceFaq({ title, items }: ServiceFaqPropsI) {
                     {item.question}
                   </Typography>
                 </summary>
-                <Typography variant="body-s" as="p" className={styles.answer}>
+                <Typography variant="body-s" className={styles.answer}>
                   {item.answer}
                 </Typography>
               </details>

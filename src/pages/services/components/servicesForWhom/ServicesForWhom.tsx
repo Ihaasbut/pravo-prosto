@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import cn from "classnames";
-import TitleBlockHome from "../../../../components/titleBlockHome/TitleBlockHome";
+import TitleBlockTransparent from "../../../../components/sections/titleBlockTransparent/TitleBlockTransparent";
 import Typography from "../../../../components/ui/typography/Typography";
 import { useFadeIn } from "../../../../hooks/animation/useFadeIn";
 import type { ServicesForWhomPropsI } from "./ServicesForWhom.types";
@@ -13,10 +13,7 @@ function ServicesForWhom({ audiences }: ServicesForWhomPropsI) {
 
   return (
     <section className={styles.section}>
-      <TitleBlockHome
-        title={audiences.title}
-        description={audiences.description}
-      />
+      <TitleBlockTransparent data={audiences} />
 
       <div className="container">
         <div className="content">
@@ -36,7 +33,6 @@ function ServicesForWhom({ audiences }: ServicesForWhomPropsI) {
                     </Typography>
                     <Typography
                       variant="body-s"
-                      as="p"
                       className={styles.description}
                     >
                       {item.description}

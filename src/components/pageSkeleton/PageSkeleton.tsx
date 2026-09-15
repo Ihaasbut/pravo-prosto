@@ -1,3 +1,4 @@
+import cn from "classnames";
 import styles from "./PageSkeleton.module.css";
 import type {
   PageSkeletonProps,
@@ -5,12 +6,10 @@ import type {
   TitleSectionSkeletonProps,
 } from "./PageSkeleton.types";
 
-function SkeletonBlock({ className = "" }: SkeletonBlockProps) {
-  const classes = className
-    ? `${styles.skeleton} ${className}`
-    : styles.skeleton;
-
-  return <span className={classes} aria-hidden="true"></span>;
+function SkeletonBlock({ className }: SkeletonBlockProps) {
+  return (
+    <span className={cn(styles.skeleton, className)}></span>
+  );
 }
 
 function TitleSectionSkeleton({
@@ -19,12 +18,10 @@ function TitleSectionSkeleton({
   filters = false,
   compact = false,
 }: TitleSectionSkeletonProps) {
-  const titleSectionClass = compact
-    ? `${styles.titleSection} ${styles.titleSectionCompact}`
-    : styles.titleSection;
-
   return (
-    <div className={titleSectionClass}>
+    <div
+      className={cn(styles.titleSection, compact && styles.titleSectionCompact)}
+    >
       <div className="container">
         <div className="content">
           <div className={styles.titleInner}>

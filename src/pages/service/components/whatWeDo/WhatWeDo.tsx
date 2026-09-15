@@ -30,14 +30,12 @@ function WhatWeDo({ title, features }: WhatWeDoPropsI) {
                 <span className={styles.label}>[ {number} ]</span>
                 <Typography
                   variant={isWide ? "h4" : "body-m"}
-                  as="p"
                   className={styles.cardTitle}
                 >
                   {feature.title}
                 </Typography>
                 <Typography
                   variant="body-s"
-                  as="p"
                   className={styles.description}
                 >
                   {feature.description}

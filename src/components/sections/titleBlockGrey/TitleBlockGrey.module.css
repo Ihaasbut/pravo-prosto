@@ -1,0 +1,27 @@
+.wrapper {
+  padding: 200px 0 50px;
+  background-color: var(--color-bg-2);
+  border-bottom: 1px solid var(--color-purple);
+}
+
+.wrapper :global(h2 + p) {
+  max-width: 38rem;
+}
+
+@media (width < 1024px) {
+  .wrapper {
+    padding: 24px 0 28px;
+  }
+}
+
+@media (width < 768px) {
+  .wrapper {
+    padding: 16px 0 20px;
+  }
+}
+
+@media (max-width: 424px) {
+  .wrapper {
+    padding: 12px 0 16px;
+  }
+}

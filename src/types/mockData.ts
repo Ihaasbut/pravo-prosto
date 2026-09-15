@@ -33,3 +33,7 @@ export interface ServiceExtrasI {
   stages: FeaturesI[];
   faq: FaqItemI[];
 }
+
+export interface ServiceExtrasBySlugI {
+  [slug: string]: ServiceExtrasI;
+}

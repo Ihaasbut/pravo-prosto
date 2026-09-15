@@ -3,35 +3,21 @@ import Logo from "../../components/ui/icons/logo/Logo";
 import Typography from "../../components/ui/typography/Typography";
 import styles from "./BurgerMenu.module.css";
 import cn from "classnames";
-import type { BurgerMenuPropsI, NavLinkI } from "./BurgerMenu.types";
-import { useEffect, useState } from "react";
 import { useLanguage } from "../../hooks/use-language";
 import Backdrop from "../../components/ui/backdrop/Backdrop";
 import Cross from "../../components/ui/cross/Cross";
+import { useMenu } from "../../hooks/use-menu";
+import { BURGER_MENU_DATA } from "./BurgerMenu.consts";
 
-function BurgerMenu(props: BurgerMenuPropsI) {
-  const { onToggleMenu, isMenuOpen } = props;
+function BurgerMenu() {
+  const { isMenuOpen, toggleMenu, closeMenu } = useMenu();
   const { language } = useLanguage();
-  const [navLinks, setNavLinks] = useState<NavLinkI[] | null>(null);
-
-  useEffect(() => {
-    (async () => {
-      const module = await import(
-        `../burgerMenu/mockData/BurgerMenu.mockData.${language}.ts`
-      );
-      const navLinksData: NavLinkI[] = module.navLinks;
-      setNavLinks(navLinksData);
-    })();
-  }, [language]);
-
-  if (!navLinks) {
-    return null;
-  }
+  const navLinks = BURGER_MENU_DATA[language];
 
   return (
     <>
       <button
-        onClick={onToggleMenu}
+        onClick={toggleMenu}
         className={cn(styles.burgerMenu, isMenuOpen && styles.menuOpen)}
       >
         <span />
@@ -42,7 +28,7 @@ function BurgerMenu(props: BurgerMenuPropsI) {
         id="burger-menu"
         className={cn(styles.menuWrapper, isMenuOpen && styles.menuActive)}
       >
-        <Backdrop onClose={onToggleMenu} isOpened={isMenuOpen} />
+        <Backdrop onClose={closeMenu} isOpened={isMenuOpen} />
 
         <div className={styles.inner}>
           <Logo className={styles.logo} />
@@ -53,7 +39,7 @@ function BurgerMenu(props: BurgerMenuPropsI) {
                 <NavLink
                   to={navLink.path}
                   end={navLink.path === ""}
-                  onClick={onToggleMenu}
+                  onClick={closeMenu}
                   className={({ isActive }) =>
                     cn(styles.navLink, isActive && styles.navLinkActive)
                   }
@@ -64,7 +50,7 @@ function BurgerMenu(props: BurgerMenuPropsI) {
             ))}
           </ul>
 
-          <Cross className={styles.close} onClick={onToggleMenu} />
+          <Cross className={styles.close} onClick={closeMenu} />
         </div>
       </div>
     </>

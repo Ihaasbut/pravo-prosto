@@ -1,9 +1,9 @@
-import type { TitleBlockPropsI } from "../../../types/titleBlock.types";
+import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
 import type { ServicesForWhomDataI } from "../../services/components/servicesForWhom/ServicesForWhom.types";
 import type { NewsCategoryI } from "../News.types";
 
-export const headerPage: TitleBlockPropsI = {
+export const headerPage: TitleBlockI = {
   title: "News",
   description:
     "Contract reviews, cases, and short notes for IT teams — without legalese.",

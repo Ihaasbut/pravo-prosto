@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import cn from "classnames";
-import TitleBlockHome from "../../../../components/titleBlockHome/TitleBlockHome";
+import TitleBlockTransparent from "../../../../components/sections/titleBlockTransparent/TitleBlockTransparent";
 import Typography from "../../../../components/ui/typography/Typography";
 import { useSlideRight } from "../../../../hooks/animation/useSlideRight";
 import type { HomeProcessPropsI } from "./HomeProcess.types";
@@ -13,7 +13,7 @@ function HomeProcess({ process }: HomeProcessPropsI) {
 
   return (
     <section className={styles.section}>
-      <TitleBlockHome title={process.title} description={process.description} />
+      <TitleBlockTransparent data={process} />
 
       <div className="container">
         <div className="content">
@@ -30,7 +30,6 @@ function HomeProcess({ process }: HomeProcessPropsI) {
                     </Typography>
                     <Typography
                       variant="body-s"
-                      as="p"
                       className={styles.description}
                     >
                       {step.description}

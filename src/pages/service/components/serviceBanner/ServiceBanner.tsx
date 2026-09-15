@@ -15,7 +15,7 @@ function ServiceBanner({
     <div className={cn(styles.banner, "block-margin")}>
       <div className={styles.inner}>
         <div className={styles.info}>
-          <Typography variant="body-l" as={"p"} className={styles.description}>
+          <Typography variant="body-l" className={styles.description}>
             <span>{labelText} </span> {description}
           </Typography>
           <Button variant="fill" onClick={openModal}>

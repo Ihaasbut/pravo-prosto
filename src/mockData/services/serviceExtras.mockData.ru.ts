@@ -1,6 +1,6 @@
-import type { ServiceExtrasI } from "../../types/mockData";
+import type { ServiceExtrasBySlugI } from "../../types/mockData";
 
-export const serviceExtras: Record<string, ServiceExtrasI> = {
+export const serviceExtras: ServiceExtrasBySlugI = {
   "dogovory-i-dokumenty": {
     stages: [
       {

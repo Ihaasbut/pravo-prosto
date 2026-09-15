@@ -20,7 +20,7 @@ function HeroEmbla({ serviceKeywords }: HeroEmblaPropsI) {
           {serviceKeywords.map((serviceKeyword, index) => (
             <div className="embla__slide" key={index}>
               <span> [ ] </span>
-              <Typography variant="body-l" as={"p"}>
+              <Typography variant="body-l">
                 {serviceKeyword.name}
               </Typography>
             </div>

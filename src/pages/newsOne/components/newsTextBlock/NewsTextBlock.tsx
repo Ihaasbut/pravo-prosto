@@ -8,7 +8,6 @@ function NewsTextBlock({ text }: NewsTextBlockI) {
     <div className={styles.wrapper}>
       <Typography
         variant={"body-m"}
-        as={"p"}
         className={cn(styles.text, styles.textOnly)}
       >
         {text}

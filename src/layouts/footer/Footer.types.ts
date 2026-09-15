@@ -1,29 +1,10 @@
-export interface TelephoneI {
-    telephone: string;
-    hrefForHtml: string;
-}
-
-export interface MailI {
-    mail: string;
-    hrefForHtml: string;
-}
-
-export interface LegalPageI {
-    title: string;
-    slug: string;
-}
-
-export interface FooterLinksI {
-    tel1: TelephoneI;
-    tel2?: TelephoneI;
-    mail: MailI;
-    userAgreement: LegalPageI;
-    privacyPolicy: LegalPageI;
-}
+import type { FooterContactsI } from "./components/footerContacts/FooterContacts.types";
+import type { FooterLinksI } from "./components/footerCopyright/FooterCopyright.types";
 
 export interface FooterI {
-    links: FooterLinksI;
-    notice: string;
-    titleCompany: string;
-    address: string;
+  contacts: FooterContactsI;
+  links: FooterLinksI;
+  notice: string;
+  titleCompany: string;
+  address: string;
 }

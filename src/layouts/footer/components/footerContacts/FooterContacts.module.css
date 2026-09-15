@@ -1,0 +1,34 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.telephones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.55em;
+  row-gap: 0.1em;
+}
+
+.telephone {
+  white-space: nowrap;
+}
+
+.telephoneSeparator {
+  color: var(--color-grey);
+  cursor: default;
+  pointer-events: none;
+  font-weight: 400;
+}
+
+@media (hover: hover) {
+  .email:hover {
+    color: var(--color-accent);
+  }
+
+  .telephone:hover {
+    color: var(--color-accent);
+  }
+}

@@ -1,4 +1,4 @@
-import type { TitleBlockPropsI } from "../../../types/titleBlock.types";
+import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
 import type { HomeAboutDataI } from "../components/homeAbout/HomeAbout.types";
 import type { HomeProcessDataI } from "../components/homeProcess/HomeProcess.types";
@@ -106,21 +106,21 @@ export const process: HomeProcessDataI = {
   ],
 };
 
-export const teamBlock: TitleBlockPropsI = {
+export const teamBlock: TitleBlockI = {
   title: "Team",
   description:
     "Lawyers with practice in IT, fintech, and intellectual property. We work as part of your team.",
   buttonText: "More details",
 };
 
-export const servicesBlock: TitleBlockPropsI = {
+export const servicesBlock: TitleBlockI = {
   title: "Services",
   description:
     "Legal and accounting services for IT companies: contracts, transactions, intellectual property, and business support.",
   buttonText: "All services",
 };
 
-export const newsBlock: TitleBlockPropsI = {
+export const newsBlock: TitleBlockI = {
   title: "News",
   buttonText: "All news",
 };

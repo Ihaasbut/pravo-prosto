@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import TitleBlockHome from "../../../../components/titleBlockHome/TitleBlockHome";
+import TitleBlockTransparent from "../../../../components/sections/titleBlockTransparent/TitleBlockTransparent";
 import Typography from "../../../../components/ui/typography/Typography";
 import { useLanguage } from "../../../../hooks/use-language";
 import type { HomeTeamPropsI } from "./HomeTeam.types";
@@ -11,10 +11,8 @@ function HomeTeam({ teamBlock, team }: HomeTeamPropsI) {
 
   return (
     <section className={styles.section}>
-      <TitleBlockHome
-        title={teamBlock.title}
-        description={teamBlock.description}
-        buttonText={teamBlock.buttonText}
+      <TitleBlockTransparent
+        data={teamBlock}
         onButtonClick={() => navigate(`/${language}/team`)}
       />
 
@@ -30,7 +28,7 @@ function HomeTeam({ teamBlock, team }: HomeTeamPropsI) {
                   <Typography variant="body-s" as="h3" className={styles.name}>
                     {person.dataPerson}
                   </Typography>
-                  <Typography variant="body-xs" as="p" className={styles.post}>
+                  <Typography variant="body-xs" className={styles.post}>
                     {person.post}
                   </Typography>
                 </div>

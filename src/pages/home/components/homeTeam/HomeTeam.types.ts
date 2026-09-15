@@ -1,7 +1,7 @@
 import type { TeamPersonI } from "../../../../types/team.types";
-import type { TitleBlockPropsI } from "../../../../types/titleBlock.types";
+import type { TitleBlockI } from "../../../../types/titleBlock.types";
 
 export interface HomeTeamPropsI {
-  teamBlock: TitleBlockPropsI;
+  teamBlock: TitleBlockI;
   team: TeamPersonI[];
 }

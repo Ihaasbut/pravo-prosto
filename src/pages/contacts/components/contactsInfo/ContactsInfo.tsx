@@ -9,7 +9,7 @@ function ContactsInfo({ address, phones, emails }: ContactsInfoPropsI) {
         <div className="content">
           <div className={styles.grid}>
             <div className={styles.card}>
-              <Typography variant="body-xs" as="p" className={styles.label}>
+              <Typography variant="body-xs" className={styles.label}>
                 {address.label}
               </Typography>
               <a
@@ -32,7 +32,7 @@ function ContactsInfo({ address, phones, emails }: ContactsInfoPropsI) {
             </div>
 
             <div className={styles.card}>
-              <Typography variant="body-xs" as="p" className={styles.label}>
+              <Typography variant="body-xs" className={styles.label}>
                 {phones.label}
               </Typography>
               <div className={styles.stack}>
@@ -52,7 +52,7 @@ function ContactsInfo({ address, phones, emails }: ContactsInfoPropsI) {
             </div>
 
             <div className={styles.card}>
-              <Typography variant="body-xs" as="p" className={styles.label}>
+              <Typography variant="body-xs" className={styles.label}>
                 {emails.label}
               </Typography>
               <div className={styles.stack}>

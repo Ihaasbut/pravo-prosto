@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import NewsList from "../../../../components/newsList/NewsList";
-import TitleBlockHome from "../../../../components/titleBlockHome/TitleBlockHome";
+import NewsList from "../../../../components/sections/newsList/NewsList";
+import TitleBlockTransparent from "../../../../components/sections/titleBlockTransparent/TitleBlockTransparent";
 import { useLanguage } from "../../../../hooks/use-language";
 import type { HomeNewsPropsI } from "./HomeNews.types";
 import styles from "./HomeNews.module.css";
@@ -11,10 +11,8 @@ function HomeNews({ newsBlock, news }: HomeNewsPropsI) {
 
   return (
     <section className={styles.section}>
-      <TitleBlockHome
-        title={newsBlock.title}
-        description={newsBlock.description}
-        buttonText={newsBlock.buttonText}
+      <TitleBlockTransparent
+        data={newsBlock}
         onButtonClick={() => navigate(`/${language}/news`)}
       />
       <div className={styles.list}>

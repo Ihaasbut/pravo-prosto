@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import cn from "classnames";
-import TitleBlockHome from "../../../../components/titleBlockHome/TitleBlockHome";
+import TitleBlockTransparent from "../../../../components/sections/titleBlockTransparent/TitleBlockTransparent";
 import Typography from "../../../../components/ui/typography/Typography";
 import { useFadeIn } from "../../../../hooks/animation/useFadeIn";
 import type { HomeAboutPropsI } from "./HomeAbout.types";
@@ -13,7 +13,7 @@ function HomeAbout({ about }: HomeAboutPropsI) {
 
   return (
     <section className={styles.section}>
-      <TitleBlockHome title={about.title} description={about.description} />
+      <TitleBlockTransparent data={about} />
 
       <div className="container">
         <div className="content">
@@ -33,7 +33,6 @@ function HomeAbout({ about }: HomeAboutPropsI) {
                     </Typography>
                     <Typography
                       variant="body-s"
-                      as="p"
                       className={styles.description}
                     >
                       {principle.description}

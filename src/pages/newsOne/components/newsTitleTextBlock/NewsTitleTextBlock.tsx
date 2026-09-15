@@ -9,7 +9,7 @@ function NewsTitleTextBlock({ title, text }: NewsTitleTextBlockI) {
         <Typography variant="h4" as={"h4"} className={styles.title}>
           {title}
         </Typography>
-        <Typography variant="body-m" as={"p"} className={styles.text}>
+        <Typography variant="body-m" className={styles.text}>
           {text}
         </Typography>
       </div>

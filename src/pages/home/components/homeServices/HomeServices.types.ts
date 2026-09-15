@@ -1,7 +1,7 @@
 import type { ServicesCategoryI } from "../../../../types/mockData";
-import type { TitleBlockPropsI } from "../../../../types/titleBlock.types";
+import type { TitleBlockI } from "../../../../types/titleBlock.types";
 
 export interface HomeServicesPropsI {
-  servicesBlock: TitleBlockPropsI;
+  servicesBlock: TitleBlockI;
   category: ServicesCategoryI;
 }
