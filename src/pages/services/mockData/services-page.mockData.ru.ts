@@ -1,8 +1,8 @@
-import type { TitleBlockPropsI } from "../../../types/titleBlock.types";
+import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
 import type { ServicesForWhomDataI } from "../components/servicesForWhom/ServicesForWhom.types";
 
-export const headerPage: TitleBlockPropsI = {
+export const headerPage: TitleBlockI = {
   title: "Юридические и бухгалтерские услуги для ИТ",
   description: "Мы не просто юристы. Мы часть вашей ИТ-команды.",
   buttonText: "Консультация",

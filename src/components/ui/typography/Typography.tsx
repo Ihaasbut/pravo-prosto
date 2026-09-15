@@ -6,7 +6,7 @@ function Typography({
   variant,
   children,
   className = "",
-  as: Component = "div",
+  as: Component = "p",
   href,
 }: TypographyPropsI) {
   return (

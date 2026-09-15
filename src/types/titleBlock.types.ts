@@ -1,4 +1,4 @@
-export interface TitleBlockPropsI {
+export interface TitleBlockI {
     title: string;
     description?: string;
     descriptionStyle?: string;

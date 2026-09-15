@@ -77,12 +77,12 @@
     z-index: 60;
   }
 
-  .menuOpen .burgerWrapper {
+  :global(html[data-menu-open="true"]) .burgerWrapper {
     z-index: 80;
   }
 
-  .menuOpen .buttons,
-  .menuOpen .logo {
+  :global(html[data-menu-open="true"]) .buttons,
+  :global(html[data-menu-open="true"]) .logo {
     pointer-events: none;
   }
 }

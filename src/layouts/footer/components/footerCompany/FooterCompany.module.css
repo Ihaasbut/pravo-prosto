@@ -1,0 +1,15 @@
+.titleCompanyLink {
+  width: max-content;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .titleCompanyLink:hover {
+    color: var(--color-accent);
+  }
+}
+
+.titleCompany {
+  cursor: pointer;
+}

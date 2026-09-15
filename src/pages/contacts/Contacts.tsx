@@ -1,38 +1,18 @@
-import { useEffect, useState } from "react";
-import TitleBlockGrey from "../../components/titleBlockPrimary/TitleBlockPrimary";
+import TitleBlockTransparent from "../../components/sections/titleBlockTransparent/TitleBlockTransparent";
 import YandexMap from "../../components/sections/yandexMap/YandexMap";
 import { useLanguage } from "../../hooks/use-language";
-import type { ContactsPageI } from "./Contacts.types";
+import { CONTACTS_DATA } from "./Contacts.consts";
 import styles from "./Contacts.module.css";
-import PageSkeleton from "../../components/pageSkeleton/PageSkeleton";
 import ContactsInfo from "./components/contactsInfo/ContactsInfo";
 
 function Contacts() {
-  const [pageData, setPageData] = useState<ContactsPageI | null>(null);
   const { language } = useLanguage();
-
-  useEffect(() => {
-    (async () => {
-      const pageModule = await import(
-        `./mockData/contacts-page.mockData.${language}.ts`
-      );
-
-      setPageData(pageModule.headerPage);
-    })();
-  }, [language]);
-
-  if (!pageData) {
-    return <PageSkeleton variant="contacts" />;
-  }
+  const pageData = CONTACTS_DATA[language];
 
   return (
     <div className={styles.contacts}>
       <div className={styles.hero}>
-        <TitleBlockGrey
-          title={pageData.title}
-          buttonText={pageData.buttonText}
-          className={styles.header}
-        />
+        <TitleBlockTransparent data={pageData} />
         <ContactsInfo
           address={pageData.address}
           phones={pageData.phones}

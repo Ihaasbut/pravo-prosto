@@ -1,4 +1,4 @@
-import type { Language } from "../../../context/language-context";
+import type { Language } from "../../../context/language/LanguageContext";
 
 export const MODAL_FORM_TITLES: Record<Language, string> = {
   ru: "Оставьте заявку",

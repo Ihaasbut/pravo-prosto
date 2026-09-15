@@ -10,7 +10,7 @@ function RequestSection({ request }: RequestSectionPropsI) {
         <div className="content">
           <div className={styles.inner}>
             <div className={styles.copy}>
-              <Typography variant="body-m" as="p" className={styles.label}>
+              <Typography variant="body-m" className={styles.label}>
                 {request.label}
               </Typography>
 
@@ -20,7 +20,6 @@ function RequestSection({ request }: RequestSectionPropsI) {
 
               <Typography
                 variant="body-m"
-                as="p"
                 className={styles.description}
               >
                 {request.description}

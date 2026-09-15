@@ -18,7 +18,7 @@ function Hero({ hero }: HeroPropsI) {
             <Typography variant="h1" as="h1">
               [{hero.title}]
             </Typography>
-            <Typography variant="body-l" as="p">
+            <Typography variant="body-l">
               {hero.description}
             </Typography>
 

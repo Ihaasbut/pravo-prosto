@@ -1,41 +1,17 @@
-import { useEffect, useState } from "react";
-import TitleBlockGrey from "../../components/titleBlockPrimary/TitleBlockPrimary";
+import TitleBlockGrey from "../../components/sections/titleBlockGrey/TitleBlockGrey";
 import Typography from "../../components/ui/typography/Typography";
 import { useLanguage } from "../../hooks/use-language";
+import { LEGAL_PAGES_DATA } from "./LegalPage.consts";
 import styles from "./LegalPage.module.css";
-import type {
-  LegalPageI,
-  LegalPageProps,
-  LegalPagesDataI,
-} from "./LegalPage.types";
-import PageSkeleton from "../../components/pageSkeleton/PageSkeleton";
+import type { LegalPageProps } from "./LegalPage.types";
 
 function LegalPage({ pageKey }: LegalPageProps) {
-  const [pageData, setPageData] = useState<LegalPageI | null>(null);
-  const [legalPagesData, setLegalPagesData] = useState<LegalPagesDataI | null>(
-    null,
-  );
   const { language } = useLanguage();
-
-  useEffect(() => {
-    (async () => {
-      const legalPageModule = await import(
-        `./mockData/legal-page.mockData.${language}.ts`
-      );
-      const data = legalPageModule.legalPagesData;
-
-      setLegalPagesData(data);
-      setPageData(data.pages[pageKey]);
-    })();
-  }, [language, pageKey]);
-
-  if (!pageData || !legalPagesData) {
-    return <PageSkeleton variant="legal" />;
-  }
+  const pageData = LEGAL_PAGES_DATA[language].pages[pageKey];
 
   return (
     <div className={styles.legal}>
-      <TitleBlockGrey title={pageData.title} />
+      <TitleBlockGrey data={pageData} />
 
       <div className="container">
         <div className="content">
@@ -45,7 +21,6 @@ function LegalPage({ pageKey }: LegalPageProps) {
                 <Typography
                   key={paragraph}
                   variant="body-m"
-                  as={"p"}
                   className={styles.paragraph}
                 >
                   {paragraph}
@@ -69,7 +44,6 @@ function LegalPage({ pageKey }: LegalPageProps) {
                       <Typography
                         key={paragraph}
                         variant="body-s"
-                        as={"p"}
                         className={styles.paragraph}
                       >
                         {paragraph}

@@ -1,121 +1,79 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import type {
-  ServiceI,
-  ServicesCategoryI,
-  ServiceDetailI,
-  ServiceExtrasI,
-} from "../../types/mockData";
+import type { ServiceI } from "../../types/mockData";
 import { useLanguage } from "../../hooks/use-language";
-import TitleBlockGrey from "../../components/titleBlockPrimary/TitleBlockPrimary";
-import type { ServicePageStaticI } from "./Service.types";
+import TitleBlockGrey from "../../components/sections/titleBlockGrey/TitleBlockGrey";
+import type { TitleBlockI } from "../../types/titleBlock.types";
 import PageSkeleton from "../../components/pageSkeleton/PageSkeleton";
 import ServiceBanner from "./components/serviceBanner/ServiceBanner";
 import ServiceFaq from "./components/serviceFaq/ServiceFaq";
 import ServiceRelated from "./components/serviceRelated/ServiceRelated";
 import ServiceStages from "./components/serviceStages/ServiceStages";
 import WhatWeDo from "./components/whatWeDo/WhatWeDo";
-
-interface ServicePageDataI {
-  detail: ServiceDetailI;
-  extras: ServiceExtrasI | null;
-  related: Pick<ServiceI, "title" | "slug" | "highlights">[];
-}
+import { SERVICE_CATEGORIES_DATA } from "../../mockData/services/Services.consts";
+import { SERVICE_EXTRAS_DATA } from "../../mockData/services/serviceExtras.consts";
+import { SERVICE_PAGE_STATIC_DATA } from "./Service.consts";
 
 function Service() {
   const params = useParams();
-  const [pageData, setPageData] = useState<ServicePageDataI | null>(null);
-  const [staticData, setStaticData] = useState<ServicePageStaticI | null>(null);
   const { language } = useLanguage();
+  const staticData = SERVICE_PAGE_STATIC_DATA[language];
+  const serviceCategory = SERVICE_CATEGORIES_DATA[language].find((category) =>
+    category.services.some((service) => service.slug === params.slug),
+  );
+  const service = serviceCategory?.services.find(
+    (item: ServiceI) => item.slug === params.slug,
+  );
 
-  useEffect(() => {
-    (async () => {
-      const servicesModule = await import(
-        `../../mockData/services/Services.mockData.${language}.ts`
-      );
-      const extrasModule = await import(
-        `../../mockData/services/serviceExtras.mockData.${language}.ts`
-      );
-      const servicePageModule = await import(
-        `./mockData/service-page.mockData.${language}.ts`
-      );
-
-      setStaticData(servicePageModule.servicePageStaticData);
-      const serviceCategory = servicesModule.serviceCategories.find(
-        (category: ServicesCategoryI) => {
-          return category.services.some(
-            (service) => service.slug === params.slug,
-          );
-        },
-      );
-
-      const service = serviceCategory?.services.find(
-        (service: ServiceI) => service.slug === params.slug,
-      );
-
-      if (!service?.detailPage) {
-        setPageData(null);
-        return;
-      }
-
-      const related = (serviceCategory?.services ?? [])
-        .filter((item: ServiceI) => item.slug !== params.slug)
-        .slice(0, 3)
-        .map((item: ServiceI) => ({
-          title: item.title,
-          slug: item.slug,
-          highlights: item.highlights,
-        }));
-
-      setPageData({
-        detail: service.detailPage,
-        extras: params.slug
-          ? (extrasModule.serviceExtras[params.slug] ?? null)
-          : null,
-        related,
-      });
-    })();
-  }, [language, params.slug]);
-
-  if (!pageData || !staticData) {
+  if (!service?.detailPage) {
     return <PageSkeleton variant="service" />;
   }
 
+  const related = (serviceCategory?.services ?? [])
+    .filter((item: ServiceI) => item.slug !== params.slug)
+    .slice(0, 3)
+    .map((item: ServiceI) => ({
+      title: item.title,
+      slug: item.slug,
+      highlights: item.highlights,
+    }));
+  const extras = params.slug
+    ? (SERVICE_EXTRAS_DATA[language][params.slug] ?? null)
+    : null;
+
+  const data: TitleBlockI = {
+    title: service.detailPage.title,
+    description: service.detailPage.description,
+    descriptionStyle: "justify",
+  };
+
   return (
     <div>
-      <TitleBlockGrey
-        title={pageData.detail.title}
-        description={pageData.detail.description}
-        descriptionStyle={"justify"}
-      />
+      <TitleBlockGrey data={data} />
       <div className="container">
         <div className="content">
           <WhatWeDo
             title={staticData.whatWeDoTitle}
-            features={pageData.detail.features}
+            features={service.detailPage.features}
           />
-          {pageData.extras ? (
+          {extras ? (
             <>
               <ServiceStages
                 title={staticData.stagesTitle}
-                stages={pageData.extras.stages}
+                stages={extras.stages}
               />
-              <ServiceFaq
-                title={staticData.faqTitle}
-                items={pageData.extras.faq}
-              />
+              <ServiceFaq title={staticData.faqTitle} items={extras.faq} />
             </>
           ) : null}
           <ServiceRelated
             title={staticData.relatedTitle}
-            services={pageData.related}
+            services={related}
           />
         </div>
 
         <ServiceBanner
-          description={pageData.detail.banner.description}
-          buttonText={pageData.detail.banner.buttonText}
-          image={pageData.detail.banner.image}
+          description={service.detailPage.banner.description}
+          buttonText={service.detailPage.banner.buttonText}
+          image={service.detailPage.banner.image}
           labelText={staticData.bannerLabel}
         />
       </div>

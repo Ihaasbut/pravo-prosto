@@ -38,7 +38,6 @@ function ServiceCategory({
                     >
                       <Typography
                         variant="body-l"
-                        as={"p"}
                         className={styles.title}
                       >
                         {service.title}
@@ -49,7 +48,6 @@ function ServiceCategory({
                           <Typography
                             key={highlight}
                             variant="body-s"
-                            as={"p"}
                             className={styles.highlight}
                           >
                             - {highlight}
@@ -73,7 +71,6 @@ function ServiceCategory({
                 <div className={cn(styles.service, "animate-from-top")}>
                   <Typography
                     variant="body-l"
-                    as={"p"}
                     className={styles.title}
                   >
                     {service.title}
@@ -84,7 +81,6 @@ function ServiceCategory({
                       <Typography
                         key={highlight}
                         variant="body-s"
-                        as={"p"}
                         className={styles.highlight}
                       >
                         - {highlight}

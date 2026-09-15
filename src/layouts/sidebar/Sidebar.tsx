@@ -1,19 +1,12 @@
-import cn from "classnames";
 import Logo from "../../components/ui/icons/logo/Logo";
-import styles from "./Sidebar.module.css";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
-import type { SiderBarPropsI } from "./Sidebar.types";
+import styles from "./Sidebar.module.css";
 
-function Sidebar({ isMenuOpen, onToggleMenu }: SiderBarPropsI) {
+function Sidebar() {
   return (
-    <nav className={cn(styles.wrapper, isMenuOpen && styles.menuOpen)}>
+    <nav className={styles.wrapper}>
       <Logo className={styles.logo} />
-
-      <div className={styles.sidebar} onClick={onToggleMenu}></div>
-
-      <div className={styles.dekstop}>
-        <BurgerMenu onToggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} />
-      </div>
+      <BurgerMenu />
     </nav>
   );
 }

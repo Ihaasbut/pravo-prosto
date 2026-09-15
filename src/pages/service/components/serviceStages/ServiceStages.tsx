@@ -21,7 +21,6 @@ function ServiceStages({ title, stages }: ServiceStagesPropsI) {
               </Typography>
               <Typography
                 variant="body-s"
-                as="p"
                 className={styles.description}
               >
                 {stage.description}

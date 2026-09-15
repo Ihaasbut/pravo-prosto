@@ -1,47 +1,18 @@
-import { useEffect, useState } from "react";
-import TitleBlockGrey from "../../components/titleBlockPrimary/TitleBlockPrimary";
+import TitleBlockGrey from "../../components/sections/titleBlockGrey/TitleBlockGrey";
 import styles from "./Team.module.css";
 import TeamPersons from "./components/teamPersons/TeamPersons";
-import type { PageTeamFullDataI } from "./Team.types";
 import { useLanguage } from "../../hooks/use-language";
-import PageSkeleton from "../../components/pageSkeleton/PageSkeleton";
 import HomeProcess from "../home/components/homeProcess/HomeProcess";
 import RequestSection from "../../components/sections/requestSection/RequestSection";
+import { TEAM_PAGE_DATA } from "./Team.consts";
 
 function Team() {
-  const [pageData, setPageData] = useState<PageTeamFullDataI | null>(null);
   const { language } = useLanguage();
-
-  useEffect(() => {
-    (async () => {
-      const teamModule = await import(
-        `../../mockData/team/Team.mockData.${language}.ts`
-      );
-
-      const pageModule = await import(
-        `../team/mockData/team-page.mockData.${language}.ts`
-      );
-
-      const fullData: PageTeamFullDataI = {
-        team: teamModule.team,
-        page: pageModule.pageTeam,
-      };
-
-      setPageData(fullData);
-    })();
-  }, [language]);
-
-  if (!pageData) {
-    return <PageSkeleton variant="team" />;
-  }
+  const pageData = TEAM_PAGE_DATA[language];
 
   return (
     <div className={styles.team}>
-      <TitleBlockGrey
-        title={pageData.page.title}
-        description={pageData.page.description}
-        className={styles.header}
-      />
+      <TitleBlockGrey data={pageData.page} />
 
       <TeamPersons teamData={pageData.team} />
       <HomeProcess process={pageData.page.process} />
