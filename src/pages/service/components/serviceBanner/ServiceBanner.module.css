@@ -42,7 +42,7 @@
   }
 }
 
-.info span {
+.description span {
   color: var(--color-accent);
   font-weight: 900;
 }
