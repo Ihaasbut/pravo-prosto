@@ -1,21 +1,17 @@
-import type { ServicesCategoryI } from "../../types/mockData";
-import type { NewI } from "../../types/news.types";
-import type { TeamPersonI } from "../../types/team.types";
-import type { TitleBlockI } from "../../types/titleBlock.types";
 import type { RequestSectionDataI } from "../../components/sections/requestSection/RequestSection.types";
+import type { HeroDataI } from "./components/hero/Hero.types";
 import type { HomeAboutDataI } from "./components/homeAbout/HomeAbout.types";
-import type { HeroI } from "./components/hero/Hero.types";
+import type { HomeNewsDataI } from "./components/homeNews/HomeNews.types";
 import type { HomeProcessDataI } from "./components/homeProcess/HomeProcess.types";
+import type { HomeServicesDataI } from "./components/homeServices/HomeServices.types";
+import type { HomeTeamDataI } from "./components/homeTeam/HomeTeam.types";
 
 export interface PageHomeFullDataI {
-  hero: HeroI;
+  hero: HeroDataI;
   about: HomeAboutDataI;
-  servicesBlock: TitleBlockI;
-  featuredCategory: ServicesCategoryI;
+  services: HomeServicesDataI;
   process: HomeProcessDataI;
-  teamBlock: TitleBlockI;
-  team: TeamPersonI[];
-  newsBlock: TitleBlockI;
-  featuredNews: NewI[];
+  team: HomeTeamDataI;
+  news: HomeNewsDataI;
   request: RequestSectionDataI;
 }

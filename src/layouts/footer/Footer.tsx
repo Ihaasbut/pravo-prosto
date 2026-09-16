@@ -1,10 +1,12 @@
 import cn from "classnames";
+
 import { useLanguage } from "../../hooks/use-language";
-import { FOOTER_DATA } from "./Footer.consts";
 import FooterCompany from "./components/footerCompany/FooterCompany";
 import FooterContacts from "./components/footerContacts/FooterContacts";
 import FooterCopyright from "./components/footerCopyright/FooterCopyright";
 import FooterEmbla from "./components/footerEmbla/FooterEmbla";
+import { FOOTER_DATA } from "./Footer.consts";
+
 import styles from "./Footer.module.css";
 
 function Footer() {

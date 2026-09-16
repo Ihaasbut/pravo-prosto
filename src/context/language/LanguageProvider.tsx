@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+
 import {
-  LanguageContext,
   type Language,
+  LanguageContext,
   type LanguageContextValue,
 } from "./LanguageContext";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { getLocalizedPath } from "../../mockData/services/Services.consts";
+import { getPathForLanguage } from "./LanguageProvider.helpers";
 import type { LanguageProviderI } from "./LanguageProvider.types";
 
 function isLanguage(value: string | undefined): value is Language {
@@ -21,7 +22,7 @@ export const LanguageProvider = ({ children }: LanguageProviderI) => {
   useEffect(() => {
     if (params.lang !== language) {
       const fromLanguage = isLanguage(params.lang) ? params.lang : language;
-      const newPath = getLocalizedPath(
+      const newPath = getPathForLanguage(
         location.pathname,
         fromLanguage,
         language,

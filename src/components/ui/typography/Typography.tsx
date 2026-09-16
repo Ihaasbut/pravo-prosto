@@ -1,6 +1,8 @@
-import styles from "./Typography.module.css";
 import cn from "classnames";
+
 import type { TypographyPropsI } from "./Typography.types";
+
+import styles from "./Typography.module.css";
 
 function Typography({
   variant,

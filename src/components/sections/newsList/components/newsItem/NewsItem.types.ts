@@ -1,8 +1,8 @@
-import type { NewI } from "../../../../../types/news.types";
+import type { NewDataI } from "../../../../../types/news.types";
 
 export type NewsItemVariant = "allPage" | "detailPage";
 
 export interface NewsItemI {
-  news: NewI;
+  news: NewDataI;
   variant: NewsItemVariant;
 }

@@ -1,26 +1,22 @@
 import { useNavigate } from "react-router-dom";
+
+import ServiceCategory from "../../../../components/sections/serviceCategory/ServiceCategory";
 import TitleBlockTransparent from "../../../../components/sections/titleBlockTransparent/TitleBlockTransparent";
-import ServiceCategory from "../../../services/serviceCategory/ServiceCategory";
 import { useLanguage } from "../../../../hooks/use-language";
 import type { HomeServicesPropsI } from "./HomeServices.types";
+
 import styles from "./HomeServices.module.css";
 
-function HomeServices({ servicesBlock, category }: HomeServicesPropsI) {
+function HomeServices({ data }: HomeServicesPropsI) {
+  const { titleBlock, category } = data;
   const navigate = useNavigate();
   const { language } = useLanguage();
+  const goToServices = () => navigate(`/${language}/services`);
 
   return (
     <section className={styles.section}>
-      <TitleBlockTransparent
-        data={servicesBlock}
-        onButtonClick={() => navigate(`/${language}/services`)}
-      />
-      <ServiceCategory
-        area={category.area}
-        services={category.services}
-        toPrefix="services/"
-        onGrey
-      />
+      <TitleBlockTransparent data={titleBlock} onButtonClick={goToServices} />
+      <ServiceCategory data={category} toPrefix="services/" onGrey />
     </section>
   );
 }

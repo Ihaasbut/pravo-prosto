@@ -1,9 +1,11 @@
-import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from "embla-carousel-auto-scroll";
-import Typography from "../../../../components/ui/typography/Typography";
 import cn from "classnames";
-import styles from "./Footer.module.css";
+import AutoScroll from "embla-carousel-auto-scroll";
+import useEmblaCarousel from "embla-carousel-react";
+
+import Typography from "../../../../components/ui/typography/Typography";
 import type { FooterEmblaProps } from "./FooterEmbla.types";
+
+import styles from "./Footer.module.css";
 
 function FooterEmbla({ text }: FooterEmblaProps) {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
@@ -18,13 +20,13 @@ function FooterEmbla({ text }: FooterEmblaProps) {
     <div className={cn(styles.embla, "embla")}>
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {Array.from({ length: 8 }, (_, index) => (
-            <div className="embla__slide" key={index}>
-              <Typography variant="body-l">
-                {text}
-              </Typography>
-            </div>
-          ))}
+          {["one", "two", "three", "four", "five", "six", "seven", "eight"].map(
+            (slide) => (
+              <div className="embla__slide" key={slide}>
+                <Typography variant="body-l">{text}</Typography>
+              </div>
+            ),
+          )}
         </div>
       </div>
     </div>

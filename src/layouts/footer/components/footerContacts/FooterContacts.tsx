@@ -1,6 +1,8 @@
 import { Fragment } from "react";
+
 import Typography from "../../../../components/ui/typography/Typography";
 import type { FooterContactsPropsI } from "./FooterContacts.types";
+
 import styles from "./FooterContacts.module.css";
 
 function FooterContacts({ contacts }: FooterContactsPropsI) {

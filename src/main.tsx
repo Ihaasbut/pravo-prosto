@@ -1,26 +1,29 @@
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./styles/index.css";
-import "./styles/colors.css";
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-import RootLayout from "./layouts/rootLayout/RootLayout.tsx";
-import Home from "./pages/home/Home.tsx";
-import { ThemeProvider } from "./context/theme/ThemeProvider";
-import Services from "./pages/services/Services.tsx";
+import { createRoot } from "react-dom/client";
+
 import { LanguageProvider } from "./context/language/LanguageProvider";
-import Team from "./pages/team/Team.tsx";
-import Contacts from "./pages/contacts/Contacts.tsx";
-import News from "./pages/news/News.tsx";
-import Service from "./pages/service/Service.tsx";
-import NewsOne from "./pages/newsOne/NewsOne.tsx";
-import { ModalProvider } from "./context/modal/ModalProvider";
 import { MenuProvider } from "./context/menu/MenuProvider";
+import { ModalProvider } from "./context/modal/ModalProvider";
+import { ThemeProvider } from "./context/theme/ThemeProvider";
+import RootLayout from "./layouts/rootLayout/RootLayout.tsx";
+import Contacts from "./pages/contacts/Contacts.tsx";
+import Home from "./pages/home/Home.tsx";
 import LegalPage from "./pages/legalPage/LegalPage.tsx";
+import News from "./pages/news/News.tsx";
+import NewsOne from "./pages/newsOne/NewsOne.tsx";
+import NotFound from "./pages/notFound/NotFound.tsx";
+import Service from "./pages/service/Service.tsx";
+import Services from "./pages/services/Services.tsx";
+import Team from "./pages/team/Team.tsx";
 import { initTelegramWebApp } from "./telegram-webapp.ts";
+
+import "./styles/index.css";
+import "./styles/colors.css";
 
 initTelegramWebApp();
 
@@ -76,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "user-agreement",
         element: <LegalPage pageKey="userAgreement" />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

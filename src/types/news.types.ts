@@ -1,37 +1,43 @@
 import type { ComponentType } from "react";
 
-export interface NewI {
-    title: string;
-    categoryId: number;
-    categoryName: string;
-    image: string;
-    slug: string;
-    date: string;
-    blocks: (
-        | NewsTextBlockI
-        | NewsImageBlockI
-        | NewsTitleTextBlockI
-        | NewsListBlockI
-    )[];
+import type { TitleBlockI } from "./titleBlock.types";
+
+export type NewDataI = TitleBlockI & {
+  categoryId: number;
+  categoryName: string;
+  image: string;
+  slug: string;
+  date: string;
+  blocks: NewsBlockI[];
+};
+
+export type NewsBlockI =
+  | NewsTextBlockI
+  | NewsImageBlockI
+  | NewsTitleTextBlockI
+  | NewsListBlockI;
+
+export interface NewsBlockComponentPropsI {
+  data: NewsBlockI;
 }
 
 interface NewsOneComponentBlock {
-    component: ComponentType;
+  component: ComponentType<NewsBlockComponentPropsI>;
 }
 
-export interface NewsTextBlockI extends NewsOneComponentBlock {
-    text: string;
-}
+export type NewsTextBlockI = NewsOneComponentBlock & {
+  text: string;
+};
 
-export interface NewsImageBlockI extends NewsOneComponentBlock {
-    image: string;
-}
+export type NewsImageBlockI = NewsOneComponentBlock & {
+  image: string;
+};
 
-export interface NewsTitleTextBlockI extends NewsOneComponentBlock {
-    title: string;
-    text: string;
-}
+export type NewsTitleTextBlockI = NewsOneComponentBlock & {
+  title: string;
+  text: string;
+};
 
-export interface NewsListBlockI extends NewsOneComponentBlock {
-    list: string[];
-}
+export type NewsListBlockI = NewsOneComponentBlock & {
+  list: string[];
+};

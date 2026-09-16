@@ -1,64 +1,38 @@
-import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
+import type { TitleBlockI } from "../../../types/titleBlock.types";
+import type { HeroDataI } from "../components/hero/Hero.types";
 import type { HomeAboutDataI } from "../components/homeAbout/HomeAbout.types";
 import type { HomeProcessDataI } from "../components/homeProcess/HomeProcess.types";
-import type { HeroI } from "../components/hero/Hero.types";
 
-export const hero: HeroI = {
+export const hero: HeroDataI = {
   title: "Математически точные\nюридические решения",
   description:
     "Право Просто — российская юридическая фирма с глубокой экспертизой в IT, инвестиционных сделках и юридических исследованиях. Мы решаем многоуровневые правовые задачи и управляем комплексными юридическими проектами для бизнеса и частных клиентов. Головной офис компании расположен в ИТ-Парке им. Б. Рамеева в Казани.",
   button: "Консультация",
   serviceKeywords: [
-    {
-      name: "Договоры",
-    },
-    {
-      name: "Сделки",
-    },
-    {
-      name: "Претензии",
-    },
-    {
-      name: "Инвестиции",
-    },
-    {
-      name: "Авторское право",
-    },
-    {
-      name: "Аудит",
-    },
-    {
-      name: "Реорганизация",
-    },
-    {
-      name: "Защита кода",
-    },
-    {
-      name: "Аккредитация",
-    },
-    {
-      name: "Правовой R&D",
-    },
-    {
-      name: "ИТ-льготы",
-    },
-    {
-      name: "Биометрия",
-    },
-    {
-      name: "Due diligence",
-    },
-    {
-      name: "Лицензия",
-    },
+    "Договоры",
+    "Сделки",
+    "Претензии",
+    "Инвестиции",
+    "Авторское право",
+    "Аудит",
+    "Реорганизация",
+    "Защита кода",
+    "Аккредитация",
+    "Правовой R&D",
+    "ИТ-льготы",
+    "Биометрия",
+    "Due diligence",
+    "Лицензия",
   ],
 };
 
 export const about: HomeAboutDataI = {
-  title: "Подход",
-  description:
-    "Встраиваемся в продуктовую команду и закрываем правовые задачи так, чтобы ими можно было пользоваться в работе, а не только хранить в папке.",
+  titleBlock: {
+    title: "Подход",
+    description:
+      "Встраиваемся в продуктовую команду и закрываем правовые задачи так, чтобы ими можно было пользоваться в работе, а не только хранить в папке.",
+  },
   principles: [
     {
       title: "Сначала продукт",
@@ -79,9 +53,11 @@ export const about: HomeAboutDataI = {
 };
 
 export const process: HomeProcessDataI = {
-  title: "Как работаем",
-  description:
-    "Короткий цикл: фиксируем задачу, отсекаем лишнее и ведём работу так, чтобы вы всегда понимали следующий шаг.",
+  titleBlock: {
+    title: "Как работаем",
+    description:
+      "Короткий цикл: фиксируем задачу, отсекаем лишнее и ведём работу так, чтобы вы всегда понимали следующий шаг.",
+  },
   steps: [
     {
       title: "Заявка",

@@ -1,8 +1,11 @@
 import Typography from "../../../../components/ui/typography/Typography";
-import type { NewsTitleTextBlockI } from "../../../../types/news.types";
+import type { NewsTitleTextBlockPropsI } from "./NewsTitleTextBlock.types";
+
 import styles from "../NewsBlock.module.css";
 
-function NewsTitleTextBlock({ title, text }: NewsTitleTextBlockI) {
+function NewsTitleTextBlock({ data }: NewsTitleTextBlockPropsI) {
+  const { title, text } = data;
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.titleAndText}>

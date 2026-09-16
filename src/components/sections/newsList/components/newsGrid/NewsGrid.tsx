@@ -1,14 +1,15 @@
 import cn from "classnames";
 
 import NewsItem from "../newsItem/NewsItem";
-import styles from "./NewsGrid.module.css";
 import type { NewsGridI } from "./NewsGrid.types";
 
-function NewsGrid({ pageData, variant }: NewsGridI) {
+import styles from "./NewsGrid.module.css";
+
+function NewsGrid({ data, variant }: NewsGridI) {
   return (
     <div className={cn(styles.desktop, styles[variant])}>
-      {pageData.map((element, index) => (
-        <NewsItem news={element} variant={variant} key={index} />
+      {data.map((element) => (
+        <NewsItem news={element} variant={variant} key={element.slug} />
       ))}
     </div>
   );

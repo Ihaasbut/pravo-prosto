@@ -1,9 +1,9 @@
-import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
+import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { ServicesForWhomDataI } from "../../services/components/servicesForWhom/ServicesForWhom.types";
 import type { NewsCategoryI } from "../News.types";
 
-export const headerPage: TitleBlockI = {
+export const titleBlock: TitleBlockI = {
   title: "News",
   description:
     "Contract reviews, cases, and short notes for IT teams — without legalese.",
@@ -33,9 +33,11 @@ export const newsCategories: NewsCategoryI[] = [
 ];
 
 export const topics: ServicesForWhomDataI = {
-  title: "What we write about",
-  description:
-    "Not a digest of “all law”, but what an IT team meets at work: offers, NDAs, SLAs, rights to code.",
+  titleBlock: {
+    title: "What we write about",
+    description:
+      "Not a digest of “all law”, but what an IT team meets at work: offers, NDAs, SLAs, rights to code.",
+  },
   items: [
     {
       title: "Our news",
@@ -59,6 +61,8 @@ export const topics: ServicesForWhomDataI = {
     },
   ],
 };
+
+export const sidebarTitle = "More news";
 
 export const request: RequestSectionDataI = {
   title: "A similar task?",

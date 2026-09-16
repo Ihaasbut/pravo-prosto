@@ -1,40 +1,25 @@
 import { useNavigate } from "react-router-dom";
+
 import TitleBlockTransparent from "../../../../components/sections/titleBlockTransparent/TitleBlockTransparent";
-import Typography from "../../../../components/ui/typography/Typography";
 import { useLanguage } from "../../../../hooks/use-language";
+import HomeTeamList from "./components/homeTeamList/HomeTeamList";
 import type { HomeTeamPropsI } from "./HomeTeam.types";
+
 import styles from "./HomeTeam.module.css";
 
-function HomeTeam({ teamBlock, team }: HomeTeamPropsI) {
+function HomeTeam({ data }: HomeTeamPropsI) {
+  const { titleBlock, team } = data;
   const navigate = useNavigate();
   const { language } = useLanguage();
+  const goToTeam = () => navigate(`/${language}/team`);
 
   return (
     <section className={styles.section}>
-      <TitleBlockTransparent
-        data={teamBlock}
-        onButtonClick={() => navigate(`/${language}/team`)}
-      />
+      <TitleBlockTransparent data={titleBlock} onButtonClick={goToTeam} />
 
       <div className="container">
         <div className="content">
-          <ul className={styles.grid}>
-            {team.map((person) => (
-              <li className={styles.card} key={person.dataPerson}>
-                <div className={styles.inner}>
-                  <div className={styles.image}>
-                    <img src={person.image} alt={person.dataPerson} />
-                  </div>
-                  <Typography variant="body-s" as="h3" className={styles.name}>
-                    {person.dataPerson}
-                  </Typography>
-                  <Typography variant="body-xs" className={styles.post}>
-                    {person.post}
-                  </Typography>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <HomeTeamList data={team} />
         </div>
       </div>
     </section>

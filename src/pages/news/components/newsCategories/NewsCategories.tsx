@@ -1,33 +1,36 @@
-import type { NewsCategoriesI } from "./NewsCategories.types";
-import styles from "./NewsCategories.module.css";
 import cn from "classnames";
 
+import type { NewsCategoriesPropsI } from "./NewsCategories.types";
+
+import styles from "./NewsCategories.module.css";
+
 function NewsCategories({
-  newsCategories,
+  data,
   onFilterChange,
   activeCategory,
-}: NewsCategoriesI) {
+}: NewsCategoriesPropsI) {
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <div className={styles.categories}>
-        {newsCategories.map((category) => (
-          <button
-            type="button"
-            className={cn(
-              styles.button,
-              category.id === activeCategory && styles.active,
-            )}
-            onClick={() => {
-              onFilterChange(category.id);
-            }}
-            aria-pressed={category.id === activeCategory}
-            key={category.id}
-          >
-            {category.title}
-          </button>
-        ))}
+        {data.map((category) => {
+          const handleClick = () => onFilterChange(category.id);
+
+          return (
+            <button
+              type="button"
+              className={cn(
+                styles.button,
+                category.id === activeCategory && styles.active,
+              )}
+              onClick={handleClick}
+              key={category.id}
+            >
+              {category.title}
+            </button>
+          );
+        })}
       </div>
-    </div>
+    </section>
   );
 }
 

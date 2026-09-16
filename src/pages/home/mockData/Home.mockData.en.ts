@@ -1,64 +1,38 @@
-import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
+import type { TitleBlockI } from "../../../types/titleBlock.types";
+import type { HeroDataI } from "../components/hero/Hero.types";
 import type { HomeAboutDataI } from "../components/homeAbout/HomeAbout.types";
 import type { HomeProcessDataI } from "../components/homeProcess/HomeProcess.types";
-import type { HeroI } from "../components/hero/Hero.types";
 
-export const hero: HeroI = {
+export const hero: HeroDataI = {
   title: "Mathematically accurate legal solutions",
   description:
     "PRAVO PROSTO — a Russian law firm with in-depth expertise in IT, investment transactions, and legal research. We solve multi-level legal tasks and manage complex legal projects for business and private clients. The company's head office is located in the B. Rameev IT Park in Kazan.",
   button: "Consultation",
   serviceKeywords: [
-    {
-      name: "Contracts",
-    },
-    {
-      name: "Transactions",
-    },
-    {
-      name: "Claims",
-    },
-    {
-      name: "Investments",
-    },
-    {
-      name: "Copyright",
-    },
-    {
-      name: "Audit",
-    },
-    {
-      name: "Reorganization",
-    },
-    {
-      name: "Code Protection",
-    },
-    {
-      name: "Accreditation",
-    },
-    {
-      name: "Legal R&D",
-    },
-    {
-      name: "IT Benefits",
-    },
-    {
-      name: "Biometrics",
-    },
-    {
-      name: "Due Diligence",
-    },
-    {
-      name: "Licensing",
-    },
+    "Contracts",
+    "Transactions",
+    "Claims",
+    "Investments",
+    "Copyright",
+    "Audit",
+    "Reorganization",
+    "Code Protection",
+    "Accreditation",
+    "Legal R&D",
+    "IT Benefits",
+    "Biometrics",
+    "Due Diligence",
+    "Licensing",
   ],
 };
 
 export const about: HomeAboutDataI = {
-  title: "Approach",
-  description:
-    "We join the product team and close legal work so you can use it, not file it away.",
+  titleBlock: {
+    title: "Approach",
+    description:
+      "We join the product team and close legal work so you can use it, not file it away.",
+  },
   principles: [
     {
       title: "Product first",
@@ -79,9 +53,11 @@ export const about: HomeAboutDataI = {
 };
 
 export const process: HomeProcessDataI = {
-  title: "How we work",
-  description:
-    "A short cycle: we pin the task, cut what is not needed, and keep the next step obvious.",
+  titleBlock: {
+    title: "How we work",
+    description:
+      "A short cycle: we pin the task, cut what is not needed, and keep the next step obvious.",
+  },
   steps: [
     {
       title: "Request",

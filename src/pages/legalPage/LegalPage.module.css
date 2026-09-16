@@ -1,57 +1,18 @@
 .legal {
-    width: 100%;
+  width: 100%;
 }
 
 .contentWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    margin: 100px 0;
-    max-width: 980px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin: 100px 0;
+  max-width: 980px;
 }
 
 @media (width < 768px) {
-    .contentWrapper {
-        gap: 40px;
-        margin: 50px 0;
-    }
-}
-
-.intro,
-.sectionContent {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.sections {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
-
-@media (width < 768px) {
-    .sections {
-        gap: 35px;
-    }
-}
-
-.section {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-@media (width < 768px) {
-    .section {
-        gap: 18px;
-    }
-}
-
-.sectionTitle {
-    color: var(--color-text);
-}
-
-.paragraph {
-    line-height: 1.6;
+  .contentWrapper {
+    gap: 40px;
+    margin: 50px 0;
+  }
 }

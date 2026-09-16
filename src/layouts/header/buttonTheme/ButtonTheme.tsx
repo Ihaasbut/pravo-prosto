@@ -1,6 +1,8 @@
-import { useTheme } from "../../../hooks/use-theme";
-import styles from "./ButtonTheme.module.css";
 import cn from "classnames";
+
+import { useTheme } from "../../../hooks/use-theme";
+
+import styles from "./ButtonTheme.module.css";
 
 function ButtonTheme() {
   const { theme, handleChangeTheme } = useTheme();

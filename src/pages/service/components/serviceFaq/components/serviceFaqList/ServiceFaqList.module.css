@@ -1,0 +1,52 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  border-top: 1px solid var(--color-grey);
+}
+
+.item:last-child {
+  border-bottom: 1px solid var(--color-grey);
+}
+
+.summary {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 20px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.label {
+  flex-shrink: 0;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+}
+
+.question {
+  font-weight: 700;
+}
+
+.answer {
+  padding: 0 0 24px 72px;
+  max-width: 72ch;
+}
+
+@media (width < 768px) {
+  .summary {
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .answer {
+    padding: 0 0 20px;
+  }
+}

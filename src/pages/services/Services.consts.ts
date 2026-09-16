@@ -1,22 +1,22 @@
 import type { Language } from "../../context/language/LanguageContext";
 import { SERVICE_CATEGORIES_DATA } from "../../mockData/services/Services.consts";
-import type { PageServicesFullDataI } from "./Services.types";
 import {
   audiences as audiencesEn,
-  headerPage as headerPageEn,
   request as requestEn,
+  titleBlock as titleBlockEn,
 } from "./mockData/services-page.mockData.en.ts";
 import {
   audiences as audiencesRu,
-  headerPage as headerPageRu,
   request as requestRu,
+  titleBlock as titleBlockRu,
 } from "./mockData/services-page.mockData.ru.ts";
+import type { PageServicesFullDataI } from "./Services.types";
 
 export const SERVICES_PAGE_DATA: Record<Language, PageServicesFullDataI> = {
   ru: {
     serviceCategories: SERVICE_CATEGORIES_DATA.ru,
     page: {
-      headerPage: headerPageRu,
+      titleBlock: titleBlockRu,
       audiences: audiencesRu,
       request: requestRu,
     },
@@ -24,7 +24,7 @@ export const SERVICES_PAGE_DATA: Record<Language, PageServicesFullDataI> = {
   en: {
     serviceCategories: SERVICE_CATEGORIES_DATA.en,
     page: {
-      headerPage: headerPageEn,
+      titleBlock: titleBlockEn,
       audiences: audiencesEn,
       request: requestEn,
     },

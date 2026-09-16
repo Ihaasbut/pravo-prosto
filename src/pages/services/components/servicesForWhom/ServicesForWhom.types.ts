@@ -1,14 +1,15 @@
+import type { TitleBlockI } from "../../../../types/titleBlock.types";
+
 export interface ServicesForWhomItemI {
   title: string;
   description: string;
 }
 
 export interface ServicesForWhomDataI {
-  title: string;
-  description: string;
+  titleBlock: TitleBlockI;
   items: ServicesForWhomItemI[];
 }
 
 export interface ServicesForWhomPropsI {
-  audiences: ServicesForWhomDataI;
+  data: ServicesForWhomDataI;
 }

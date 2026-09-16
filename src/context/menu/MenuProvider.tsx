@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import { MenuContext, type MenuContextValueI } from "./MenuContext";
 import type { MenuProviderI } from "./MenuProvider.types";
 

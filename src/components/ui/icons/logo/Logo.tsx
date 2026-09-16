@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import styles from "./Logo.module.css";
-
 import type { LogoPropsI } from "./Logo.types";
+
+import styles from "./Logo.module.css";
 
 function Logo({ className }: LogoPropsI) {
   return (

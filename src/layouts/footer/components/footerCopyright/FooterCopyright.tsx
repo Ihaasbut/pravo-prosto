@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+
 import Typography from "../../../../components/ui/typography/Typography";
 import { YANDEX_MAPS_URL } from "../../Footer.consts";
 import type { FooterCopyrightPropsI } from "./FooterCopyright.types";
+
 import styles from "./FooterCopyright.module.css";
 
 function FooterCopyright({ address, notice, links }: FooterCopyrightPropsI) {

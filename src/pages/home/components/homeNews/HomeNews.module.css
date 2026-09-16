@@ -16,13 +16,3 @@
     padding-bottom: 28px;
   }
 }
-
-.list {
-  margin-top: 36px;
-}
-
-@media (width < 768px) {
-  .list {
-    margin-top: 24px;
-  }
-}

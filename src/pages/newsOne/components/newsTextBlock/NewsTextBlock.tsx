@@ -1,9 +1,13 @@
-import Typography from "../../../../components/ui/typography/Typography";
-import type { NewsTextBlockI } from "../../../../types/news.types";
-import styles from "../NewsBlock.module.css";
 import cn from "classnames";
 
-function NewsTextBlock({ text }: NewsTextBlockI) {
+import Typography from "../../../../components/ui/typography/Typography";
+import type { NewsTextBlockPropsI } from "./NewsTextBlock.types";
+
+import styles from "../NewsBlock.module.css";
+
+function NewsTextBlock({ data }: NewsTextBlockPropsI) {
+  const { text } = data;
+
   return (
     <div className={styles.wrapper}>
       <Typography

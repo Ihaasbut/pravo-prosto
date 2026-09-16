@@ -1,5 +1,6 @@
 import TitleBlockTransparent from "../titleBlockTransparent/TitleBlockTransparent";
 import type { TitleBlockGreyPropsI } from "./TitleBlockGrey.types";
+
 import styles from "./TitleBlockGrey.module.css";
 
 function TitleBlockGrey({

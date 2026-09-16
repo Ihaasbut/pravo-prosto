@@ -1,14 +1,10 @@
 export interface HeroPropsI {
-    hero: HeroI;
+  data: HeroDataI;
 }
 
-export interface HeroI {
-    title: string;
-    description: string;
-    button: string;
-    serviceKeywords: serviceKeywordI[];
-}
-
-export interface serviceKeywordI {
-    name: string;
+export interface HeroDataI {
+  title: string;
+  description: string;
+  button: string;
+  serviceKeywords: string[];
 }

@@ -1,0 +1,29 @@
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-weight: 700;
+  text-align: left;
+  width: 100%;
+}
+
+@media (width < 1024px) {
+  .navLinks {
+    text-align: center;
+  }
+}
+
+.navLink {
+  color: var(--color-white);
+  transition: color 0.3s ease-out;
+}
+
+@media (hover: hover) {
+  .navLink:hover {
+    color: var(--color-purple);
+  }
+}
+
+.navLinkActive {
+  color: var(--color-accent);
+}

@@ -9,7 +9,7 @@ export interface PageServicesFullDataI {
 }
 
 export interface PageServicesI {
-  headerPage: TitleBlockI;
+  titleBlock: TitleBlockI;
   audiences: ServicesForWhomDataI;
   request: RequestSectionDataI;
 }

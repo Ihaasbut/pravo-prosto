@@ -1,18 +1,18 @@
+import cn from "classnames";
+
 import Button from "../../../../components/ui/button/Button";
 import Typography from "../../../../components/ui/typography/Typography";
 import { useModal } from "../../../../hooks/use-modal";
-import type { ServiceBannerI } from "./ServiceBanner.types";
-import styles from "./ServiceBanner.module.css";
-import cn from "classnames";
+import type { ServiceBannerPropsI } from "./ServiceBanner.types";
 
-function ServiceBanner({
-  description,
-  buttonText,
-  labelText = "[ from our side ]",
-}: ServiceBannerI) {
+import styles from "./ServiceBanner.module.css";
+
+function ServiceBanner({ data }: ServiceBannerPropsI) {
+  const { description, buttonText, labelText } = data;
   const { openModal } = useModal();
+
   return (
-    <div className={cn(styles.banner, "block-margin")}>
+    <section className={cn(styles.banner, "block-margin")}>
       <div className={styles.inner}>
         <div className={styles.info}>
           <Typography variant="body-l" className={styles.description}>
@@ -23,7 +23,7 @@ function ServiceBanner({
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

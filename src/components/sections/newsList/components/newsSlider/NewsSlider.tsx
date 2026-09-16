@@ -1,10 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import NewsItem from "../newsItem/NewsItem";
-import styles from "./NewsSlider.module.css";
 import type { NewsSliderI } from "./NewsSlider.types";
 
-function NewsSlider({ pageData }: NewsSliderI) {
+import styles from "./NewsSlider.module.css";
+
+function NewsSlider({ data }: NewsSliderI) {
   return (
     <div className={styles.slider}>
       <Swiper
@@ -22,8 +23,8 @@ function NewsSlider({ pageData }: NewsSliderI) {
           },
         }}
       >
-        {pageData.map((element, index) => (
-          <SwiperSlide key={index}>
+        {data.map((element) => (
+          <SwiperSlide key={element.slug}>
             <NewsItem news={element} variant="allPage" />
           </SwiperSlide>
         ))}

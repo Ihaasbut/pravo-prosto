@@ -1,8 +1,9 @@
+import { useModal } from "../../../hooks/use-modal";
 import Button from "../../ui/button/Button";
 import Typography from "../../ui/typography/Typography";
-import styles from "./TitleBlockTransparent.module.css";
 import type { TitleBlockTransparentPropsI } from "./TitleBlockTransparent.types";
-import { useModal } from "../../../hooks/use-modal";
+
+import styles from "./TitleBlockTransparent.module.css";
 
 function TitleBlockTransparent({
   data,

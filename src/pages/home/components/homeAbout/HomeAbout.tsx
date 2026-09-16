@@ -1,47 +1,19 @@
-import { useRef } from "react";
-import cn from "classnames";
 import TitleBlockTransparent from "../../../../components/sections/titleBlockTransparent/TitleBlockTransparent";
-import Typography from "../../../../components/ui/typography/Typography";
-import { useFadeIn } from "../../../../hooks/animation/useFadeIn";
+import HomeAboutPrinciples from "./components/homeAboutPrinciples/HomeAboutPrinciples";
 import type { HomeAboutPropsI } from "./HomeAbout.types";
+
 import styles from "./HomeAbout.module.css";
 
-function HomeAbout({ about }: HomeAboutPropsI) {
-  const containerRef = useRef<HTMLUListElement>(null);
-
-  useFadeIn(containerRef);
+function HomeAbout({ data }: HomeAboutPropsI) {
+  const { titleBlock, principles } = data;
 
   return (
     <section className={styles.section}>
-      <TitleBlockTransparent data={about} />
+      <TitleBlockTransparent data={titleBlock} />
 
       <div className="container">
         <div className="content">
-          <ul className={styles.grid} ref={containerRef}>
-            {about.principles.map((principle, index) => {
-              const number = String(index + 1).padStart(2, "0");
-
-              return (
-                <li
-                  className={cn(styles.card, "animate-fade")}
-                  key={principle.title}
-                >
-                  <div className={styles.inner}>
-                    <span className={styles.label}>[ {number} ]</span>
-                    <Typography variant="h4" as="h3" className={styles.title}>
-                      {principle.title}
-                    </Typography>
-                    <Typography
-                      variant="body-s"
-                      className={styles.description}
-                    >
-                      {principle.description}
-                    </Typography>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+          <HomeAboutPrinciples data={principles} />
         </div>
       </div>
     </section>

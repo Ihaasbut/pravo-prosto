@@ -1,35 +1,35 @@
-import Typography from "../../../../components/ui/typography/Typography";
-import styles from "./Hero.module.css";
-import "swiper/swiper.css";
-
 import Button from "../../../../components/ui/button/Button";
-import HeroEmbla from "./heroEmbla/HeroEmbla";
-import type { HeroPropsI } from "./Hero.types";
+import Typography from "../../../../components/ui/typography/Typography";
 import { useModal } from "../../../../hooks/use-modal";
+import type { HeroPropsI } from "./Hero.types";
+import HeroEmbla from "./heroEmbla/HeroEmbla";
 
-function Hero({ hero }: HeroPropsI) {
+import "swiper/swiper.css";
+import styles from "./Hero.module.css";
+
+function Hero({ data }: HeroPropsI) {
   const { openModal } = useModal();
 
   return (
     <div className="container">
-      <div className={styles.hero}>
+      <section className={styles.hero}>
         <div className="content">
           <div className={styles.inner}>
             <Typography variant="h1" as="h1">
-              [{hero.title}]
+              [{data.title}]
             </Typography>
             <Typography variant="body-l">
-              {hero.description}
+              {data.description}
             </Typography>
 
             <Button variant="fill" onClick={openModal}>
-              {hero.button}{" "}
+              {data.button}
             </Button>
           </div>
         </div>
 
-        <HeroEmbla serviceKeywords={hero.serviceKeywords} />
-      </div>
+        <HeroEmbla serviceKeywords={data.serviceKeywords} />
+      </section>
     </div>
   );
 }

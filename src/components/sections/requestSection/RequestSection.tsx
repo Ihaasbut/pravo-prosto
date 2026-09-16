@@ -1,9 +1,10 @@
 import RequestForm from "../../ui/form/RequestForm";
 import Typography from "../../ui/typography/Typography";
-import styles from "./RequestSection.module.css";
 import type { RequestSectionPropsI } from "./RequestSection.types";
 
-function RequestSection({ request }: RequestSectionPropsI) {
+import styles from "./RequestSection.module.css";
+
+function RequestSection({ data }: RequestSectionPropsI) {
   return (
     <section className={styles.section}>
       <div className="container">
@@ -11,18 +12,18 @@ function RequestSection({ request }: RequestSectionPropsI) {
           <div className={styles.inner}>
             <div className={styles.copy}>
               <Typography variant="body-m" className={styles.label}>
-                {request.label}
+                {data.label}
               </Typography>
 
               <Typography variant="h2" as="h2">
-                {request.title}
+                {data.title}
               </Typography>
 
               <Typography
                 variant="body-m"
                 className={styles.description}
               >
-                {request.description}
+                {data.description}
               </Typography>
             </div>
 

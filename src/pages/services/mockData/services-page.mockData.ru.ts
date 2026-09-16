@@ -1,17 +1,19 @@
-import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
+import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { ServicesForWhomDataI } from "../components/servicesForWhom/ServicesForWhom.types";
 
-export const headerPage: TitleBlockI = {
+export const titleBlock: TitleBlockI = {
   title: "Юридические и бухгалтерские услуги для ИТ",
   description: "Мы не просто юристы. Мы часть вашей ИТ-команды.",
   buttonText: "Консультация",
 };
 
 export const audiences: ServicesForWhomDataI = {
-  title: "Для кого",
-  description:
-    "Работаем с ИТ-бизнесом, которому нужны договоры, льготы, IP и сделки без перевода с юридического на человеческий.",
+  titleBlock: {
+    title: "Для кого",
+    description:
+      "Работаем с ИТ-бизнесом, которому нужны договоры, льготы, IP и сделки без перевода с юридического на человеческий.",
+  },
   items: [
     {
       title: "Стартап и фаундеры",

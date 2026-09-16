@@ -1,7 +1,7 @@
-import type { NewI } from "../../../types/news.types";
+import type { NewDataI } from "../../../types/news.types";
 import type { NewsItemVariant } from "./components/newsItem/NewsItem.types";
 
 export interface NewsListI {
-  pageData: NewI[];
+  data: NewDataI[];
   variant: NewsItemVariant;
 }

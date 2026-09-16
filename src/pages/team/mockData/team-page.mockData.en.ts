@@ -1,13 +1,17 @@
 import type { PageTeamI } from "../Team.types";
 
 export const pageTeam: PageTeamI = {
-  title: "Team",
-  description:
-    "Lawyers with practice in IT, fintech, and intellectual property. We work as part of your team — from contracts to disputes.",
-  process: {
-    title: "How we work with a client",
+  titleBlock: {
+    title: "Team",
     description:
-      "We do not split the job into “the legal part” and your headache. We take the contour and run it to a clear next step.",
+      "Lawyers with practice in IT, fintech, and intellectual property. We work as part of your team — from contracts to disputes.",
+  },
+  process: {
+    titleBlock: {
+      title: "How we work with a client",
+      description:
+        "We do not split the job into “the legal part” and your headache. We take the contour and run it to a clear next step.",
+    },
     steps: [
       {
         title: "The task, not the title",

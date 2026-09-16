@@ -1,9 +1,0 @@
-.list {
-  margin: 28px 0 8px;
-}
-
-@media (width < 768px) {
-  .list {
-    margin: 20px 0 8px;
-  }
-}

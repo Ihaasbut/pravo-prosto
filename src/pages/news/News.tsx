@@ -1,41 +1,37 @@
 import { useState } from "react";
-import TitleBlockGrey from "../../components/sections/titleBlockGrey/TitleBlockGrey";
-import styles from "./News.module.css";
 
-import { useLanguage } from "../../hooks/use-language";
 import NewsList from "../../components/sections/newsList/NewsList";
-import NewsCategories from "./components/newsCategories/NewsCategories";
 import RequestSection from "../../components/sections/requestSection/RequestSection";
+import TitleBlockGrey from "../../components/sections/titleBlockGrey/TitleBlockGrey";
+import { useLanguage } from "../../hooks/use-language";
 import ServicesForWhom from "../services/components/servicesForWhom/ServicesForWhom";
+import NewsCategories from "./components/newsCategories/NewsCategories";
 import { NEWS_PAGE_DATA } from "./News.consts";
 
 function News() {
   const { language } = useLanguage();
-  const pageData = NEWS_PAGE_DATA[language];
+  const { news, page } = NEWS_PAGE_DATA[language];
+  const { titleBlock, newsCategories, topics, request } = page;
   const [activeCategory, setActiveCategory] = useState(1);
 
   const filteredNews =
     activeCategory === 1
-      ? pageData.news
-      : pageData.news.filter((news) => news.categoryId === activeCategory);
+      ? news
+      : news.filter((item) => item.categoryId === activeCategory);
 
   return (
-    <div className={styles.news}>
-      <TitleBlockGrey data={pageData.page.headerPage}>
+    <>
+      <TitleBlockGrey data={titleBlock}>
         <NewsCategories
-          newsCategories={pageData.page.newsCategories}
+          data={newsCategories}
           onFilterChange={setActiveCategory}
           activeCategory={activeCategory}
         />
       </TitleBlockGrey>
-      <div className={styles.list}>
-        <div className="container">
-          <NewsList variant="allPage" pageData={filteredNews} />
-        </div>
-      </div>
-      <ServicesForWhom audiences={pageData.page.topics} />
-      <RequestSection request={pageData.page.request} />
-    </div>
+      <NewsList variant="allPage" data={filteredNews} />
+      <ServicesForWhom data={topics} />
+      <RequestSection data={request} />
+    </>
   );
 }
 

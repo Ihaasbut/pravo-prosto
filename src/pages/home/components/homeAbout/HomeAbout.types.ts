@@ -1,14 +1,15 @@
-export interface HomeAboutItemI {
+import type { TitleBlockI } from "../../../../types/titleBlock.types";
+
+export interface HomeAboutItemDataI {
   title: string;
   description: string;
 }
 
 export interface HomeAboutDataI {
-  title: string;
-  description: string;
-  principles: HomeAboutItemI[];
+  titleBlock: TitleBlockI;
+  principles: HomeAboutItemDataI[];
 }
 
 export interface HomeAboutPropsI {
-  about: HomeAboutDataI;
+  data: HomeAboutDataI;
 }
