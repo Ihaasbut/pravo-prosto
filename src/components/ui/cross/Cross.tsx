@@ -1,6 +1,7 @@
 import cn from "classnames";
 
 import type { CrossPropsI } from "./Cross.types";
+
 import styles from "./Cross.module.css";
 
 function Cross({ onClick, className }: CrossPropsI) {

@@ -1,7 +1,9 @@
-import styles from "./Button.module.css";
 import cn from "classnames";
-import type { ButtonPropsI } from "./Button.types";
+
 import Typography from "../typography/Typography";
+import type { ButtonPropsI } from "./Button.types";
+
+import styles from "./Button.module.css";
 
 function Button({
   children,

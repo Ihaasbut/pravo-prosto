@@ -1,74 +1,58 @@
 import Typography from "../../../../components/ui/typography/Typography";
-import type { ContactsInfoPropsI } from "./ContactsInfo.types";
+import type { ContactBlockI, ContactsInfoPropsI } from "./ContactsInfo.types";
+
 import styles from "./ContactsInfo.module.css";
 
-function ContactsInfo({ address, phones, emails }: ContactsInfoPropsI) {
+function ContactsInfo({ data }: ContactsInfoPropsI) {
+  const { address, phones, emails } = data;
+  const groups: ContactBlockI[] = [
+    {
+      label: address.label,
+      href: address.href,
+      items: address.lines.map((value) => ({ value })),
+    },
+    phones,
+    emails,
+  ];
+
   return (
     <div className={styles.section}>
       <div className="container">
         <div className="content">
           <div className={styles.grid}>
-            <div className={styles.card}>
-              <Typography variant="body-xs" className={styles.label}>
-                {address.label}
-              </Typography>
-              <a
-                className={styles.stack}
-                href={address.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {address.lines.map((line) => (
-                  <Typography
-                    variant="body-l"
-                    as="span"
-                    className={styles.line}
-                    key={line}
-                  >
-                    {line}
-                  </Typography>
-                ))}
-              </a>
-            </div>
+            {groups.map((group) => {
+              const Stack = group.href ? "a" : "div";
 
-            <div className={styles.card}>
-              <Typography variant="body-xs" className={styles.label}>
-                {phones.label}
-              </Typography>
-              <div className={styles.stack}>
-                {phones.items.map((phone) => (
-                  <Typography
-                    variant="body-l"
-                    as="a"
-                    className={styles.line}
-                    href={phone.href}
-                    key={phone.href}
-                    aria-label={phone.value}
-                  >
-                    {phone.value}
+              return (
+                <div className={styles.card} key={group.label}>
+                  <Typography variant="body-xs" className={styles.label}>
+                    {group.label}
                   </Typography>
-                ))}
-              </div>
-            </div>
-
-            <div className={styles.card}>
-              <Typography variant="body-xs" className={styles.label}>
-                {emails.label}
-              </Typography>
-              <div className={styles.stack}>
-                {emails.items.map((email) => (
-                  <Typography
-                    variant="body-l"
-                    as="a"
-                    className={styles.line}
-                    href={email.href}
-                    key={email.href}
+                  <Stack
+                    className={styles.stack}
+                    {...(group.href
+                      ? {
+                          href: group.href,
+                          target: "_blank",
+                          rel: "noreferrer",
+                        }
+                      : {})}
                   >
-                    {email.value}
-                  </Typography>
-                ))}
-              </div>
-            </div>
+                    {group.items.map((item) => (
+                      <Typography
+                        variant="body-l"
+                        as={item.href ? "a" : "span"}
+                        className={styles.line}
+                        href={item.href}
+                        key={item.value}
+                      >
+                        {item.value}
+                      </Typography>
+                    ))}
+                  </Stack>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

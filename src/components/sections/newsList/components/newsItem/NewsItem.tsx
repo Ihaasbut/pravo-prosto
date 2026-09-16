@@ -1,10 +1,12 @@
-import cn from "classnames";
 import { Link } from "react-router-dom";
+
+import cn from "classnames";
 
 import { useLanguage } from "../../../../../hooks/use-language";
 import Typography from "../../../../ui/typography/Typography";
-import styles from "./NewsItem.module.css";
 import type { NewsItemI } from "./NewsItem.types";
+
+import styles from "./NewsItem.module.css";
 
 function NewsItem({ news, variant }: NewsItemI) {
   const { language } = useLanguage();

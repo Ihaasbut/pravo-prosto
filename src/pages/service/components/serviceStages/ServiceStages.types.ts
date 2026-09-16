@@ -1,6 +1,5 @@
-import type { FeaturesI } from "../../../../types/mockData";
+import type { ServiceDetailI } from "../../../../types/mockData";
 
 export interface ServiceStagesPropsI {
-  title: string;
-  stages: FeaturesI[];
+  data: ServiceDetailI["stages"];
 }

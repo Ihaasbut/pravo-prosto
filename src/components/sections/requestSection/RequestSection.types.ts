@@ -5,5 +5,5 @@ export interface RequestSectionDataI {
 }
 
 export interface RequestSectionPropsI {
-  request: RequestSectionDataI;
+  data: RequestSectionDataI;
 }

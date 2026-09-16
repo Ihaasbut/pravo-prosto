@@ -1,9 +1,9 @@
-import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
+import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { ServicesForWhomDataI } from "../../services/components/servicesForWhom/ServicesForWhom.types";
 import type { NewsCategoryI } from "../News.types";
 
-export const headerPage: TitleBlockI = {
+export const titleBlock: TitleBlockI = {
   title: "Новости",
   description:
     "Разборы договоров, кейсы и короткие материалы для ИТ-команд — без канцелярита.",
@@ -33,9 +33,11 @@ export const newsCategories: NewsCategoryI[] = [
 ];
 
 export const topics: ServicesForWhomDataI = {
-  title: "О чём пишем",
-  description:
-    "Не дайджест «всего права», а то, с чем ИТ-команда сталкивается в работе: оферта, NDA, SLA, права на код.",
+  titleBlock: {
+    title: "О чём пишем",
+    description:
+      "Не дайджест «всего права», а то, с чем ИТ-команда сталкивается в работе: оферта, NDA, SLA, права на код.",
+  },
   items: [
     {
       title: "Наши новости",
@@ -59,6 +61,8 @@ export const topics: ServicesForWhomDataI = {
     },
   ],
 };
+
+export const sidebarTitle = "Ещё новости";
 
 export const request: RequestSectionDataI = {
   title: "Есть похожая задача?",

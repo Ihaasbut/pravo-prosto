@@ -1,7 +1,11 @@
-import type { NewI } from "../../../../types/news.types";
+import type { NewDataI } from "../../../../types/news.types";
 import type { TitleBlockI } from "../../../../types/titleBlock.types";
 
+export interface HomeNewsDataI {
+  titleBlock: TitleBlockI;
+  news: NewDataI[];
+}
+
 export interface HomeNewsPropsI {
-  newsBlock: TitleBlockI;
-  news: NewI[];
+  data: HomeNewsDataI;
 }

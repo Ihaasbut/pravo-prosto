@@ -1,6 +1,7 @@
+import type { RefObject } from "react";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import type { RefObject } from "react";
 import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);

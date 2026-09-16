@@ -1,8 +1,9 @@
-import BurgerMenu from "../burgerMenu/BurgerMenu";
-import styles from "./Header.module.css";
 import Logo from "../../components/ui/icons/logo/Logo";
-import ButtonTheme from "./buttonTheme/ButtonTheme";
+import BurgerMenu from "../burgerMenu/BurgerMenu";
 import ButtonLanguage from "./buttonLanguage/ButtonLanguage";
+import ButtonTheme from "./buttonTheme/ButtonTheme";
+
+import styles from "./Header.module.css";
 
 function Header() {
   return (

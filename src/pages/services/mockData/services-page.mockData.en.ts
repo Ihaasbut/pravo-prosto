@@ -1,17 +1,19 @@
-import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { RequestSectionDataI } from "../../../components/sections/requestSection/RequestSection.types";
+import type { TitleBlockI } from "../../../types/titleBlock.types";
 import type { ServicesForWhomDataI } from "../components/servicesForWhom/ServicesForWhom.types";
 
-export const headerPage: TitleBlockI = {
+export const titleBlock: TitleBlockI = {
   title: "Legal and accounting services for IT",
   description: "We are not just lawyers. We are part of your IT team.",
   buttonText: "Consultation",
 };
 
 export const audiences: ServicesForWhomDataI = {
-  title: "Who it is for",
-  description:
-    "We work with IT businesses that need contracts, tax status, IP, and deals without a translation from legal into human.",
+  titleBlock: {
+    title: "Who it is for",
+    description:
+      "We work with IT businesses that need contracts, tax status, IP, and deals without a translation from legal into human.",
+  },
   items: [
     {
       title: "Startups and founders",

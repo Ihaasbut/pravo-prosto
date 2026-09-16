@@ -1,8 +1,10 @@
-import "./HeroEmbla.css";
-import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
+import useEmblaCarousel from "embla-carousel-react";
+
 import Typography from "../../../../../components/ui/typography/Typography";
 import type { HeroEmblaPropsI } from "./HeroEmbla.types";
+
+import "./HeroEmbla.css";
 
 function HeroEmbla({ serviceKeywords }: HeroEmblaPropsI) {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
@@ -17,12 +19,10 @@ function HeroEmbla({ serviceKeywords }: HeroEmblaPropsI) {
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {serviceKeywords.map((serviceKeyword, index) => (
-            <div className="embla__slide" key={index}>
+          {serviceKeywords.map((serviceKeyword) => (
+            <div className="embla__slide" key={serviceKeyword}>
               <span> [ ] </span>
-              <Typography variant="body-l">
-                {serviceKeyword.name}
-              </Typography>
+              <Typography variant="body-l">{serviceKeyword}</Typography>
             </div>
           ))}
         </div>

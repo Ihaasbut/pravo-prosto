@@ -1,4 +1,5 @@
 import type { ServiceBannerI } from "../pages/service/components/serviceBanner/ServiceBanner.types";
+import type { TitleBlockI } from "./titleBlock.types";
 
 export interface ServicesCategoryI {
   area: string;
@@ -12,13 +13,6 @@ export interface ServiceI {
   detailPage?: ServiceDetailI;
 }
 
-export interface ServiceDetailI {
-  title: string;
-  description: string;
-  features: FeaturesI[];
-  banner: ServiceBannerI;
-}
-
 export interface FeaturesI {
   title: string;
   description: string;
@@ -29,11 +23,19 @@ export interface FaqItemI {
   answer: string;
 }
 
-export interface ServiceExtrasI {
-  stages: FeaturesI[];
-  faq: FaqItemI[];
-}
-
-export interface ServiceExtrasBySlugI {
-  [slug: string]: ServiceExtrasI;
+export interface ServiceDetailI {
+  titleBlock: TitleBlockI;
+  whatWeDo: {
+    title: string;
+    features: FeaturesI[];
+  };
+  stages: {
+    title: string;
+    stages: FeaturesI[];
+  };
+  faq: {
+    title: string;
+    items: FaqItemI[];
+  };
+  banner: ServiceBannerI;
 }

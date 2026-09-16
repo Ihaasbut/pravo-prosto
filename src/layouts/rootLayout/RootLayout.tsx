@@ -1,10 +1,12 @@
-import { Outlet, useLocation } from "react-router-dom";
-import styles from "./RootLayout.module.css";
-import Sidebar from "../sidebar/Sidebar";
 import { useLayoutEffect } from "react";
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
+import { Outlet, useLocation } from "react-router-dom";
+
 import ModalForm from "../../components/sections/modalForm/ModalForm";
+import Footer from "../footer/Footer";
+import Header from "../header/Header";
+import Sidebar from "../sidebar/Sidebar";
+
+import styles from "./RootLayout.module.css";
 
 function RootLayout() {
   const { pathname } = useLocation();
@@ -22,8 +24,8 @@ function RootLayout() {
         <Sidebar />
 
         <div className={styles.page}>
-          {Array.from({ length: 4 }, (_, index) => (
-            <span key={index} className={styles.backgroundLine} />
+          {["edge", "near", "center", "far"].map((line) => (
+            <span key={line} className={styles.backgroundLine} />
           ))}
 
           <main className={styles.main}>

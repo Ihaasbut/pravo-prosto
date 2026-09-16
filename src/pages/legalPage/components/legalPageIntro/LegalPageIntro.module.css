@@ -1,0 +1,9 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.paragraph {
+  line-height: 1.6;
+}

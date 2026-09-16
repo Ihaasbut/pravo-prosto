@@ -1,12 +1,14 @@
-import TitleBlockGrey from "../../components/sections/titleBlockGrey/TitleBlockGrey";
-import styles from "./NewsOne.module.css";
-import { useLanguage } from "../../hooks/use-language";
 import { useParams } from "react-router-dom";
 
-import NewsList from "../../components/sections/newsList/NewsList";
-import PageSkeleton from "../../components/pageSkeleton/PageSkeleton";
 import RequestSection from "../../components/sections/requestSection/RequestSection";
+import TitleBlockGrey from "../../components/sections/titleBlockGrey/TitleBlockGrey";
+import { useLanguage } from "../../hooks/use-language";
 import { NEWS_PAGE_DATA } from "../news/News.consts";
+import NotFound from "../notFound/NotFound";
+import NewsOneArticle from "./components/newsOneArticle/NewsOneArticle";
+import NewsOneSidebar from "./components/newsOneSidebar/NewsOneSidebar";
+
+import styles from "./NewsOne.module.css";
 
 function NewsOne() {
   const { language } = useLanguage();
@@ -15,12 +17,15 @@ function NewsOne() {
   const article = pageData.news.find((newsItem) => newsItem.slug === slug);
 
   if (!article) {
-    return <PageSkeleton variant="news-detail" />;
+    return <NotFound />;
   }
 
-  const sidebar = pageData.news
-    .filter((newsItem) => newsItem.slug !== slug)
-    .slice(0, 3);
+  const { news, page } = NEWS_PAGE_DATA[language];
+  const { request, sidebarTitle } = page;
+  const sidebar = {
+    title: sidebarTitle,
+    news: news.filter((newsItem) => newsItem.slug !== slug).slice(0, 3),
+  };
 
   return (
     <div className={styles.newsOne}>
@@ -31,27 +36,12 @@ function NewsOne() {
       <div className="container">
         <div className="content">
           <div className={styles.layout}>
-            <article className={styles.detail}>
-              <div className={styles.meta}>
-                <span>{article.categoryName}</span>
-                <span>{article.date}</span>
-              </div>
-              {article.blocks.map((block, id) => {
-                const Component = block.component;
-                return <Component key={id} {...block} />;
-              })}
-            </article>
-
-            <aside className={styles.sidebar}>
-              <p className={styles.sidebarTitle}>
-                {language === "en" ? "More news" : "Ещё новости"}
-              </p>
-              <NewsList pageData={sidebar} variant="detailPage" />
-            </aside>
+            <NewsOneArticle data={article} />
+            <NewsOneSidebar data={sidebar} />
           </div>
         </div>
       </div>
-      <RequestSection request={pageData.page.request} />
+      <RequestSection data={request} />
     </div>
   );
 }

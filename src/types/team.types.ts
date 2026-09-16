@@ -2,9 +2,7 @@ export interface TeamPersonI {
   image: string;
   dataPerson: string;
   post: string;
-  study: PatternInfoI;
-  experience: PatternInfoI;
-  area: PatternInfoI;
+  details: PatternInfoI[];
   comment: string;
 }
 
@@ -14,5 +12,5 @@ export interface PatternInfoI {
 }
 
 export interface TeamPersonsI {
-  teamData: TeamPersonI[];
+  data: TeamPersonI[];
 }

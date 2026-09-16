@@ -8,8 +8,9 @@ import {
   REQUEST_FORM_DATA,
   REQUEST_FORM_DEFAULT_VALUES,
 } from "./RequestForm.consts";
-import styles from "./RequestForm.module.css";
 import type { RequestFormFieldsI } from "./RequestForm.types";
+
+import styles from "./RequestForm.module.css";
 
 const PHONE_MASK = "+{7} (000) 000-00-00";
 

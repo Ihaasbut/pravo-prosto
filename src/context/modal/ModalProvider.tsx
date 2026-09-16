@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+
 import {
-    ModalContext,
     type IsOpenI,
+    ModalContext,
     type ModalContextValueI,
 } from "./ModalContext";
 import type { ModalProviderI } from "./ModalProvider.types";

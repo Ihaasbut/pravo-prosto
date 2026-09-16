@@ -1,17 +1,18 @@
 import type { RequestSectionDataI } from "../../components/sections/requestSection/RequestSection.types";
-import type { ServicesForWhomDataI } from "../services/components/servicesForWhom/ServicesForWhom.types";
-import type { NewI } from "../../types/news.types";
+import type { NewDataI } from "../../types/news.types";
 import type { TitleBlockI } from "../../types/titleBlock.types";
+import type { ServicesForWhomDataI } from "../services/components/servicesForWhom/ServicesForWhom.types";
 
 export interface PageNewsI {
-  headerPage: TitleBlockI;
+  titleBlock: TitleBlockI;
   newsCategories: NewsCategoryI[];
   topics: ServicesForWhomDataI;
   request: RequestSectionDataI;
+  sidebarTitle: string;
 }
 
 export interface PageNewsFullDataI {
-  news: NewI[];
+  news: NewDataI[];
   page: PageNewsI;
 }
 
@@ -21,10 +22,10 @@ export interface NewsCategoryI {
 }
 
 export interface NewsFilterI {
-  news: NewI[];
+  news: NewDataI[];
 }
 
 export interface NewsCategoriesDataI {
-  news: NewI[];
+  news: NewDataI[];
   activeCategory: number;
 }

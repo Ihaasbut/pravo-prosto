@@ -1,0 +1,80 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 12px;
+}
+
+.card {
+  min-height: 260px;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  padding: 28px 24px 32px;
+}
+
+.card:nth-child(1) .inner {
+  background: var(--color-coral);
+  color: var(--color-white);
+}
+
+.card:nth-child(2) .inner {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+.card:nth-child(3) .inner {
+  background: var(--color-accent);
+  color: var(--color-black);
+}
+
+.card:nth-child(4) .inner {
+  background: var(--color-purple);
+  color: var(--color-white);
+}
+
+.label {
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+}
+
+.card:nth-child(3) .label {
+  color: var(--color-coral);
+}
+
+.title {
+  font-weight: 700;
+}
+
+.description {
+  margin-top: auto;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width < 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 0;
+  }
+
+  .inner {
+    padding: 22px 20px 24px;
+  }
+}

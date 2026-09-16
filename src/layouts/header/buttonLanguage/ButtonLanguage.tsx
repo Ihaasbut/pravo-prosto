@@ -1,6 +1,8 @@
-import { useLanguage } from "../../../hooks/use-language";
-import styles from "./ButtonLanguage.module.css";
 import cn from "classnames";
+
+import { useLanguage } from "../../../hooks/use-language";
+
+import styles from "./ButtonLanguage.module.css";
 
 function ButtonLanguage() {
   const { language, handleChangeLanguage } = useLanguage();
